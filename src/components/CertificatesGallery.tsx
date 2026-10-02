@@ -143,7 +143,6 @@ export default function CertificatesGallery() {
         </div>
       </div>
 
-      {/* Lightbox */}
       <AnimatePresence>
         {lightboxIdx !== null && (
           <motion.div

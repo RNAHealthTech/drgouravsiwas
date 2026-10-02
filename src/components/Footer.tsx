@@ -13,7 +13,6 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.container}`}>
         <div className={styles.grid}>
-          {/* Column 1: Bio & Branding */}
           <div className={styles.column}>
             <div className={styles.brand}>
               <div className={styles.footerLogoContainer}>
@@ -36,7 +35,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
           <div className={styles.column}>
             <h4 className={styles.title}>Navigation</h4>
             <ul className={styles.links}>
@@ -55,7 +53,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Hospital & Contact */}
           <div className={styles.column}>
             <h4 className={styles.title}>Sir Ganga Ram Hospital</h4>
             <address className={styles.address}>
@@ -75,7 +72,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Medical Disclaimer */}
         <div className={styles.disclaimerPanel}>
           <p>
             <strong>Medical Disclaimer:</strong> The clinical information on this portal is intended for informational and educational guidance only. It should not be used as a substitute for in-person consultation with a qualified plastic, cosmetic, and reconstructive surgeon. Please visit the OPD at Sir Ganga Ram Hospital or call the casualty desk for medical emergencies.

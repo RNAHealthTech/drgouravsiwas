@@ -10,7 +10,6 @@ export default function IntroAnimation() {
   const [subVisible, setSubVisible] = useState(false);
 
   useEffect(() => {
-    // Check if already seen this session
     if (sessionStorage.getItem('intro_shown')) {
       setPhase('done');
       return;
@@ -37,7 +36,6 @@ export default function IntroAnimation() {
         exit={{ opacity: 0 }}
         transition={{ duration: 1.1, ease: [0.76, 0, 0.24, 1] }}
       >
-        {/* Background split curtain exit */}
         {phase === 'exit' && (
           <>
             <motion.div
@@ -56,7 +54,6 @@ export default function IntroAnimation() {
         )}
 
         <div className={styles.content}>
-          {/* Dr. text */}
           <div className={styles.drWrapper}>
             <motion.span
               className={styles.drText}
@@ -68,7 +65,6 @@ export default function IntroAnimation() {
             </motion.span>
           </div>
 
-          {/* Name — letter by letter */}
           <div className={styles.nameWrapper}>
             {'Gourav Siwas'.split('').map((char, i) => (
               <motion.span
@@ -87,7 +83,6 @@ export default function IntroAnimation() {
             ))}
           </div>
 
-          {/* Divider line */}
           <motion.div
             className={styles.divider}
             initial={{ scaleX: 0 }}
@@ -95,7 +90,6 @@ export default function IntroAnimation() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           />
 
-          {/* Subtitle */}
           <motion.p
             className={styles.subtitle}
             initial={{ opacity: 0, y: 16 }}
@@ -105,7 +99,6 @@ export default function IntroAnimation() {
             Plastic · Cosmetic · Hand Microsurgery
           </motion.p>
 
-          {/* Tagline */}
           <motion.p
             className={styles.tagline}
             initial={{ opacity: 0 }}
@@ -116,7 +109,6 @@ export default function IntroAnimation() {
           </motion.p>
         </div>
 
-        {/* Corner logo mark */}
         <motion.div
           className={styles.cornerMark}
           initial={{ opacity: 0 }}
@@ -126,7 +118,6 @@ export default function IntroAnimation() {
           GS
         </motion.div>
 
-        {/* Progress line */}
         <motion.div
           className={styles.progressBar}
           initial={{ scaleX: 0 }}

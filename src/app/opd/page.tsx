@@ -10,10 +10,8 @@ import styles from './opdPage.module.css';
 export default function OpdPage() {
   return (
     <div className={styles.pageWrapper}>
-      {/* 1. OPD Schedule & Fee schedule */}
       <OpdSchedule />
 
-      {/* 2. Pre-consultation Guidelines Section */}
       <section className={styles.guidelinesSection}>
         <div className="container">
           <ScrollReveal direction="up">
@@ -24,7 +22,6 @@ export default function OpdPage() {
           </ScrollReveal>
 
           <div className={styles.guidelinesGrid}>
-            {/* Card 1: What to Bring */}
             <ScrollReveal direction="right" delay={100} duration={800}>
               <div className={`${styles.guideCard} glass-card`}>
                 <h3>📋 What to Bring for Consultation</h3>
@@ -49,7 +46,6 @@ export default function OpdPage() {
               </div>
             </ScrollReveal>
 
-            {/* Card 2: Aesthetic & Cosmetic Consultation Prep */}
             <ScrollReveal direction="left" delay={200} duration={800}>
               <div className={`${styles.guideCard} glass-card`}>
                 <h3>✨ Aesthetic / Cosmetic Consultation Prep</h3>
@@ -77,7 +73,6 @@ export default function OpdPage() {
         </div>
       </section>
 
-      {/* 3. Booking Call To Action */}
       <BookingCTA />
     </div>
   );

@@ -17,7 +17,6 @@ export default function Timeline() {
         </ScrollReveal>
 
         <div className={styles.grid}>
-          {/* Left Column: Positions & Training */}
           <div className={styles.column}>
             <ScrollReveal direction="left">
               <h3 className={styles.columnTitle}>Clinical Experience & Positions</h3>
@@ -52,13 +51,11 @@ export default function Timeline() {
             </div>
           </div>
 
-          {/* Right Column: Awards & Memberships */}
           <div className={styles.column}>
             <ScrollReveal direction="right">
               <h3 className={styles.columnTitle}>Awards & Memberships</h3>
             </ScrollReveal>
 
-            {/* Award Section */}
             <div className={styles.awardSection}>
               {doctorData.awards.map((award, idx) => (
                 <ScrollReveal key={`award-${idx}`} direction="right" delay={idx * 120} duration={600} style={{ marginBottom: '16px' }}>
@@ -86,7 +83,6 @@ export default function Timeline() {
               ))}
             </div>
 
-            {/* Membership Section */}
             <div className={styles.membershipSection}>
               <ScrollReveal direction="right" delay={150}>
                 <h4 className={styles.sectionSubtitle}>Professional Societies</h4>

@@ -15,7 +15,6 @@ export default function Hero() {
 
   return (
     <section id="hero" className={styles.hero}>
-      {/* Motion Graphics Background */}
       <div className={styles.motionBg}>
         <div className={`${styles.particle} ${styles.particle1}`}></div>
         <div className={`${styles.particle} ${styles.particle2}`}></div>
@@ -105,7 +104,6 @@ export default function Hero() {
                 />
               </div>
 
-              {/* Floating Credentials Badges */}
               <div className={`${styles.floatingCard} ${styles.floatCard1} glass-card animate-float`}>
                 <div className={styles.floatIcon}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

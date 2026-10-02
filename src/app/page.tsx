@@ -61,13 +61,9 @@ export default function Home() {
   return (
     <main className={styles.main}>
 
-      {/* ═══════════════════════════════════════════════════════════════
-          1. FULL-SCREEN VIDEO HERO — Garth Fisher style
-      ═══════════════════════════════════════════════════════════════ */}
       <section ref={heroRef} className={styles.hero}>
         <motion.div className={styles.heroBg} style={{ scale: heroScale }}>
           <HeroCanvasAnimation />
-          {/* Animated CSS rings overlay */}
           <div className={styles.heroRings}>
             <div className={styles.ring1} />
             <div className={styles.ring2} />
@@ -110,9 +106,6 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════════
-          2. RUNNING MARQUEE
-      ═══════════════════════════════════════════════════════════════ */}
       <div className={styles.marqueeBar}>
         <Marquee speed={60} gradient={false} pauseOnHover={true} autoFill>
           {['Plastic Surgery', 'Cosmetic Refinement', 'Hand Microsurgery', 'Reconstructive Surgery', 'Trauma & Burns', 'Scar Revision'].map((t, i) => (
@@ -123,9 +116,6 @@ export default function Home() {
         </Marquee>
       </div>
 
-      {/* ═══════════════════════════════════════════════════════════════
-          3. ABOUT — Split layout with floating accent card
-      ═══════════════════════════════════════════════════════════════ */}
       <section className={styles.about}>
         <div className="container">
           <div className={styles.aboutGrid}>
@@ -177,14 +167,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════════
-          3.5. EUROPEAN BOARD SHOWCASE
-      ═══════════════════════════════════════════════════════════════ */}
       <EuropeanBoardShowcase />
 
-      {/* ═══════════════════════════════════════════════════════════════
-          4. STATS COUNTER BAR
-      ═══════════════════════════════════════════════════════════════ */}
       <section className={styles.statsBar}>
         <div className="container">
           <div className={styles.statsGrid}>
@@ -205,9 +189,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════════
-          5. PROCEDURES — Garth Fisher editorial image grid
-      ═══════════════════════════════════════════════════════════════ */}
       <section id="procedures" className={styles.procedures}>
         <div className="container">
           <motion.div 
@@ -247,14 +228,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════════
-          5.5. EMERGENCY TRAUMA GUIDE
-      ═══════════════════════════════════════════════════════════════ */}
       <EmergencyTraumaGuide />
 
-      {/* ═══════════════════════════════════════════════════════════════
-          6. CINEMATIC PARALLAX QUOTE
-      ═══════════════════════════════════════════════════════════════ */}
       <section className={styles.parallax}>
         <div className={styles.parallaxBg} />
         <div className={styles.parallaxInner}>
@@ -280,9 +255,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════════
-          7. TESTIMONIALS SLIDER
-      ═══════════════════════════════════════════════════════════════ */}
       <section className={styles.testimonials}>
         <div className="container">
           <motion.div 
@@ -330,9 +302,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════════
-          8. GALLERY SLIDER
-      ═══════════════════════════════════════════════════════════════ */}
       <section className={styles.gallery}>
         <div className="container">
           <motion.div 
@@ -374,14 +343,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════════
-          8.5. OPD SCHEDULE
-      ═══════════════════════════════════════════════════════════════ */}
       <OpdSchedule />
 
-      {/* ═══════════════════════════════════════════════════════════════
-          9. FINAL CTA
-      ═══════════════════════════════════════════════════════════════ */}
       <section className={styles.cta}>
         <div className="container">
           <motion.div 

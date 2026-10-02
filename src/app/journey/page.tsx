@@ -12,10 +12,8 @@ export default function JourneyPage() {
 
   return (
     <div className={styles.pageWrapper}>
-      {/* 1. Main Timeline */}
       <Timeline />
 
-      {/* 2. Current Posting Highlight Section */}
       {currentPos && (
         <section className={styles.affiliationSection}>
           <div className="container">
@@ -57,7 +55,6 @@ export default function JourneyPage() {
         </section>
       )}
 
-      {/* 3. Booking Call To Action */}
       <BookingCTA />
     </div>
   );

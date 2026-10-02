@@ -116,7 +116,6 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Desktop Navigation */}
         <nav className={styles.nav}>
           {navLinks.map((link) => {
             if (link.isDropdown) {
@@ -138,7 +137,6 @@ export default function Header() {
                     />
                   </Link>
 
-                  {/* Vertical Mega Menu Dropdown */}
                   {isMegaMenuOpen && (
                     <div
                       className={styles.megaMenu}
@@ -147,7 +145,6 @@ export default function Header() {
                     >
                       <div className={styles.megaContainer}>
                         <div className={styles.megaBody}>
-                          {/* Left Vertical Categories Column */}
                           <div className={styles.verticalSidebar}>
                             <div className={styles.sidebarHeading}>Clinical Specialties</div>
                             <div className={styles.categoryList}>
@@ -173,7 +170,6 @@ export default function Header() {
                             </div>
                           </div>
 
-                          {/* Right Procedures Grid Panel */}
                           <div className={styles.proceduresPanel}>
                             <div>
                               <div className={styles.panelHeader}>
@@ -215,7 +211,6 @@ export default function Header() {
                           </div>
                         </div>
 
-                        {/* Mega Menu Bottom Bar */}
                         <div className={styles.megaFooter}>
                           <div className={styles.megaEmergencyGroup}>
                             <span className={styles.emergencyPill}>24x7 Emergency Care</span>
@@ -258,7 +253,6 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile Menu Toggle */}
         <button
           className={`${styles.burger} ${isMenuOpen ? styles.burgerActive : ''}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -270,7 +264,6 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Navigation Panel */}
       <div className={`${styles.mobilePanel} ${isMenuOpen ? styles.mobilePanelOpen : ''}`}>
         <nav className={styles.mobileNav}>
           {navLinks.map((link) => {

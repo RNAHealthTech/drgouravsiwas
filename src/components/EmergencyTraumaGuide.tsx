@@ -50,7 +50,6 @@ export default function EmergencyTraumaGuide() {
         </ScrollReveal>
 
         <div className={styles.contentGrid}>
-          {/* Left: Step-by-step Interactive Flow */}
           <div className={styles.stepsColumn}>
             {steps.map((s) => {
               const isActive = activeStep === s.step;
@@ -71,7 +70,6 @@ export default function EmergencyTraumaGuide() {
             })}
           </div>
 
-          {/* Right: Emergency Hotline & Action Callout Card */}
           <div className={`${styles.hotlineCard} glass-card`}>
             <div className={styles.hotlineTop}>
               <div className={styles.hotlineBadge}>Emergency Hotline</div>

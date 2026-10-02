@@ -30,7 +30,6 @@ export default function DetailedProfile() {
         </motion.div>
 
         <div className={styles.profileContainer}>
-          {/* Sidebar Tabs */}
           <div className={styles.tabsSidebar}>
             {tabs.map((tab) => {
               const Icon = tab.icon;
@@ -47,7 +46,6 @@ export default function DetailedProfile() {
             })}
           </div>
 
-          {/* Content Area */}
           <div className={styles.contentArea}>
             <AnimatePresence mode="wait">
               {activeTab === 'publications' && (

@@ -62,7 +62,6 @@ function ServicesContent() {
 
   return (
     <main className={styles.servicesPage}>
-      {/* Header Section */}
       <header className={styles.header}>
         <div className={styles.headerBg}></div>
         <div className={styles.headerContent}>
@@ -88,7 +87,6 @@ function ServicesContent() {
         </div>
       </header>
 
-      {/* INFINITE MARQUEE */}
       <div className={styles.marqueeContainer}>
         <Marquee speed={40} gradient={false}>
           <span className={styles.marqueeText}>✦ EUROPEAN BOARD CERTIFIED HAND SURGEON (EDHS)</span>
@@ -99,7 +97,6 @@ function ServicesContent() {
         </Marquee>
       </div>
 
-      {/* Tabs Section - Mega Menu Style Tabs */}
       <section className={styles.tabsSection}>
         <div className={styles.tabsContainer}>
           {serviceCategories.map((category) => (
@@ -114,7 +111,6 @@ function ServicesContent() {
         </div>
       </section>
 
-      {/* Grid Section */}
       <section className={styles.gridSection}>
         <motion.div layout className={styles.gridContainer}>
           <AnimatePresence mode="popLayout">
@@ -160,7 +156,6 @@ function ServicesContent() {
         </motion.div>
       </section>
 
-      {/* Interactive Process / Approach Section */}
       <section className={styles.processSection}>
         <div className="container">
           <motion.div
@@ -215,7 +210,6 @@ function ServicesContent() {
         </div>
       </section>
 
-      {/* Procedure Estimator */}
       <section className={styles.estimatorSection}>
         <div className="container">
           <motion.div
@@ -235,7 +229,6 @@ function ServicesContent() {
 
       <TestimonialsGrid />
 
-      {/* Booking CTA */}
       <section style={{ backgroundColor: 'var(--bg-secondary)', padding: '40px 0' }}>
         <BookingCTA />
       </section>

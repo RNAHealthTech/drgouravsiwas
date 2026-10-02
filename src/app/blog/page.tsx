@@ -71,7 +71,6 @@ export default function BlogPage() {
 
       <section className={styles.pageSection}>
         <div className="container">
-          {/* Featured Post */}
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -94,7 +93,6 @@ export default function BlogPage() {
             </div>
           </motion.div>
 
-          {/* Grid Posts */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '40px' }}>
             {posts.slice(1).map((post, idx) => (
               <motion.div 
@@ -123,7 +121,6 @@ export default function BlogPage() {
         </div>
       </section>
       
-      {/* Global styles for blog hover effects */}
       <style dangerouslySetInnerHTML={{__html: `
         .featuredBlog { transition: transform 0.4s ease, box-shadow 0.4s ease; }
         .featuredBlog:hover { transform: translateY(-5px); box-shadow: 0 20px 60px rgba(0,0,0,0.1); }

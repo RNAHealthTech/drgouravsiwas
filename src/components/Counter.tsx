@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 interface CounterProps {
   endValue: number;
-  duration?: number; // in milliseconds
+  duration?: number;
   prefix?: string;
   suffix?: string;
   className?: string;
@@ -58,7 +58,6 @@ export default function Counter({
       const elapsed = timestamp - startTime;
       const progress = Math.min(elapsed / duration, 1);
 
-      // Ease out quad function
       const easeOutQuad = progress * (2 - progress);
       const currentValue = Math.floor(easeOutQuad * endValue);
 
@@ -67,7 +66,7 @@ export default function Counter({
       if (progress < 1) {
         animationFrameId = requestAnimationFrame(updateCount);
       } else {
-        setCount(endValue); // Ensure we end exactly on the target
+        setCount(endValue);
       }
     };
 

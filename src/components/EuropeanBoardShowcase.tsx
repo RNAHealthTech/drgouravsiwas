@@ -10,10 +10,9 @@ import styles from './EuropeanBoardShowcase.module.css';
 export default function EuropeanBoardShowcase() {
   const { openBooking } = useBooking();
 
-  // 12 European stars positioned in a 360-degree circle
   const starCount = 12;
-  const radius = 46; // radius in px from center
-  const center = 60; // center offset in 120px box
+  const radius = 46;
+  const center = 60;
 
   const stars = Array.from({ length: starCount }).map((_, i) => {
     const angle = (i * (360 / starCount) - 90) * (Math.PI / 180);
@@ -30,7 +29,6 @@ export default function EuropeanBoardShowcase() {
             <div className={styles.ambientGlow} />
 
             <div className={styles.grid}>
-              {/* Left Column: Distinction Details */}
               <div className={styles.contentCol}>
                 <div className={styles.badgeRow}>
                   <span className={styles.euPill}>
@@ -88,7 +86,6 @@ export default function EuropeanBoardShowcase() {
                 </div>
               </div>
 
-              {/* Right Column: Verified Convocation Photo & European Board Seal */}
               <div className={styles.sealWrapper}>
                 <div className={styles.photoShowcaseCard}>
                   <div className={styles.photoFrame}>

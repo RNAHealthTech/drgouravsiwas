@@ -19,7 +19,6 @@ export default function About() {
         </ScrollReveal>
 
         <div className={styles.grid}>
-          {/* Left Column: Bio Card */}
           <ScrollReveal direction="right" delay={150} duration={850}>
             <div className={`${styles.bioCard} glass-card`}>
               <div className={styles.cardHeader}>
@@ -41,7 +40,6 @@ export default function About() {
             </div>
           </ScrollReveal>
 
-          {/* Right Column: Tabbed Qualifications & Skills */}
           <ScrollReveal direction="left" delay={250} duration={850}>
             <div className={styles.detailsCard}>
               <div className={styles.tabs}>

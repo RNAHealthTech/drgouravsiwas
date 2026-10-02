@@ -14,10 +14,10 @@ interface Particle {
 }
 
 const COLORS = [
-  'rgba(212, 175, 55, alpha)',   // gold
-  'rgba(184, 150, 62, alpha)',   // dark gold
-  'rgba(255, 255, 255, alpha)',  // white
-  'rgba(230, 200, 100, alpha)',  // light gold
+  'rgba(212, 175, 55, alpha)',
+  'rgba(184, 150, 62, alpha)',
+  'rgba(255, 255, 255, alpha)',
+  'rgba(230, 200, 100, alpha)',
 ];
 
 export default function HeroCanvasAnimation() {
@@ -38,11 +38,9 @@ export default function HeroCanvasAnimation() {
     resize();
     window.addEventListener('resize', resize);
 
-    // Init particles
     const count = Math.min(80, Math.floor((window.innerWidth * window.innerHeight) / 14000));
     particlesRef.current = Array.from({ length: count }, () => createParticle(canvas));
 
-    // Lines connecting close particles
     function drawConnections(p: Particle[], c: CanvasRenderingContext2D) {
       for (let i = 0; i < p.length; i++) {
         for (let j = i + 1; j < p.length; j++) {
@@ -65,7 +63,6 @@ export default function HeroCanvasAnimation() {
     function animate() {
       if (!ctx || !canvas) return;
 
-      // Deep brown gradient bg
       const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
       gradient.addColorStop(0, '#1a0f0a');
       gradient.addColorStop(0.5, '#2d1810');
@@ -73,7 +70,6 @@ export default function HeroCanvasAnimation() {
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Subtle radial glow center
       const radial = ctx.createRadialGradient(
         canvas.width / 2, canvas.height / 2, 0,
         canvas.width / 2, canvas.height / 2, canvas.width * 0.6
@@ -83,17 +79,14 @@ export default function HeroCanvasAnimation() {
       ctx.fillStyle = radial;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Draw connections
       drawConnections(particlesRef.current, ctx);
 
-      // Draw & move particles
       particlesRef.current.forEach((p) => {
         p.x += p.speedX;
         p.y += p.speedY;
         p.opacity += p.opacityDir * 0.008;
         if (p.opacity >= 0.7 || p.opacity <= 0.05) p.opacityDir *= -1;
 
-        // Wrap around edges
         if (p.x < -10) p.x = canvas.width + 10;
         if (p.x > canvas.width + 10) p.x = -10;
         if (p.y < -10) p.y = canvas.height + 10;
@@ -102,7 +95,6 @@ export default function HeroCanvasAnimation() {
         const colorStr = p.color.replace('alpha', String(p.opacity.toFixed(2)));
 
         ctx.save();
-        // Glow effect
         ctx.shadowBlur = p.radius * 4;
         ctx.shadowColor = p.color.replace('alpha', '0.4');
         ctx.beginPath();

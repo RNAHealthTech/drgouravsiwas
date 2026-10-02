@@ -12,7 +12,6 @@ export default function FloatingActionBar() {
   return (
     <div className={`${styles.floatingBarContainer} no-print`}>
       <div className={`${styles.floatingBar} ${isExpanded ? styles.expanded : styles.collapsed}`}>
-        {/* Toggle button */}
         <button
           className={styles.toggleBtn}
           onClick={() => setIsExpanded(!isExpanded)}

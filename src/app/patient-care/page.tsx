@@ -53,7 +53,6 @@ export default function PatientCarePage() {
           <p>Pre-operative checklists and post-operative recovery instructions for optimal healing</p>
         </div>
 
-        {/* Action Button Wrapper */}
         <div className={`${styles.actionWrapper} no-print`}>
           <button onClick={() => window.print()} className="btn btn-secondary btn-sm">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}>
@@ -66,7 +65,6 @@ export default function PatientCarePage() {
         </div>
 
         <div className={styles.grid}>
-          {/* Pre-Op Column */}
           <div className={`${styles.careCard} glass-card`}>
             <div className={styles.cardHeader}>
               <span className={styles.headerIcon}>
@@ -94,7 +92,6 @@ export default function PatientCarePage() {
             </div>
           </div>
 
-          {/* Post-Op Column */}
           <div className={`${styles.careCard} glass-card`}>
             <div className={styles.cardHeader}>
               <span className={styles.headerIcon}>
@@ -121,7 +118,6 @@ export default function PatientCarePage() {
           </div>
         </div>
 
-        {/* Emergency Alert Section */}
         <div className={styles.alertCard}>
           <div className={styles.alertIcon}>
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c53030" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -145,7 +141,6 @@ export default function PatientCarePage() {
           </div>
         </div>
 
-        {/* OPD Hours Quick View Card */}
         <div className={`${styles.opdSection} no-print`}>
           <div className={`${styles.opdCard} glass-card`}>
             <div className={styles.opdInfo}>
@@ -164,7 +159,6 @@ export default function PatientCarePage() {
         </div>
       </div>
       
-      {/* Reusable Booking CTA Banner */}
       <div className="no-print" style={{ width: '100%' }}>
         <BookingCTA />
       </div>

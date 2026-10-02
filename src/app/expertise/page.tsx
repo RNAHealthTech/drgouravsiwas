@@ -10,10 +10,8 @@ import styles from './expertisePage.module.css';
 export default function ExpertisePage() {
   return (
     <div className={styles.pageWrapper}>
-      {/* 1. Areas of Expertise Grid */}
       <Expertise />
 
-      {/* 2. Surgery-specific Patient Stories */}
       <section className={styles.testimonialsSection}>
         <div className="container">
           <ScrollReveal direction="up">
@@ -45,7 +43,6 @@ export default function ExpertisePage() {
         </div>
       </section>
 
-      {/* 3. Booking Call To Action */}
       <BookingCTA />
     </div>
   );

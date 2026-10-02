@@ -50,7 +50,6 @@ export default function ProceduresPage() {
         </div>
       </header>
 
-      {/* INFINITE MARQUEE */}
       <div style={{ background: 'var(--primary)', color: 'var(--secondary)', padding: '16px 0', borderBottom: '1px solid rgba(212,175,55,0.2)' }}>
         <Marquee speed={40} gradient={false}>
           <span style={{ margin: '0 40px', fontSize: '1rem', fontFamily: 'var(--font-serif)', fontStyle: 'italic', letterSpacing: '0.05em' }}>✦ AESTHETIC REFINEMENT</span>

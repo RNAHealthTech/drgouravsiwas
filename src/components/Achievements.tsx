@@ -16,7 +16,6 @@ export default function Achievements() {
         </ScrollReveal>
 
         <div className={styles.achievementsGrid}>
-          {/* Left side: Complex Microsurgery Highlight */}
           <ScrollReveal direction="right" delay={150} duration={850}>
             <div className={styles.goldMedalCard}>
               <div className={styles.medalIcon}>🏆</div>
@@ -30,7 +29,6 @@ export default function Achievements() {
             </div>
           </ScrollReveal>
 
-          {/* Right side: ATLS & Memberships */}
           <div className={styles.credentialsColumn}>
             <ScrollReveal direction="left" delay={200} duration={850}>
               <div className={`${styles.credentialCard} glass-card`}>

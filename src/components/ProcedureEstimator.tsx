@@ -145,7 +145,6 @@ export default function ProcedureEstimator() {
           </div>
         </ScrollReveal>
 
-        {/* Category Selector Tabs */}
         <div className={styles.filterTabs}>
           {(['All', 'Aesthetic', 'Microsurgery', 'Reconstructive'] as const).map((cat) => (
             <button
@@ -162,9 +161,7 @@ export default function ProcedureEstimator() {
           ))}
         </div>
 
-        {/* Interactive Master-Detail Layout */}
         <div className={styles.explorerGrid}>
-          {/* Left: Procedure Selector Cards */}
           <div className={styles.procedureList}>
             {filteredProcedures.map((proc) => {
               const isActive = proc.id === activeProcedure.id;
@@ -187,7 +184,6 @@ export default function ProcedureEstimator() {
             })}
           </div>
 
-          {/* Right: Detailed Specification Matrix Card */}
           <div className={`${styles.detailCard} glass-card`}>
             <div className={styles.detailHeader}>
               <div className={styles.badgeRow}>
@@ -198,7 +194,6 @@ export default function ProcedureEstimator() {
               <p className={styles.detailOverview}>{activeProcedure.overview}</p>
             </div>
 
-            {/* Recovery Metrics Grid */}
             <div className={styles.metricsGrid}>
               <div className={styles.metricItem}>
                 <div className={styles.metricIcon}>⏱️</div>
@@ -233,7 +228,6 @@ export default function ProcedureEstimator() {
               </div>
             </div>
 
-            {/* Technique & Benefits */}
             <div className={styles.techniqueBlock}>
               <h4 className={styles.techniqueTitle}>🔬 Surgical Technique & Approach:</h4>
               <p className={styles.techniqueDesc}>{activeProcedure.technique}</p>
@@ -248,7 +242,6 @@ export default function ProcedureEstimator() {
               </ul>
             </div>
 
-            {/* Bottom Booking Action */}
             <div className={styles.actionRow}>
               <button
                 id={`estimator-book-${activeProcedure.id}`}

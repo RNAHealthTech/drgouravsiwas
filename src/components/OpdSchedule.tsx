@@ -22,7 +22,6 @@ export default function OpdSchedule() {
         </div>
 
         <div className={styles.grid}>
-          {/* Left Column: OPD Schedule Card */}
           <div className={`${styles.scheduleCard} glass-card`}>
             <div className={styles.tabs}>
               <button 
@@ -266,7 +265,6 @@ export default function OpdSchedule() {
             </div>
           </div>
 
-          {/* Right Column: Fee Schedule Card */}
           <div className={`${styles.feeCard} glass-card`}>
             <h3 className={styles.feeTitle}>Consultation Tariffs</h3>
             <p className={styles.feeSubtitle}>Official fee structure at Sir Ganga Ram Hospital</p>

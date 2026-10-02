@@ -5,9 +5,9 @@ import React, { useEffect, useRef, useState } from 'react';
 interface ScrollRevealProps {
   children: React.ReactNode;
   direction?: 'up' | 'down' | 'left' | 'right' | 'fade' | 'scale';
-  delay?: number; // in milliseconds
-  duration?: number; // in milliseconds
-  threshold?: number; // 0 to 1
+  delay?: number;
+  duration?: number;
+  threshold?: number;
   className?: string;
   as?: keyof React.JSX.IntrinsicElements;
   style?: React.CSSProperties;
@@ -31,7 +31,6 @@ export default function ScrollReveal({
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsRevealed(true);
-          // Once revealed, we don't need to observe anymore
           if (elementRef.current) {
             observer.unobserve(elementRef.current);
           }
@@ -39,7 +38,7 @@ export default function ScrollReveal({
       },
       {
         threshold,
-        rootMargin: '0px 0px -50px 0px', // Trigger slightly before it enters the viewport fully
+        rootMargin: '0px 0px -50px 0px',
       }
     );
 

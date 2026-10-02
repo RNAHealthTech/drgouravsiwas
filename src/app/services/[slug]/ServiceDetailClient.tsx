@@ -41,17 +41,14 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
   );
   const whatsappUrl = `https://wa.me/918950406670?text=${whatsappMessage}`;
 
-  // Find related procedures
   const relatedServices = servicesData
     .filter((s) => s.id !== service.id && service.relatedSlugs?.includes(s.slug))
     .slice(0, 4);
 
   return (
     <div className={styles.detailPage}>
-      {/* 1. Hero / Header Banner */}
       <header className={styles.heroHeader}>
         <div className={styles.heroContent}>
-          {/* Breadcrumb Navigation */}
           <nav className={styles.breadcrumb} aria-label="Breadcrumb">
             <Link href="/">Home</Link>
             <span className={styles.breadcrumbSeparator}>/</span>
@@ -62,13 +59,11 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
             <span className={styles.breadcrumbCurrent}>{service.shortTitle || service.title}</span>
           </nav>
 
-          {/* Category Badge */}
           <div className={styles.categoryBadge}>
             <Sparkles size={14} />
             <span>{service.categoryLabel}</span>
           </div>
 
-          {/* Procedure Title */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -78,7 +73,6 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
             {service.title}
           </motion.h1>
 
-          {/* Procedure Tagline Quote */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -92,12 +86,9 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
         </div>
       </header>
 
-      {/* 2. Main 2-Column Section */}
       <section className={styles.layoutSection}>
         <div className={styles.layoutGrid}>
-          {/* Left Column: Procedural Narrative */}
           <main className={styles.mainContent}>
-            {/* Featured Procedural Visual Card */}
             <div className={styles.featuredImageCard}>
               <Image
                 src={service.image || '/images/procedure-1.jpg'}
@@ -112,7 +103,6 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               </div>
             </div>
 
-            {/* Overview & Clinical Background */}
             <div className={styles.contentBlock}>
               <h2 className={styles.blockTitle}>
                 <FileText size={22} color="var(--secondary)" />
@@ -128,7 +118,6 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               </div>
             </div>
 
-            {/* Conditions Treated & Key Indications */}
             <div className={styles.contentBlock}>
               <h2 className={styles.blockTitle}>
                 <AlertCircle size={22} color="var(--secondary)" />
@@ -147,7 +136,6 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               </div>
             </div>
 
-            {/* The GS Surgical Approach & Technique */}
             <div className={styles.contentBlock}>
               <h2 className={styles.blockTitle}>
                 <Stethoscope size={22} color="var(--secondary)" />
@@ -167,7 +155,6 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               </div>
             </div>
 
-            {/* Candidacy Checklist */}
             <div className={styles.contentBlock}>
               <h2 className={styles.blockTitle}>
                 <CheckCircle2 size={22} color="var(--secondary)" />
@@ -186,7 +173,6 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               </div>
             </div>
 
-            {/* Recovery & Healing Timeline */}
             <div className={styles.contentBlock}>
               <h2 className={styles.blockTitle}>
                 <Calendar size={22} color="var(--secondary)" />
@@ -207,7 +193,6 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               </div>
             </div>
 
-            {/* Frequently Asked Questions */}
             {service.faqs && service.faqs.length > 0 && (
               <div className={styles.contentBlock}>
                 <h2 className={styles.blockTitle}>
@@ -254,9 +239,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
             )}
           </main>
 
-          {/* Right Column: Sticky Sidebar */}
           <aside className={styles.sidebar}>
-            {/* Quick Facts Card */}
             <div className={styles.factsCard}>
               <div className={styles.factsCardTitle}>
                 <span>Quick Facts</span>
@@ -315,7 +298,6 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                 </div>
               </div>
 
-              {/* Action Buttons */}
               <div className={styles.sidebarActionGroup}>
                 <button
                   type="button"
@@ -338,7 +320,6 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               </div>
             </div>
 
-            {/* Related Procedures Card */}
             {relatedServices.length > 0 && (
               <div className={styles.relatedCard}>
                 <h3 className={styles.relatedTitle}>Related Procedures</h3>
@@ -357,7 +338,6 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
               </div>
             )}
 
-            {/* Emergency Hand & Trauma Assistance Card */}
             <div className={styles.emergencyCard}>
               <div className={styles.emergencyCardHeader}>
                 <PhoneCall size={14} />
@@ -378,7 +358,6 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
         </div>
       </section>
 
-      {/* 3. Bottom Consultation Banner */}
       <section className={styles.bottomCtaSection}>
         <div className={styles.bottomCtaContainer}>
           <div className={styles.bottomCtaLeft}>

@@ -13,12 +13,11 @@ export default function LiveOpdStatus() {
   useEffect(() => {
     const checkOpdStatus = () => {
       const now = new Date();
-      const day = now.getDay(); // 0 = Sunday, 1-6 = Mon-Sat
+      const day = now.getDay();
       const hour = now.getHours();
       const min = now.getMinutes();
       const timeInMins = hour * 60 + min;
 
-      // Sunday: Closed for regular OPD, Emergency 24/7
       if (day === 0) {
         setStatus({
           isOpen: false,
@@ -28,8 +27,6 @@ export default function LiveOpdStatus() {
         return;
       }
 
-      // Morning OPD: 09:00 AM to 11:00 AM (540 to 660 mins)
-      // Evening OPD: 04:00 PM to 06:00 PM (960 to 1080 mins)
       if (timeInMins >= 540 && timeInMins < 660) {
         setStatus({
           isOpen: true,

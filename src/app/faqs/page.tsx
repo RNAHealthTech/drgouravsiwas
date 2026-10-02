@@ -84,7 +84,6 @@ export default function FaqsPage() {
           <p>Common questions regarding plastic, cosmetic, and hand reconstructive surgeries</p>
         </div>
 
-        {/* Category Filter Tabs */}
         <div className={styles.tabsWrapper}>
           {categories.map(cat => (
             <button 
@@ -100,7 +99,6 @@ export default function FaqsPage() {
           ))}
         </div>
 
-        {/* Accordion List */}
         <div className={styles.accordion}>
           {filteredFaqs.map((faq, idx) => {
             const isOpen = activeIndex === idx;

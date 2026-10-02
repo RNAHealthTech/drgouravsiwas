@@ -45,7 +45,6 @@ export default function AppointmentModal({ isOpen, onClose, selectedType = 'Dire
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API request
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
