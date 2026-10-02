@@ -19,12 +19,12 @@ export default function Achievements() {
           {/* Left side: Complex Microsurgery Highlight */}
           <ScrollReveal direction="right" delay={150} duration={850}>
             <div className={styles.goldMedalCard}>
-              <div className={styles.medalIcon}>🏅</div>
+              <div className={styles.medalIcon}>🏆</div>
               <div className={styles.medalContent}>
-                <h3>Excellence in Complex Microsurgery & Hand Replantation</h3>
-                <h4>Sir Ganga Ram Hospital &bull; Department of Plastic Surgery</h4>
+                <h3>European Diploma in Hand Surgery</h3>
+                <h4>Youngest Indian & First Plastic Surgeon from New Delhi</h4>
                 <p>
-                  Recognized for critical surgical contributions in emergency limb salvage, microvascular anastomosis, and successfully executing complex severed hand replantations and free tissue transfers at Sir Ganga Ram Hospital.
+                  Successfully completed the prestigious European Diploma in Hand Surgery (EDHS) in Basel, Switzerland (2026). Recognized for advanced knowledge and clinical judgement in the specialized field of hand surgery.
                 </p>
               </div>
             </div>
@@ -34,25 +34,25 @@ export default function Achievements() {
           <div className={styles.credentialsColumn}>
             <ScrollReveal direction="left" delay={200} duration={850}>
               <div className={`${styles.credentialCard} glass-card`}>
-                <div className={styles.credIcon}>🩺</div>
+                <div className={styles.credIcon}>🏥</div>
                 <div className={styles.credContent}>
-                  <h4>ATLS Certified & Microvascular Trained</h4>
-                  <p>Certified in Advanced Trauma Life Support by the American College of Surgeons, adhering to the highest global standards in polytrauma care and surgical patient safety.</p>
+                  <h4>Delhi's 1st Bilateral Hand Transplant</h4>
+                  <p>Part of the esteemed surgical team that performed Delhi's first successful bilateral hand transplant in January 2024 at Sir Ganga Ram Hospital.</p>
                 </div>
               </div>
             </ScrollReveal>
 
             <ScrollReveal direction="left" delay={250} duration={850}>
               <div className={`${styles.credentialCard} glass-card`}>
-                <div className={styles.credIcon}>🛡️</div>
+                <div className={styles.credIcon}>🤝</div>
                 <div className={styles.credContent}>
                   <h4>Professional Memberships</h4>
                   <p>Full member of prestigious national and international surgical associations:</p>
                   <div className={styles.membershipsList}>
-                    <span className={styles.membershipBadge} style={{ background: '#fef3c7', color: '#92400e', borderColor: '#fde68a' }}>🇪🇺 EBOPRAS (European Board)</span>
+                    <span className={styles.membershipBadge} style={{ background: '#fef3c7', color: '#92400e', borderColor: '#fde68a' }}>⭐ EDHS (European Board)</span>
                     <span className={styles.membershipBadge}>APSI (Plastic Surgery)</span>
                     <span className={styles.membershipBadge}>ISSH (Hand Surgery)</span>
-                    <span className={styles.membershipBadge}>IAAPS (Aesthetic)</span>
+                    <span className={styles.membershipBadge}>MNAMS (Med Sciences)</span>
                   </div>
                 </div>
               </div>

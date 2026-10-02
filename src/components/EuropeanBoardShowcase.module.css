@@ -237,17 +237,136 @@
   align-items: center;
 }
 
-.emblemBox {
+.photoShowcaseCard {
   background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
   backdrop-filter: blur(12px);
   border: 1.5px solid rgba(245, 158, 11, 0.4);
   border-radius: var(--radius-md);
-  padding: 34px 24px;
-  text-align: center;
+  padding: 18px;
   width: 100%;
-  max-width: 360px;
-  box-shadow: 0 12px 30px rgba(6, 78, 59, 0.08), 0 0 20px rgba(245, 158, 11, 0.08);
+  max-width: 400px;
+  box-shadow: 0 16px 36px rgba(6, 78, 59, 0.1), 0 0 24px rgba(245, 158, 11, 0.12);
   position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.photoShowcaseCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px rgba(6, 78, 59, 0.14), 0 0 30px rgba(245, 158, 11, 0.18);
+}
+
+.photoFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 4.8;
+  border-radius: calc(var(--radius-md) - 6px);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.certPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.6s ease;
+}
+
+.photoShowcaseCard:hover .certPhoto {
+  transform: scale(1.03);
+}
+
+.photoBadgeOverlay {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.photoBadgeVerified {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  color: #fef08a;
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.checkIcon {
+  color: #22c55e;
+  font-weight: 900;
+}
+
+.photoCardFooter {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 6px 12px 6px;
+}
+
+.floatingStarsBadge {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rotatingMiniRing {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: spin-stars 20s linear infinite;
+}
+
+.miniStar {
+  position: absolute;
+  color: #d97706;
+  font-size: 0.55rem;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 2px rgba(217, 119, 6, 0.6));
+}
+
+.miniInsignia {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--primary) 0%, #064e3b 100%);
+  border: 1.5px solid #f59e0b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 8px rgba(6, 78, 59, 0.25);
+  z-index: 2;
+}
+
+.photoCardTitle {
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 2px;
+  line-height: 1.3;
+}
+
+.photoCardSub {
+  font-size: 0.76rem;
+  color: #b45309;
+  font-weight: 600;
+  margin: 0;
 }
 
 /* Rotating European Stars Circle */

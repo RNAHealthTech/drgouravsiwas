@@ -6,7 +6,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import styles from './About.module.css';
 
 export default function About() {
-  const [activeTab, setActiveTab] = useState<'education' | 'skills'>('education');
+  const [activeTab, setActiveTab] = useState<'education' | 'skills' | 'research'>('education');
 
   return (
     <section id="about" className={styles.about}>
@@ -57,6 +57,12 @@ export default function About() {
                 >
                   Core Competencies
                 </button>
+                <button 
+                  className={`${styles.tabBtn} ${activeTab === 'research' ? styles.tabBtnActive : ''}`}
+                  onClick={() => setActiveTab('research')}
+                >
+                  Research & Pubs
+                </button>
               </div>
 
               <div className={styles.tabContent}>
@@ -85,6 +91,38 @@ export default function About() {
                           </svg>
                         </div>
                         <span className={styles.skillName}>{skill}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {activeTab === 'research' && (
+                  <div className={`${styles.educationList} ${styles.tabPane}`}>
+                    <div className={styles.educationItem}>
+                      <div className={styles.eduDot}></div>
+                      <div className={styles.eduInfo}>
+                        <h4 className={styles.eduDegree}>Dissertation</h4>
+                        <p className={styles.eduInst}>{doctorData.dissertation}</p>
+                      </div>
+                    </div>
+                    {doctorData.publications.map((pub, idx) => (
+                      <div key={`pub-${idx}`} className={styles.educationItem}>
+                        <div className={styles.eduDot}></div>
+                        <div className={styles.eduInfo}>
+                          <span className={styles.eduYear}>{pub.year}</span>
+                          <h4 className={styles.eduDegree}>{pub.title}</h4>
+                          <p className={styles.eduInst}>{pub.authors} - {pub.journal}</p>
+                        </div>
+                      </div>
+                    ))}
+                    {doctorData.presentations.map((pres, idx) => (
+                      <div key={`pres-${idx}`} className={styles.educationItem}>
+                        <div className={styles.eduDot}></div>
+                        <div className={styles.eduInfo}>
+                          <span className={styles.eduYear}>{pres.date}</span>
+                          <h4 className={styles.eduDegree}>{pres.title} ({pres.type})</h4>
+                          <p className={styles.eduInst}>{pres.event}</p>
+                        </div>
                       </div>
                     ))}
                   </div>

@@ -1,0 +1,82 @@
+/* ════════════════════════════════════════════
+   SHARED SUBPAGE STYLES — Modern Editorial
+   ════════════════════════════════════════════ */
+
+.pageHeader {
+  position: relative;
+  padding: 200px 0 120px;
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  text-align: center;
+  overflow: hidden;
+}
+
+.pageHeaderBg {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(135deg, rgba(42, 33, 24, 0.92) 0%, rgba(42, 33, 24, 0.7) 100%), url('/images/hero-poster.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.pageHeaderContent {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pageTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.pageSubtitle {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.pageSection {
+  padding: 120px 0;
+  background-color: var(--bg-primary);
+}
+
+.pageSectionAlt {
+  padding: 120px 0;
+  background-color: var(--bg-secondary);
+}
+
+.grid2Col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .grid2Col {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+.card {
+  background: var(--bg-primary);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--border);
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+}

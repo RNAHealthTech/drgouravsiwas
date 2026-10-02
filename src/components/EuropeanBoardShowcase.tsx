@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useBooking } from '@/context/BookingContext';
 import ScrollReveal from '@/components/ScrollReveal';
 import styles from './EuropeanBoardShowcase.module.css';
@@ -87,34 +88,48 @@ export default function EuropeanBoardShowcase() {
                 </div>
               </div>
 
-              {/* Right Column: European Board Seal & Rotating Stars */}
+              {/* Right Column: Verified Convocation Photo & European Board Seal */}
               <div className={styles.sealWrapper}>
-                <div className={styles.emblemBox}>
-                  {/* Rotating 12-Star European Constellation */}
-                  <div className={styles.starsOrbit}>
-                    <div className={styles.rotatingRing}>
-                      {stars.map((s) => (
-                        <span
-                          key={s.id}
-                          className={styles.star}
-                          style={{
-                            left: `${s.x}px`,
-                            top: `${s.y}px`,
-                          }}
-                        >
-                          ★
-                        </span>
-                      ))}
-                    </div>
-                    <div className={styles.centerInsignia}>
-                      <span>🇪🇺</span>
+                <div className={styles.photoShowcaseCard}>
+                  <div className={styles.photoFrame}>
+                    <Image
+                      src="/images/dr_gourav_ebhs_award.jpg"
+                      alt="Dr. Gourav Siwas receiving European Diploma in Hand Surgery, Basel Switzerland"
+                      width={380}
+                      height={440}
+                      className={styles.certPhoto}
+                      priority
+                    />
+                    <div className={styles.photoBadgeOverlay}>
+                      <span className={styles.photoBadgeVerified}>
+                        <span className={styles.checkIcon}>✓</span> Basel, Switzerland · 2026
+                      </span>
                     </div>
                   </div>
 
-                  <h3 className={styles.emblemTitle}>EBOPRAS FELLOW</h3>
-                  <div className={styles.emblemSubtitle}>European Board Certified</div>
-
-                  <div className={styles.emblemDivider}></div>
+                  <div className={styles.photoCardFooter}>
+                    <div className={styles.floatingStarsBadge}>
+                      <div className={styles.rotatingMiniRing}>
+                        {stars.map((s) => (
+                          <span
+                            key={s.id}
+                            className={styles.miniStar}
+                            style={{
+                              left: `${s.x * 0.42}px`,
+                              top: `${s.y * 0.42}px`,
+                            }}
+                          >
+                            ★
+                          </span>
+                        ))}
+                      </div>
+                      <div className={styles.miniInsignia}>🇪🇺</div>
+                    </div>
+                    <div>
+                      <h4 className={styles.photoCardTitle}>European Diploma in Hand Surgery</h4>
+                      <p className={styles.photoCardSub}>30th Anniversary Convocation · Basel, Switzerland</p>
+                    </div>
+                  </div>
 
                   <div className={styles.emblemStats}>
                     <div className={styles.emblemStat}>
@@ -122,8 +137,8 @@ export default function EuropeanBoardShowcase() {
                       <span className={styles.statDesc}>Board Certified</span>
                     </div>
                     <div className={styles.emblemStat}>
-                      <span className={styles.statVal}>UEMS / EBOPRAS</span>
-                      <span className={styles.statDesc}>European Union</span>
+                      <span className={styles.statVal}>EBHS / FESSH</span>
+                      <span className={styles.statDesc}>European Board</span>
                     </div>
                   </div>
                 </div>

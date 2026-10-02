@@ -1,0 +1,130 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: var(--primary, #3e2723);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Split curtain exit panels */
+.curtain {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: var(--primary, #3e2723);
+  transform-origin: top;
+  z-index: 2;
+}
+.curtainTop {
+  top: 0;
+  height: 51%;
+  transform-origin: top;
+}
+.curtainBottom {
+  bottom: 0;
+  height: 51%;
+  transform-origin: bottom;
+}
+
+/* Center content */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+
+.drWrapper {
+  overflow: hidden;
+  margin-bottom: -4px;
+}
+
+.drText {
+  display: block;
+  font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--secondary, #d4af37);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+/* Name with letter animation */
+.nameWrapper {
+  display: flex;
+  align-items: baseline;
+  perspective: 600px;
+  overflow: visible;
+}
+
+.nameLetter {
+  display: inline-block;
+  font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.space {
+  display: inline-block;
+  width: clamp(1rem, 2.5vw, 2.5rem);
+}
+
+/* Gold divider line */
+.divider {
+  width: clamp(120px, 25vw, 260px);
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--secondary, #d4af37), transparent);
+  margin: 24px auto 20px;
+  transform-origin: left;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: clamp(0.85rem, 2vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-weight: 400;
+}
+
+.tagline {
+  margin-top: 12px;
+  font-size: clamp(0.7rem, 1.5vw, 0.88rem);
+  color: rgba(255, 255, 255, 0.38);
+  letter-spacing: 0.12em;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+}
+
+/* GS monogram corner */
+.cornerMark {
+  position: absolute;
+  top: 28px;
+  left: 36px;
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--secondary, #d4af37);
+  letter-spacing: 0.04em;
+  z-index: 3;
+}
+
+/* Bottom progress bar */
+.progressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--secondary, #d4af37), #b8963e);
+  transform-origin: left;
+  z-index: 3;
+}
