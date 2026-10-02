@@ -1,54 +1,64 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
+import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Smile, Scissors, Activity, Droplet, Heart, User, Sun, Wind, Scan, Biohazard, Bone, Shield
+import {
+  Activity,
+  Bone,
+  Shield,
+  Scissors,
+  Zap,
+  Droplet,
+  Layers,
+  ShieldAlert,
+  Smile,
+  Scan,
+  User,
+  Wind,
+  Sun,
+  HeartHandshake,
+  ArrowRight,
+  Sparkles
 } from 'lucide-react';
 import Marquee from 'react-fast-marquee';
 import ProcedureEstimator from '@/components/ProcedureEstimator';
 import TestimonialsGrid from '@/components/TestimonialsGrid';
 import BookingCTA from '@/components/BookingCTA';
+import { serviceCategories, servicesData } from '@/data/servicesData';
 import styles from './services.module.css';
 
-// Using user's themes and creating categories based on procedures
-const serviceCategories = [
-  { id: 'aesthetic', label: 'Cosmetic & Aesthetic' },
-  { id: 'reconstructive', label: 'Reconstructive Microsurgery' },
-  { id: 'hand', label: 'Hand & Extremity' },
-  { id: 'office', label: 'Office Procedures' }
-];
+const iconMap: Record<string, React.ElementType> = {
+  Activity,
+  Bone,
+  Shield,
+  Scissors,
+  Zap,
+  Droplet,
+  Layers,
+  ShieldAlert,
+  Smile,
+  Scan,
+  User,
+  Wind,
+  Sun,
+  HeartHandshake
+};
 
-const servicesData = [
-  // Aesthetic
-  { id: 1, category: 'aesthetic', title: 'Rhinoplasty', desc: 'Reshaping and refining nasal structure for harmony.', icon: Smile },
-  { id: 2, category: 'aesthetic', title: 'Liposuction', desc: 'Targeted fat removal and body contouring.', icon: Activity },
-  { id: 3, category: 'aesthetic', title: 'Facelift', desc: 'Comprehensive facial rejuvenation to restore a youthful look.', icon: User },
-  { id: 4, category: 'aesthetic', title: 'Breast Augmentation', desc: 'Enhancing volume and shape using premium implants.', icon: Heart },
-  { id: 5, category: 'aesthetic', title: 'Tummy Tuck', desc: 'Abdominoplasty for a firmer, flatter abdomen.', icon: Wind },
-  { id: 6, category: 'aesthetic', title: 'Blepharoplasty', desc: 'Eyelid surgery to remove excess skin and reduce puffiness.', icon: Scan },
-  
-  // Reconstructive
-  { id: 7, category: 'reconstructive', title: 'Burn Reconstruction', desc: 'Advanced techniques to restore function and appearance.', icon: Sun },
-  { id: 8, category: 'reconstructive', title: 'Trauma Surgery', desc: 'Complex repairs for maxillofacial and soft tissue injuries.', icon: Shield },
-  { id: 9, category: 'reconstructive', title: 'Cancer Reconstruction', desc: 'Restoring defects following tumor or lesion removal.', icon: Biohazard },
-  { id: 10, category: 'reconstructive', title: 'Scar Revision', desc: 'Minimizing the appearance of scars for a smoother finish.', icon: Scissors },
+function ServicesContent() {
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get('category');
 
-  // Hand & Extremity
-  { id: 11, category: 'hand', title: 'Nerve Repair', desc: 'Microsurgical repair of peripheral nerves.', icon: Activity },
-  { id: 12, category: 'hand', title: 'Tendon Repair', desc: 'Restoring movement and function to injured hands.', icon: Bone },
-  { id: 13, category: 'hand', title: 'Finger Replantation', desc: 'Emergency microsurgery to reattach severed digits.', icon: Droplet },
-  
-  // Office Procedures
-  { id: 14, category: 'office', title: 'Lobuloplasty', desc: 'Ear lobe repair and reshaping.', icon: Scissors },
-  { id: 15, category: 'office', title: 'Laceration Repair', desc: 'Precision suturing for minor cuts and injuries.', icon: Activity },
-  { id: 16, category: 'office', title: 'Mole Removal', desc: 'Safe and aesthetic excision of skin lesions.', icon: Sun },
-];
+  const [activeTab, setActiveTab] = useState<string>('hand-wrist');
 
-export default function ServicesPage() {
-  const [activeTab, setActiveTab] = useState('aesthetic');
+  useEffect(() => {
+    if (categoryParam && serviceCategories.some((c) => c.id === categoryParam)) {
+      setActiveTab(categoryParam);
+    }
+  }, [categoryParam]);
 
-  const filteredServices = servicesData.filter(s => s.category === activeTab);
+  const filteredServices = servicesData.filter((s) => s.category === activeTab);
 
   return (
     <main className={styles.servicesPage}>
@@ -56,20 +66,24 @@ export default function ServicesPage() {
       <header className={styles.header}>
         <div className={styles.headerBg}></div>
         <div className={styles.headerContent}>
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
+          <div className={styles.headerBadge}>
+            <Sparkles size={14} />
+            <span>Comprehensive Clinical Portfolio</span>
+          </div>
+          <motion.h1
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             className={`serif ${styles.headerTitle}`}
           >
-            Our Services
+            Surgical &amp; Clinical Services
           </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 30 }}
+          <motion.p
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.15 }}
             className={styles.headerSubtitle}
           >
-            Comprehensive solutions in aesthetic refinement and advanced microsurgical reconstruction.
+            Pioneering hand microsurgery, brachial plexus reconstruction, and natural aesthetic refinement by India&apos;s youngest European Board Certified Hand Surgeon.
           </motion.p>
         </div>
       </header>
@@ -77,15 +91,15 @@ export default function ServicesPage() {
       {/* INFINITE MARQUEE */}
       <div className={styles.marqueeContainer}>
         <Marquee speed={40} gradient={false}>
-          <span className={styles.marqueeText}>✦ BOARD CERTIFIED PLASTIC SURGEON</span>
-          <span className={styles.marqueeText}>✦ ADVANCED MICROSURGERY</span>
-          <span className={styles.marqueeText}>✦ AESTHETIC EXCELLENCE</span>
-          <span className={styles.marqueeText}>✦ COMPREHENSIVE PATIENT CARE</span>
-          <span className={styles.marqueeText}>✦ STATE-OF-THE-ART FACILITY</span>
+          <span className={styles.marqueeText}>✦ EUROPEAN BOARD CERTIFIED HAND SURGEON (EDHS)</span>
+          <span className={styles.marqueeText}>✦ ADVANCED RECONSTRUCTIVE MICROSURGERY</span>
+          <span className={styles.marqueeText}>✦ NATURAL AESTHETIC RHINOPLASTY</span>
+          <span className={styles.marqueeText}>✦ 24x7 EMERGENCY HAND TRAUMA &amp; REPLANTATION</span>
+          <span className={styles.marqueeText}>✦ SIR GANGA RAM HOSPITAL &amp; MAX SMART HEALTHCARE</span>
         </Marquee>
       </div>
 
-      {/* Tabs Section - Mega Menu Style */}
+      {/* Tabs Section - Mega Menu Style Tabs */}
       <section className={styles.tabsSection}>
         <div className={styles.tabsContainer}>
           {serviceCategories.map((category) => (
@@ -103,27 +117,42 @@ export default function ServicesPage() {
       {/* Grid Section */}
       <section className={styles.gridSection}>
         <motion.div layout className={styles.gridContainer}>
-          <AnimatePresence mode='popLayout'>
+          <AnimatePresence mode="popLayout">
             {filteredServices.map((service) => {
-              const Icon = service.icon;
+              const Icon = iconMap[service.iconName] || Activity;
               return (
                 <motion.div
                   key={service.id}
                   layout
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <a href={`/services/${service.id}`} className={styles.serviceCard}>
-                    <div className={styles.iconWrapper}>
-                      <Icon className={styles.icon} strokeWidth={1.5} />
-                    </div>
+                  <Link href={`/services/${service.slug}`} className={styles.serviceCard}>
                     <div>
-                      <h3 className={styles.serviceTitle}>{service.title}</h3>
-                      <p className={styles.serviceDesc}>{service.desc}</p>
+                      <div className={styles.cardTopRow}>
+                        <div className={styles.iconWrapper}>
+                          <Icon size={26} strokeWidth={1.75} />
+                        </div>
+                        <span className={styles.cardBadge}>
+                          {service.quickFacts.anesthesia.split('/')[0]}
+                        </span>
+                      </div>
+                      <h3 className={styles.serviceTitle}>{service.shortTitle || service.title}</h3>
+                      <p className={styles.serviceDesc}>{service.tagline}</p>
                     </div>
-                  </a>
+
+                    <div className={styles.cardFooter}>
+                      <span className={styles.viewDetailsLink}>
+                        <span>View Procedure Guide</span>
+                        <ArrowRight size={14} />
+                      </span>
+                      <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+                        {service.quickFacts.procedureTime}
+                      </span>
+                    </div>
+                  </Link>
                 </motion.div>
               );
             })}
@@ -134,24 +163,42 @@ export default function ServicesPage() {
       {/* Interactive Process / Approach Section */}
       <section className={styles.processSection}>
         <div className="container">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className={styles.sectionHeader}
           >
-            <h2 className={`serif ${styles.sectionTitle}`}>The GS Approach</h2>
-            <p className={styles.sectionSubtitle}>A meticulous journey designed around your comfort, safety, and desired outcomes.</p>
+            <h2 className={`serif ${styles.sectionTitle}`}>The GS Clinical Approach</h2>
+            <p className={styles.sectionSubtitle}>
+              A rigorous four-tier surgical protocol calibrated for anatomical safety, minimal trauma, and superior functional recovery.
+            </p>
           </motion.div>
-          
+
           <div className={styles.processGrid}>
             {[
-              { title: 'Initial Consultation', desc: 'Detailed assessment of your goals and anatomy by Dr. Gourav.', step: '01' },
-              { title: 'Personalized Planning', desc: 'Customized surgical or non-surgical roadmap to achieve results.', step: '02' },
-              { title: 'The Procedure', desc: 'State-of-the-art techniques performed with maximum safety.', step: '03' },
-              { title: 'Recovery & Aftercare', desc: 'Comprehensive support until full healing is achieved.', step: '04' }
+              {
+                title: 'High-Precision Diagnostics',
+                desc: 'Detailed clinical mapping, electrophysiology (EMG/NCV), and high-resolution imaging to pinpoint the exact pathology.',
+                step: '01'
+              },
+              {
+                title: 'Tailored Surgical Planning',
+                desc: 'Customized micro-technique selection—choosing between endoscopic, WALANT, or microvascular reconstructive options.',
+                step: '02'
+              },
+              {
+                title: 'Microsurgical Precision',
+                desc: 'Operating under high-power Zeiss surgical microscopes with ultra-fine sutures to ensure pristine tissue handling.',
+                step: '03'
+              },
+              {
+                title: 'Supervised Rehabilitation',
+                desc: 'Immediate mobilization protocols and dedicated hand therapy ensuring maximum joint excursion and strength return.',
+                step: '04'
+              }
             ].map((item, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -168,17 +215,19 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Procedure Estimator from existing components */}
+      {/* Procedure Estimator */}
       <section className={styles.estimatorSection}>
         <div className="container">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className={styles.sectionHeader}
           >
-            <h2 className={`serif ${styles.sectionTitle}`}>Procedure Insights</h2>
-            <p className={styles.sectionSubtitle}>Explore details and get estimated timelines for various treatments.</p>
+            <h2 className={`serif ${styles.sectionTitle}`}>Procedure Insights &amp; Cost Guidance</h2>
+            <p className={styles.sectionSubtitle}>
+              Interactive timeline estimation and clinical guidelines for surgical recovery.
+            </p>
           </motion.div>
           <ProcedureEstimator />
         </div>
@@ -186,10 +235,18 @@ export default function ServicesPage() {
 
       <TestimonialsGrid />
 
-      {/* Booking CTA replacing static CTA to reuse existing components */}
+      {/* Booking CTA */}
       <section style={{ backgroundColor: 'var(--bg-secondary)', padding: '40px 0' }}>
         <BookingCTA />
       </section>
     </main>
+  );
+}
+
+export default function ServicesPage() {
+  return (
+    <Suspense fallback={<div style={{ minHeight: '100vh', paddingTop: '120px', textAlign: 'center' }}>Loading services...</div>}>
+      <ServicesContent />
+    </Suspense>
   );
 }
