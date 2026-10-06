@@ -1,35 +1,51 @@
 :root {
-  /* Premium Luxury Medical Palette - Warm Cream & Brown Theme */
-  --primary-h: 22;
-  --primary-s: 19%;
-  --primary-l: 24%; /* Dark Brown */
-  --primary: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
-  --primary-hover: hsl(var(--primary-h), var(--primary-s), 15%);
-  --primary-light: hsl(var(--primary-h), var(--primary-s), 94%); 
+  /* ═════════════════════════════════════════════════════════════
+     Harmonious Warm Earth & Sage Medical Palette
+     Swatch 1: Warm Off-White Cream (#FEF7E7)
+     Swatch 2: Warm Sand / Buttercream (#F8EED3)
+     Swatch 3: Earthy Sage Green (#ACB296)
+     Swatch 4: Deep Earth Brown (#664637)
+     ═════════════════════════════════════════════════════════════ */
+  --primary-h: 19;
+  --primary-s: 30%;
+  --primary-l: 31%; 
+  --primary: #664637; /* Swatch 4: Deep Earth Brown */
+  --primary-hover: #4E3326; 
+  --primary-light: #F4ECE7; 
   
-  --secondary: #D4AF37; /* Gold / Champagne */
-  --secondary-hover: #b5952f;
+  --secondary-h: 73;
+  --secondary-s: 17%;
+  --secondary-l: 64%; 
+  --secondary: #ACB296; /* Swatch 3: Earthy Sage Green */
+  --secondary-hover: #949B80;
+  --secondary-light: #F2F4ED; 
+  --secondary-glow: rgba(172, 178, 150, 0.35);
+  --secondary-dark: #5E694D;
   
-  --bg-primary: #FDFBF7; /* Pure cream for warm feel */
-  --bg-secondary: #F5F2EA; /* Slightly darker cream for alternate sections */
-  --bg-dark: #3E2723; /* Dark brown for cinematic sections */
+  --accent: #ACB296;
+  --accent-light: #F2F4ED;
+  --shadow-gold-glow: 0 0 25px rgba(172, 178, 150, 0.35);
+
+  --bg-primary: #FEF7E7; /* Swatch 1: Warm off-white / light cream */
+  --bg-secondary: #F8EED3; /* Swatch 2: Warm sand / soft buttercream */
+  --bg-dark: #2B1D16; /* Deepest warm espresso brown for cinematic sections */
   
-  --text-main: #2A2118; /* Dark brown text */
-  --text-muted: #665C54;
-  --text-light: #999088; 
+  --text-main: #2A1D17; /* Deep warm brown text */
+  --text-muted: #66574F; /* Muted earthy taupe */
+  --text-light: #9B8C83; 
   --text-white: #ffffff;
   
-  --border: rgba(62, 39, 35, 0.08); 
-  --border-dark: rgba(255, 255, 255, 0.15);
+  --border: rgba(102, 70, 55, 0.12); 
+  --border-dark: rgba(254, 247, 231, 0.18);
   
   /* Typography - using Next.js font variables */
   --font-sans: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-serif: var(--font-playfair), 'Playfair Display', Georgia, serif;
   
   /* Refined Shadows */
-  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.03);
-  --shadow-md: 0 10px 40px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 4px 20px rgba(102, 70, 55, 0.05);
+  --shadow-md: 0 10px 40px rgba(102, 70, 55, 0.08);
+  --shadow-lg: 0 20px 60px rgba(102, 70, 55, 0.12);
   
   /* Rounded corners — modern feel */
   --radius-sm: 4px;
@@ -106,6 +122,38 @@ section {
   section {
     padding: 80px 0;
   }
+}
+
+/* Centered Section Titles */
+.section-title {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+}
+
+.section-title h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--primary);
+  margin-bottom: 14px;
+  letter-spacing: 0.01em;
+}
+
+.section-title h2::after {
+  content: '';
+  display: block;
+  width: 54px;
+  height: 2px;
+  background: var(--secondary);
+  margin: 14px auto 0 auto;
+}
+
+.section-title p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
 }
 
 .container {

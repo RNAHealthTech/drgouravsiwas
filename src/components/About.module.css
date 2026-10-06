@@ -126,13 +126,13 @@
 
 .tabBtn:hover {
   color: var(--primary);
-  background-color: rgba(13, 148, 136, 0.02);
+  background-color: rgba(172, 178, 150, 0.1);
 }
 
 .tabBtnActive {
   color: var(--primary);
   background-color: var(--bg-secondary);
-  border-bottom: 3px solid var(--primary);
+  border-bottom: 3px solid var(--secondary);
   margin-bottom: -1px;
 }
 
@@ -183,18 +183,18 @@
   left: 6px;
   bottom: -24px;
   width: 2px;
-  background-color: var(--border);
+  background-color: rgba(102, 70, 55, 0.15);
 }
 
 .eduDot {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background-color: var(--primary);
-  border: 3px solid var(--primary-light);
+  background-color: var(--secondary);
+  border: 3px solid #ffffff;
   margin-top: 5px;
   z-index: 2;
-  box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.15);
+  box-shadow: 0 0 0 2px rgba(172, 178, 150, 0.35);
 }
 
 .eduInfo {

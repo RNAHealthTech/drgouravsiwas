@@ -39,7 +39,7 @@ export default function AppointmentModal({ isOpen, onClose, selectedType = 'Dire
 
   if (!shouldRender) return null;
 
-  const currentFee = doctorData.fees.find(f => f.type === consultationType)?.amount || 1500;
+  const currentFee = doctorData.fees.find(f => f.type === consultationType)?.amount || 1000;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -86,7 +86,8 @@ export default function AppointmentModal({ isOpen, onClose, selectedType = 'Dire
             <div className={styles.doctorBrief}>
               <div className={styles.doctorInfo}>
                 <strong>{doctorData.name}</strong>
-                <span>{doctorData.designation} &bull; {doctorData.specialty}</span>
+                <span>Associate Consultant- Hand, wrist &amp; Reconstructive Microsurgery</span>
+                <span>Plastic, Hand &amp; Reconstructive Microsurgeon</span>
               </div>
             </div>
 

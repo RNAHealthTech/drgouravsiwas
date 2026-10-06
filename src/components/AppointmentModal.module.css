@@ -101,9 +101,12 @@
 }
 
 .doctorInfo span {
+  display: block;
   font-size: 0.8rem;
   color: var(--text-muted);
-  font-weight: 300;
+  font-weight: 400;
+  line-height: 1.45;
+  margin-top: 2px;
 }
 
 .form {

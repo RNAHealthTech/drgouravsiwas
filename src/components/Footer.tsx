@@ -16,23 +16,18 @@ export default function Footer() {
           <div className={styles.column}>
             <div className={styles.brand}>
               <div className={styles.footerLogoContainer}>
-                <Image 
-                  src="/images/dr_gourav_logo.png" 
-                  alt="Dr. Gourav Siwas — Hand, Wrist & Reconstructive Plastic Surgeon" 
-                  width={260} 
-                  height={130} 
+                <Image
+                  src="/images/dr_gourav_logo.png"
+                  alt="Dr. Gourav Siwas — Hand, Wrist & Reconstructive Plastic Surgeon"
+                  width={320}
+                  height={160}
                   className={styles.footerLogoImg}
                 />
               </div>
             </div>
             <p className={styles.description}>
-              {doctorData.department} at {doctorData.hospital}. Specialized in complex hand trauma & replantation, aesthetic facial surgery, microvascular reconstruction, and burns rehabilitation.
+              {doctorData.department} at {doctorData.hospital}. Specialized in complex hand trauma &amp; replantation, Plastic Surgery, microvascular reconstruction, and burns rehabilitation.
             </p>
-            <div className={styles.accreditation}>
-              <span className={styles.accBadge}>NABH Accredited Hospital</span>
-              <span className={styles.accBadge}>ATLS Certified</span>
-              <span className={styles.accBadge}>EBOPRAS Certified</span>
-            </div>
           </div>
 
           <div className={styles.column}>
@@ -56,7 +51,7 @@ export default function Footer() {
           <div className={styles.column}>
             <h4 className={styles.title}>Sir Ganga Ram Hospital</h4>
             <address className={styles.address}>
-              <strong>Department of Plastic Surgery (Room F-52)</strong><br />
+              <strong>Room No. 2325, Department of Plastic Surgery</strong><br />
               Sir Ganga Ram Hospital Marg,<br />
               Rajinder Nagar, New Delhi,<br />
               Delhi - 110060, India
@@ -65,16 +60,16 @@ export default function Footer() {
               <p>
                 <a href={`mailto:${doctorData.email}`}>{doctorData.email}</a>
               </p>
-              <p>Hospital: {doctorData.phone}</p>
-              <p>Casualty 24/7: {doctorData.casualtyPhone}</p>
-              <p>Ambulance: {doctorData.ambulancePhone}</p>
+              <p className={styles.phoneDirect}>
+                <a href="tel:+918950406670">📞 8950406670</a>
+              </p>
             </div>
           </div>
         </div>
 
         <div className={styles.disclaimerPanel}>
           <p>
-            <strong>Medical Disclaimer:</strong> The clinical information on this portal is intended for informational and educational guidance only. It should not be used as a substitute for in-person consultation with a qualified plastic, cosmetic, and reconstructive surgeon. Please visit the OPD at Sir Ganga Ram Hospital or call the casualty desk for medical emergencies.
+            <strong>Medical Disclaimer:</strong> The clinical information on this portal is intended for informational and educational guidance only. It should not be used as a substitute for in-person consultation with a qualified hand, wrist and reconstructive plastic surgeon. Please visit the OPD at Sir Ganga Ram Hospital or call the casualty desk for medical emergencies.
           </p>
         </div>
 

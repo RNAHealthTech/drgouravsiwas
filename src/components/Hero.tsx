@@ -48,7 +48,7 @@ export default function Hero() {
 
           <ScrollReveal direction="up" delay={300}>
             <p className={styles.description}>
-              Welcome to the official clinical portal of <strong>{doctorData.name}</strong>, {doctorData.designation} in the <strong>{doctorData.department}</strong> at <strong>{doctorData.hospital}</strong>. Combining sub-millimeter microvascular precision and aesthetic mastery to deliver world-class reconstructive, cosmetic, and hand replantation outcomes.
+              Welcome to the official clinical portal of <strong>{doctorData.name}</strong>, {doctorData.designation} in the <strong>{doctorData.department}</strong> at <strong>{doctorData.hospital}</strong>. Combining sub-millimeter microvascular precision to deliver world-class reconstructive and hand replantation outcomes.
             </p>
           </ScrollReveal>
 
@@ -123,8 +123,8 @@ export default function Hero() {
                   ★
                 </div>
                 <div className={styles.floatText}>
-                  <strong>EBOPRAS Certified</strong>
-                  <span>Youngest Indian Fellow</span>
+                  <strong>EDHS Certified</strong>
+                  <span>European Hand Surgery Fellow</span>
                 </div>
               </div>
             </div>

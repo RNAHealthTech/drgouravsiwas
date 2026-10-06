@@ -98,8 +98,8 @@
   display: flex;
   gap: 24px;
   padding: 32px;
-  background-color: #fff5f5;
-  border: 1px solid #fed7d7;
+  background-color: var(--bg-secondary, #F8EED3);
+  border: 1.5px solid #ACB296;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
 }
@@ -117,11 +117,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffebeb;
+  background-color: rgba(172, 178, 150, 0.35);
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 1px solid #fecaca;
+  border: 1.5px solid #ACB296;
   flex-shrink: 0;
 }
 
@@ -132,13 +132,13 @@
 
 .alertContent h4 {
   font-size: 1.25rem;
-  color: #c53030;
+  color: #664637;
   margin-bottom: 8px;
   font-weight: 700;
 }
 
 .alertContent p {
-  color: #742a2a;
+  color: #4A3328;
   font-size: 1rem;
   margin-bottom: 12px;
 }
@@ -146,7 +146,7 @@
 .alertList {
   list-style-type: disc;
   padding-left: 20px;
-  color: #742a2a;
+  color: #4A3328;
   font-size: 0.95rem;
   display: flex;
   flex-direction: column;

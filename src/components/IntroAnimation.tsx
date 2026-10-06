@@ -96,7 +96,7 @@ export default function IntroAnimation() {
             animate={{ opacity: subVisible ? 1 : 0, y: subVisible ? 0 : 16 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            Plastic · Cosmetic · Hand Microsurgery
+            Plastic · Reconstructive · Hand Microsurgery
           </motion.p>
 
           <motion.p

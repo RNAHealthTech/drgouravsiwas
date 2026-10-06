@@ -7,7 +7,7 @@ import { doctorData } from '@/data/doctorData';
 import { useBooking } from '@/context/BookingContext';
 import styles from './home.module.css';
 import { motion, useScroll, useTransform, type Variants } from 'framer-motion';
-import { ArrowRight, Star, ChevronDown } from 'lucide-react';
+import { ArrowRight, Star, ChevronDown, Users, Award } from 'lucide-react';
 import Marquee from 'react-fast-marquee';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
@@ -15,6 +15,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
+import Counter from '@/components/Counter';
 import EuropeanBoardShowcase from '@/components/EuropeanBoardShowcase';
 import OpdSchedule from '@/components/OpdSchedule';
 import EmergencyTraumaGuide from '@/components/EmergencyTraumaGuide';
@@ -37,25 +38,25 @@ export default function Home() {
   };
 
   const procedures = [
-    { title: 'Rhinoplasty', desc: 'Sculpting natural nasal harmony with microsurgical precision.', img: '/images/procedure-1.jpg' },
-    { title: 'Facelift & Necklift', desc: 'Rejuvenating facial contours for timeless, natural results.', img: '/images/procedure-2.jpg' },
-    { title: 'Hand Microsurgery', desc: 'Emergency replantation and intricate nerve & vessel repair.', img: '/images/procedure-3.jpg' },
-    { title: 'Reconstructive Surgery', desc: 'Restoring form and function after trauma, burns, or cancer.', img: '/images/clinic-hero.jpg' },
+    { title: 'Finger Reconstruction', desc: 'Specialized management of fingertip & amputated-part injuries, tendon repair, flap reconstruction and toe-to-finger transfer.', img: '/images/finger-reconstruction-real.jpg' },
+    { title: 'Replantation', desc: 'Emergency 24/7 microvascular replantation and revascularization of severed fingers, digits, hand, and amputated upper extremity parts.', img: '/images/replantation-real.jpg' },
+    { title: 'Scaphoid Fracture', desc: 'Minimally invasive percutaneous screw fixation, vascularized bone grafting for complex non-unions, and wrist arthroscopy.', img: '/images/scaphoid-fracture-real.jpg' },
+    { title: 'Nerve Injuries', desc: 'Adult & pediatric brachial plexus exploration, neurotization, microsurgical nerve transfers, and peripheral nerve decompression.', img: '/images/nerve-injuries-real.jpg' },
+    { title: 'Reconstructive Surgeries', desc: 'Complex free tissue transfer, defect coverage following trauma, burns reconstruction, and limb function salvage.', img: '/images/reconstructive-surgeries-real.jpg' },
   ];
 
   const stats = [
-    { num: '5000+', label: 'Surgeries Performed' },
-    { num: '10+', label: 'Years Experience' },
-    { num: '98%', label: 'Patient Satisfaction' },
-    { num: '24/7', label: 'Emergency Trauma' },
+    { value: 2000, suffix: '+', label: 'Happy Patients', icon: Users },
+    { value: 10, suffix: '+', label: 'Years Experience', icon: Award },
+    { value: 5, suffix: '★', label: 'Patient Satisfaction', icon: Star },
   ];
 
   const galleryImages = [
     { title: 'European Diploma in Hand Surgery (Basel, Switzerland)', src: '/images/dr_gourav_ebhs_award.jpg' },
-    { title: 'Dr. Gourav Siwas — Plastic & Reconstructive Surgeon', src: '/images/dr_gourav_portrait.jpg' },
     { title: 'International Academic Exchange & Clinical Mentorship', src: '/images/dr_gourav_mentorship.jpg' },
-    { title: 'Bilateral Hand Transplant Team — Sir Ganga Ram Hospital', src: '/images/gallery-4.jpeg' },
-    { title: 'World Hand Surgery Congress & Advanced Workshops', src: '/images/gallery-3.jpeg' },
+    { title: 'European Board of Hand Surgery Official Certification (EDHS)', src: '/images/cert-edhs.jpg' },
+    { title: 'Advanced Microsurgery Fellowship — Ganga Hospital', src: '/images/cert-ganga-microsurgery.png' },
+    { title: 'Dr. Gourav Siwas — Plastic, Reconstructive & Hand Surgeon', src: '/images/dr_gourav_portrait.jpg' },
   ];
 
   return (
@@ -74,22 +75,32 @@ export default function Home() {
 
         <motion.div className={styles.heroInner} style={{ opacity: heroOpacity }}>
           <motion.div className={styles.heroContent} initial="hidden" animate="visible" variants={stagger}>
+            <motion.div variants={fadeUp} className={styles.heroDoctorAvatar}>
+              <Image
+                src="/images/dr_gourav_portrait.jpg"
+                alt="Dr. Gourav Siwas"
+                width={120}
+                height={120}
+                className={styles.heroAvatarImg}
+                priority
+              />
+            </motion.div>
             <motion.span variants={fadeUp} className={styles.heroBadge}>
-              Sir Ganga Ram Hospital, New Delhi
+              Consultant Hand &amp; Microsurgery, Sir Ganga Ram Hospital, New Delhi
             </motion.span>
             <motion.h1 variants={fadeUp} className={styles.heroHeading}>
               Dr. Gourav Siwas
             </motion.h1>
             <motion.div variants={fadeUp} className={styles.heroDivider} />
             <motion.p variants={fadeUp} className={styles.heroTagline}>
-              Plastic · Cosmetic · Hand Microsurgery
+              Hand · Wrist · Microsurgery · Brachial Plexus · Plastic &amp; Reconstructive Surgery
             </motion.p>
             <motion.div variants={fadeUp} className={styles.heroCtas}>
               <button onClick={() => openBooking()} className={styles.btnPill}>
                 Book Consultation <ArrowRight size={16} />
               </button>
-              <Link href="/procedures" className={styles.btnPillOutline}>
-                View Procedures
+              <Link href="/services" className={styles.btnPillOutline}>
+                View Services
               </Link>
             </motion.div>
           </motion.div>
@@ -108,7 +119,7 @@ export default function Home() {
 
       <div className={styles.marqueeBar}>
         <Marquee speed={60} gradient={false} pauseOnHover={true} autoFill>
-          {['Plastic Surgery', 'Cosmetic Refinement', 'Hand Microsurgery', 'Reconstructive Surgery', 'Trauma & Burns', 'Scar Revision'].map((t, i) => (
+          {['Hand Surgery', 'Wrist Arthroscopy', 'Microsurgery & Replantation', 'Brachial Plexus', 'Reconstructive Surgery', 'Plastic Surgery'].map((t, i) => (
             <span key={i} className={styles.marqueeItem}>
               <span className={styles.marqueeDot}>✦</span> {t}
             </span>
@@ -119,27 +130,23 @@ export default function Home() {
       <section className={styles.about}>
         <div className="container">
           <div className={styles.aboutGrid}>
-            <motion.div 
-              className={styles.aboutImgCol}
-              initial={{ opacity: 0, x: -60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <div className={styles.aboutImgWrap}>
-                <Image src={doctorData.imageUrl} alt={doctorData.name} width={560} height={700} className={styles.aboutImg} />
-              </div>
+            <div className={styles.aboutImgCol}>
               <motion.div 
-                className={styles.aboutFloat}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4, duration: 0.7 }}
+                className={styles.aboutImgInner}
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-100px' }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
-                <span className={styles.aboutFloatNum}>10+</span>
-                <span className={styles.aboutFloatLabel}>Years of<br/>Excellence</span>
+                <div className={styles.aboutImgWrap}>
+                  <Image src={doctorData.imageUrl} alt={doctorData.name} width={560} height={700} className={styles.aboutImg} />
+                </div>
+                <div className={styles.aboutFloat}>
+                  <span className={styles.aboutFloatNum}>10+</span>
+                  <span className={styles.aboutFloatLabel}>Years of<br/>Excellence</span>
+                </div>
               </motion.div>
-            </motion.div>
+            </div>
 
             <motion.div 
               className={styles.aboutTextCol}
@@ -150,7 +157,24 @@ export default function Home() {
             >
               <span className={styles.sectionLabel}>About the Surgeon</span>
               <h2 className={styles.sectionHeading}>Where Artistry<br/>Meets Precision</h2>
-              <p className={styles.aboutBio}>{doctorData.bio}</p>
+              <div className={styles.aboutBio}>
+                <p>
+                  Dr. Gourav Siwas is a board certified Plastic &amp; Reconstructive Surgeon &amp; India’s youngest European board certified Hand surgeon with fellowship in Hand &amp; Upper Extremity Surgery.
+                </p>
+                <p>
+                  He is sincere and passionately dedicated towards ethical patient care, He is a team player with an eye for detail. He has strong creative and analytical skills which he incorporates in surgical decision making.
+                </p>
+                <p>
+                  He is a firm believer of learning and sharing his knowledge and expertise with his juniors, colleagues and seniors. He believes in both ability and availability as a surgeon.
+                </p>
+              </div>
+
+              <div className={styles.aboutPhilosophyBox}>
+                <p className={styles.aboutPhilosophyQuote}>
+                  His philosophy is &lsquo;Adding life to years!&rsquo;
+                </p>
+              </div>
+
               <div className={styles.aboutCreds}>
                 {doctorData.education.slice(0, 4).map((edu, i) => (
                   <div key={i} className={styles.aboutCredItem}>
@@ -172,19 +196,27 @@ export default function Home() {
       <section className={styles.statsBar}>
         <div className="container">
           <div className={styles.statsGrid}>
-            {stats.map((s, i) => (
-              <motion.div 
-                key={i} 
-                className={styles.statItem}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <span className={styles.statNum}>{s.num}</span>
-                <span className={styles.statLabel}>{s.label}</span>
-              </motion.div>
-            ))}
+            {stats.map((s, i) => {
+              const IconComp = s.icon;
+              return (
+                <motion.div 
+                  key={i} 
+                  className={styles.statCard}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.12, duration: 0.6 }}
+                >
+                  <div className={styles.statIconWrap}>
+                    <IconComp size={22} className={styles.statIcon} />
+                  </div>
+                  <span className={styles.statNum}>
+                    <Counter endValue={s.value} suffix={s.suffix} duration={2200} />
+                  </span>
+                  <span className={styles.statLabel}>{s.label}</span>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -195,35 +227,56 @@ export default function Home() {
             className={styles.sectionCenter}
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
           >
-            <span className={styles.sectionLabel}>Areas of Expertise</span>
-            <h2 className={styles.sectionHeading}>Signature Procedures</h2>
+            <h2 className={styles.expertiseHeading}>Areas of Expertise</h2>
+            <div className={styles.expertisePillsRow}>
+              {['Hand Surgery', 'Wrist Surgery', 'Brachial Plexus', 'Microsurgery', 'Reconstructive Surgery', 'Plastic Surgery'].map((item, idx) => (
+                <span key={idx} className={styles.expertisePill}>{item}</span>
+              ))}
+            </div>
+            <h3 className={styles.proceduresHeading}>Procedures</h3>
           </motion.div>
 
-          <div className={styles.procGrid}>
-            {procedures.map((p, i) => (
-              <motion.div 
-                key={i} 
-                className={styles.procCard}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ delay: i * 0.1, duration: 0.7 }}
-              >
-                <div className={styles.procImgWrap}>
-                  <Image src={p.img} alt={p.title} fill className={styles.procImg} />
-                  <div className={styles.procImgOverlay} />
-                </div>
-                <div className={styles.procInfo}>
-                  <h3>{p.title}</h3>
-                  <div className={styles.procInfoHidden}>
-                    <p>{p.desc}</p>
-                    <button onClick={() => openBooking()} className={styles.procBtnText}>
-                      Learn More <ArrowRight size={14} />
-                    </button>
+          <div className={styles.proceduresSwiperWrap}>
+            <button className={`${styles.swiperArrow} ${styles.swiperArrowPrev}`} id="proc-prev" aria-label="Previous procedure">
+              &#8592;
+            </button>
+            <button className={`${styles.swiperArrow} ${styles.swiperArrowNext}`} id="proc-next" aria-label="Next procedure">
+              &#8594;
+            </button>
+
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              spaceBetween={28}
+              slidesPerView={1}
+              breakpoints={{
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+              }}
+              autoplay={{ delay: 3800, disableOnInteraction: false }}
+              pagination={{ clickable: true, dynamicBullets: true }}
+              navigation={{ prevEl: '#proc-prev', nextEl: '#proc-next' }}
+              className={styles.proceduresSwiper}
+            >
+              {procedures.map((p, i) => (
+                <SwiperSlide key={i}>
+                  <div className={styles.procCard}>
+                    <div className={styles.procImgWrap}>
+                      <Image src={p.img} alt={p.title} fill className={styles.procImg} />
+                      <div className={styles.procImgOverlay} />
+                    </div>
+                    <div className={styles.procInfo}>
+                      <h3>{p.title}</h3>
+                      <div className={styles.procInfoHidden}>
+                        <p>{p.desc}</p>
+                        <button onClick={() => openBooking()} className={styles.procBtnText}>
+                          Learn More <ArrowRight size={14} />
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </section>
@@ -242,10 +295,11 @@ export default function Home() {
           >
             <span className={styles.sectionLabelLight}>Philosophy</span>
             <h2 className={styles.parallaxHeading}>
-              &ldquo;Adding life to years,<br/>not just years to life.&rdquo;
+              <span className={styles.parallaxMainQuote}>&ldquo;Adding Life to Years,</span>
+              <span className={styles.parallaxSubQuote}>not just Years to Life.&rdquo;</span>
             </h2>
             <p className={styles.parallaxSub}>
-              Following international ATLS safety protocols with a compassionate,
+              Following international protocols with a compassionate,
               patient-centered focus for unparalleled surgical outcomes.
             </p>
             <button onClick={() => openBooking()} className={styles.btnPill} style={{ marginTop: '24px' }}>

@@ -18,20 +18,17 @@ export default function FAQ() {
     },
     {
       question: "What types of surgeries does Dr. Gourav specialize in?",
-      answer: "Dr. Siwas specializes in Plastic, Cosmetic, and Hand Microsurgery. This includes emergency hand replantation, rhinoplasty, facial aesthetics, scar revision, and microvascular reconstruction."
+      answer: "Dr. Siwas specializes in Hand, Wrist, and Reconstructive Plastic Surgery. This includes emergency hand replantation, peripheral nerve repair, brachial plexus reconstruction, and microvascular reconstruction."
     },
     {
       question: "Are reconstructive surgeries covered by insurance?",
-      answer: "Reconstructive procedures (such as emergency hand microsurgery, trauma, and burn reconstruction) are typically medically necessary and covered by most Health Insurance providers. Purely cosmetic surgeries are generally not covered."
+      answer: "Reconstructive procedures (such as emergency hand microsurgery, trauma, and burn reconstruction) are typically medically necessary and covered by most Health Insurance providers. Please check with your TPA for specific coverage details."
     },
     {
       question: "What should I bring to my first consultation?",
       answer: "Please bring all previous medical reports, X-rays/CT scans, and a list of your current medications so Dr. Siwas can design an accurate and safe treatment plan for you."
     },
-    {
-      question: "What is the recovery time for cosmetic surgeries?",
-      answer: "Recovery time varies by procedure. Non-invasive procedures may require no downtime, while surgical procedures can require anywhere from a few days to several weeks. A specific timeline will be discussed during your consultation."
-    },
+
     {
       question: "Do you offer emergency trauma care?",
       answer: "Yes, being affiliated with Sir Ganga Ram Hospital, we provide 24/7 emergency trauma care, particularly for hand and extremity microsurgical emergencies."

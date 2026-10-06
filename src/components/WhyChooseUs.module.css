@@ -1,0 +1,130 @@
+.section {
+  background: var(--bg-primary);
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.reasonsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 70px;
+}
+
+@media (max-width: 900px) {
+  .reasonsGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.card {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg, 16px);
+  padding: 44px 36px;
+  border: 1px solid rgba(172, 178, 150, 0.25);
+  box-shadow: 0 10px 30px rgba(102, 70, 55, 0.05);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--secondary), var(--primary));
+  opacity: 0.8;
+  transition: width 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(102, 70, 55, 0.12), 0 0 25px rgba(172, 178, 150, 0.2);
+  border-color: rgba(172, 178, 150, 0.5);
+  background: #ffffff;
+}
+
+.card:hover::before {
+  width: 6px;
+}
+
+.iconWrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(172, 178, 150, 0.2);
+  border: 1.5px solid rgba(172, 178, 150, 0.4);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.card:hover .iconWrap {
+  background: var(--secondary);
+  color: #1e130c;
+  transform: scale(1.08);
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--primary);
+  line-height: 1.25;
+  font-weight: 500;
+}
+
+.cardDesc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.statsBar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-top: 50px;
+  border-top: 1px solid rgba(102, 70, 55, 0.12);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .statsBar {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statVal {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 4vw, 3.6rem);
+  font-weight: 300;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.statLabel {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--secondary-dark);
+}

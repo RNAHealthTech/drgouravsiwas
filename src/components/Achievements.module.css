@@ -63,10 +63,10 @@
 .medalIcon {
   font-size: 3rem;
   line-height: 1;
-  background-color: #fef3c7;
+  background-color: var(--bg-primary);
   padding: 16px;
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
+  box-shadow: 0 4px 12px rgba(102, 70, 55, 0.12);
   flex-shrink: 0;
 }
 
@@ -120,7 +120,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(13, 148, 136, 0.1);
+  border: 1px solid rgba(172, 178, 150, 0.25);
   flex-shrink: 0;
 }
 
@@ -144,15 +144,67 @@
   margin-top: 10px;
 }
 
-.membershipBadge {
-  background-color: var(--primary-light);
-  color: var(--primary);
-  border: 1px solid hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.1);
-  padding: 6px 12px;
-  border-radius: var(--radius-full);
-  font-size: 0.8rem;
-  font-weight: 600;
+.membershipsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 16px;
+  width: 100%;
+}
+
+@media (max-width: 576px) {
+  .membershipsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+.membershipItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.logoCircle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1.5px solid var(--border);
+  box-shadow: 0 2px 6px rgba(102, 70, 55, 0.08);
   display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  padding: 8px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.membershipItem:hover .logoCircle {
+  transform: translateY(-3px) scale(1.06);
+  border-color: var(--secondary);
+  box-shadow: 0 6px 14px rgba(102, 70, 55, 0.14);
+}
+
+.logoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.membershipLabel {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.25;
+}
+
+.membershipSubLabel {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-top: 2px;
 }

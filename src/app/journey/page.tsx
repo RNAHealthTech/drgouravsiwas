@@ -31,7 +31,7 @@ export default function JourneyPage() {
                   <h3>{currentPos.institution}</h3>
                   <h4>{currentPos.role} ({currentPos.period})</h4>
                   <p>
-                    {doctorData.name} is currently serving as an {doctorData.designation} at the Department of Plastic, Cosmetic, Hand & Microsurgery at Sir Ganga Ram Hospital, New Delhi. SGRH is one of India's pre-eminent multi-specialty healthcare institutions offering 24/7 emergency microsurgical hand trauma repairs, reconstructive procedures, and aesthetic surgeries.
+                    {doctorData.name} is currently associated with the Department of Plastic Surgery at Sir Ganga Ram Hospital, New Delhi as a {doctorData.designation}. His practice is dedicated to the specialised care of the hand, wrist, peripheral nerves and upper limb, combining plastic and reconstructive surgery with advanced hand surgery and microsurgical techniques. SGRH is one of India&apos;s pre-eminent multi-specialty healthcare institutions with a long-standing legacy of excellence in patient care and academic medicine.
                   </p>
                   <div className={styles.details}>
                     <span className={styles.detailItem}>📍 Room No. F-52, Plastic Surgery OPD</span>

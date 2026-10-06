@@ -14,10 +14,10 @@ interface Particle {
 }
 
 const COLORS = [
-  'rgba(212, 175, 55, alpha)',
-  'rgba(184, 150, 62, alpha)',
-  'rgba(255, 255, 255, alpha)',
-  'rgba(230, 200, 100, alpha)',
+  'rgba(172, 178, 150, alpha)', // Earthy Sage Green
+  'rgba(248, 238, 211, alpha)', // Warm Sand / Buttercream
+  'rgba(254, 247, 231, alpha)', // Warm Off-White Cream
+  'rgba(206, 212, 192, alpha)', // Soft Light Sage
 ];
 
 export default function HeroCanvasAnimation() {
@@ -38,9 +38,11 @@ export default function HeroCanvasAnimation() {
     resize();
     window.addEventListener('resize', resize);
 
+    // Init particles
     const count = Math.min(80, Math.floor((window.innerWidth * window.innerHeight) / 14000));
     particlesRef.current = Array.from({ length: count }, () => createParticle(canvas));
 
+    // Lines connecting close particles
     function drawConnections(p: Particle[], c: CanvasRenderingContext2D) {
       for (let i = 0; i < p.length; i++) {
         for (let j = i + 1; j < p.length; j++) {
@@ -49,7 +51,7 @@ export default function HeroCanvasAnimation() {
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < 150) {
             const alpha = (1 - dist / 150) * 0.12;
-            c.strokeStyle = `rgba(212, 175, 55, ${alpha})`;
+            c.strokeStyle = `rgba(172, 178, 150, ${alpha})`;
             c.lineWidth = 0.6;
             c.beginPath();
             c.moveTo(p[i].x, p[i].y);
@@ -63,30 +65,35 @@ export default function HeroCanvasAnimation() {
     function animate() {
       if (!ctx || !canvas) return;
 
+      // Deep earth brown gradient bg (from Swatch 4)
       const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-      gradient.addColorStop(0, '#1a0f0a');
-      gradient.addColorStop(0.5, '#2d1810');
-      gradient.addColorStop(1, '#1a0f0a');
+      gradient.addColorStop(0, '#180f0b');
+      gradient.addColorStop(0.5, '#2e1e17');
+      gradient.addColorStop(1, '#180f0b');
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+      // Subtle sage & cream radial glow center
       const radial = ctx.createRadialGradient(
         canvas.width / 2, canvas.height / 2, 0,
         canvas.width / 2, canvas.height / 2, canvas.width * 0.6
       );
-      radial.addColorStop(0, 'rgba(212, 175, 55, 0.07)');
+      radial.addColorStop(0, 'rgba(172, 178, 150, 0.08)');
       radial.addColorStop(1, 'rgba(0, 0, 0, 0)');
       ctx.fillStyle = radial;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+      // Draw connections
       drawConnections(particlesRef.current, ctx);
 
+      // Draw & move particles
       particlesRef.current.forEach((p) => {
         p.x += p.speedX;
         p.y += p.speedY;
         p.opacity += p.opacityDir * 0.008;
         if (p.opacity >= 0.7 || p.opacity <= 0.05) p.opacityDir *= -1;
 
+        // Wrap around edges
         if (p.x < -10) p.x = canvas.width + 10;
         if (p.x > canvas.width + 10) p.x = -10;
         if (p.y < -10) p.y = canvas.height + 10;
@@ -95,6 +102,7 @@ export default function HeroCanvasAnimation() {
         const colorStr = p.color.replace('alpha', String(p.opacity.toFixed(2)));
 
         ctx.save();
+        // Glow effect
         ctx.shadowBlur = p.radius * 4;
         ctx.shadowColor = p.color.replace('alpha', '0.4');
         ctx.beginPath();

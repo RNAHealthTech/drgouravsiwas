@@ -77,7 +77,7 @@ export default function PatientCarePage() {
               <h3>Pre-Operative Preparation</h3>
             </div>
             <p className={styles.introText}>
-              Following these guidelines strictly in the weeks leading up to your surgery ensures maximum safety and the best possible cosmetic and functional outcome.
+              Following these guidelines strictly in the weeks leading up to your surgery ensures maximum safety and the best possible functional and aesthetic outcome.
             </p>
 
             <div className={styles.guideList}>

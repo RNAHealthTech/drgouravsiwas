@@ -11,9 +11,8 @@ export default function DetailedProfile() {
 
   const tabs = [
     { id: 'publications', label: 'Publications & Research', icon: BookOpen },
-    { id: 'presentations', label: 'Presentations', icon: Presentation },
-    { id: 'conferences', label: 'Conferences & Courses', icon: GraduationCap },
-    { id: 'achievements', label: 'Achievements & Extracurricular', icon: Award }
+    { id: 'conferences', label: 'Workshops & Courses', icon: GraduationCap },
+    { id: 'achievements', label: 'Achievements & Accomplishments', icon: Award }
   ];
 
   return (
@@ -109,7 +108,7 @@ export default function DetailedProfile() {
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <h3 className={styles.contentTitle}>Courses & Trainings Attended</h3>
+                  <h3 className={styles.contentTitle}>Workshops &amp; Courses</h3>
                   <div className={styles.gridContainer}>
                     {doctorData.trainings.map((train, idx) => (
                       <div key={idx} className={styles.gridCard}>

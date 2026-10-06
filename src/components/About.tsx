@@ -59,7 +59,7 @@ export default function About() {
                   className={`${styles.tabBtn} ${activeTab === 'research' ? styles.tabBtnActive : ''}`}
                   onClick={() => setActiveTab('research')}
                 >
-                  Research & Pubs
+                  Research
                 </button>
               </div>
 
@@ -110,16 +110,6 @@ export default function About() {
                           <span className={styles.eduYear}>{pub.year}</span>
                           <h4 className={styles.eduDegree}>{pub.title}</h4>
                           <p className={styles.eduInst}>{pub.authors} - {pub.journal}</p>
-                        </div>
-                      </div>
-                    ))}
-                    {doctorData.presentations.map((pres, idx) => (
-                      <div key={`pres-${idx}`} className={styles.educationItem}>
-                        <div className={styles.eduDot}></div>
-                        <div className={styles.eduInfo}>
-                          <span className={styles.eduYear}>{pres.date}</span>
-                          <h4 className={styles.eduDegree}>{pres.title} ({pres.type})</h4>
-                          <p className={styles.eduInst}>{pres.event}</p>
                         </div>
                       </div>
                     ))}

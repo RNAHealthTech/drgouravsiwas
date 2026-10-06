@@ -47,18 +47,19 @@ export default function ContactPage() {
                 <div style={{ display: 'flex', gap: '20px' }}>
                   <div style={{ color: 'var(--secondary)' }}><MapPin size={28} /></div>
                   <div>
-                    <h4 style={{ fontSize: '1.1rem', color: 'var(--text-main)', marginBottom: '8px' }}>Location</h4>
-                    <p style={{ color: 'var(--text-muted)', lineHeight: 1.6 }}>{doctorData.hospitalAddress}</p>
+                    <h4 style={{ fontSize: '1.1rem', color: 'var(--text-main)', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>LOCATION</h4>
+                    <p style={{ color: 'var(--text-muted)', lineHeight: 1.6 }}>
+                      Sir Ganga Ram Hospital (SGRH), Rajinder Nagar, New Delhi - 110060
+                    </p>
                   </div>
                 </div>
 
                 <div style={{ display: 'flex', gap: '20px' }}>
                   <div style={{ color: 'var(--secondary)' }}><Phone size={28} /></div>
                   <div>
-                    <h4 style={{ fontSize: '1.1rem', color: 'var(--text-main)', marginBottom: '8px' }}>Phone Numbers</h4>
+                    <h4 style={{ fontSize: '1.1rem', color: 'var(--text-main)', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>PHONE NUMBERS</h4>
                     <p style={{ color: 'var(--text-muted)', lineHeight: 1.6 }}>
-                      Appointments: {doctorData.phone}<br />
-                      Emergency: {doctorData.emergencyPhone}
+                      Appointments: {doctorData.phone}
                     </p>
                   </div>
                 </div>
@@ -66,7 +67,7 @@ export default function ContactPage() {
                 <div style={{ display: 'flex', gap: '20px' }}>
                   <div style={{ color: 'var(--secondary)' }}><Mail size={28} /></div>
                   <div>
-                    <h4 style={{ fontSize: '1.1rem', color: 'var(--text-main)', marginBottom: '8px' }}>Email</h4>
+                    <h4 style={{ fontSize: '1.1rem', color: 'var(--text-main)', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>EMAIL</h4>
                     <p style={{ color: 'var(--text-muted)', lineHeight: 1.6 }}>{doctorData.email}</p>
                   </div>
                 </div>
@@ -74,9 +75,10 @@ export default function ContactPage() {
                 <div style={{ display: 'flex', gap: '20px' }}>
                   <div style={{ color: 'var(--secondary)' }}><Clock size={28} /></div>
                   <div>
-                    <h4 style={{ fontSize: '1.1rem', color: 'var(--text-main)', marginBottom: '8px' }}>Working Hours</h4>
+                    <h4 style={{ fontSize: '1.1rem', color: 'var(--text-main)', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>WORKING HOURS</h4>
                     <p style={{ color: 'var(--text-muted)', lineHeight: 1.6 }}>
-                      Mon - Sat: 9:00 AM - 6:00 PM<br />
+                      OPD: 8:00 AM - 10:00 AM (Mon - Sat)<br />
+                      F-52, SGRH<br />
                       Sunday: Emergencies Only
                     </p>
                   </div>

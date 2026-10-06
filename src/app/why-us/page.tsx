@@ -79,14 +79,14 @@ export default function WhyUsPage() {
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', textAlign: 'center', gap: '32px' }}>
             <div>
               <h3 style={{ fontSize: '3.5rem', color: 'var(--primary)', marginBottom: '8px' }}><Counter endValue={2000} suffix="+" /></h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem' }}>Successful Surgeries</p>
+              <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem' }}>Happy Patients</p>
             </div>
             <div>
-              <h3 style={{ fontSize: '3.5rem', color: 'var(--primary)', marginBottom: '8px' }}><Counter endValue={12} suffix="+" /></h3>
+              <h3 style={{ fontSize: '3.5rem', color: 'var(--primary)', marginBottom: '8px' }}><Counter endValue={10} suffix="+" /></h3>
               <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem' }}>Years of Excellence</p>
             </div>
             <div>
-              <h3 style={{ fontSize: '3.5rem', color: 'var(--primary)', marginBottom: '8px' }}><Counter endValue={100} suffix="%" /></h3>
+              <h3 style={{ fontSize: '3.5rem', color: 'var(--primary)', marginBottom: '8px' }}><Counter endValue={5} suffix="★" /></h3>
               <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem' }}>Patient Satisfaction</p>
             </div>
           </div>

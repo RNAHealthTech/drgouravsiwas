@@ -31,47 +31,19 @@ export default function EuropeanBoardShowcase() {
             <div className={styles.grid}>
               <div className={styles.contentCol}>
                 <div className={styles.badgeRow}>
-                  <span className={styles.euPill}>
-                    <span>🇪🇺</span> EBOPRAS Certified Fellow
-                  </span>
                   <span className={styles.recordPill}>
                     🇮🇳 Historic Indian Benchmark
                   </span>
                 </div>
 
                 <h2 className={styles.headline}>
-                  India’s Youngest Plastic Surgeon to Receive <span className={styles.goldText}>European Board Certification</span>
+                  India’s Youngest &amp; New Delhi’s 1st Plastic Surgeon to Receive <span className={styles.goldText}>European Diploma in Hand Surgery (EDHS)</span>
                 </h2>
 
                 <p className={styles.leadText}>
-                  Dr. Gourav Siwas has achieved the prestigious landmark of becoming <strong>India’s Youngest Plastic Surgeon to receive European Board Certification (EBOPRAS)</strong>. This rare international fellowship validates top-tier surgical mastery, international ethical standards, and advanced operative safety.
+                  Dr. Gourav Siwas has achieved the prestigious landmark of becoming <strong>India’s Youngest Plastic Surgeon and New Delhi’s 1st Plastic Surgeon to receive European Diploma in Hand Surgery (EDHS)</strong>. This rare international fellowship validates top-tier surgical mastery, international ethical standards, and advanced operative safety.
                 </p>
 
-                <div className={styles.featuresList}>
-                  <div className={styles.featureItem}>
-                    <div className={styles.featureIcon}>🔬</div>
-                    <div className={styles.featureContent}>
-                      <h4>International Sub-Millimeter Precision</h4>
-                      <p>Adherence to the highest European Union standards for intricate hand microsurgery and complex flap reconstructions.</p>
-                    </div>
-                  </div>
-
-                  <div className={styles.featureItem}>
-                    <div className={styles.featureIcon}>✨</div>
-                    <div className={styles.featureContent}>
-                      <h4>Global Aesthetic Standards</h4>
-                      <p>Modern, evidence-based cosmetic facial and body contouring techniques designed for natural, harmonious balance.</p>
-                    </div>
-                  </div>
-
-                  <div className={styles.featureItem}>
-                    <div className={styles.featureIcon}>🛡️</div>
-                    <div className={styles.featureContent}>
-                      <h4>Peer-Assessed Surgical Safety</h4>
-                      <p>Stringently vetted by European surgical boards with zero compromise on tissue viability and patient outcomes.</p>
-                    </div>
-                  </div>
-                </div>
 
                 <div className={styles.ctaRow}>
                   <button 
@@ -123,7 +95,7 @@ export default function EuropeanBoardShowcase() {
                       <div className={styles.miniInsignia}>🇪🇺</div>
                     </div>
                     <div>
-                      <h4 className={styles.photoCardTitle}>European Diploma in Hand Surgery</h4>
+                      <h4 className={styles.photoCardTitle}>European Diploma in Hand Surgery (EDHS)</h4>
                       <p className={styles.photoCardSub}>30th Anniversary Convocation · Basel, Switzerland</p>
                     </div>
                   </div>
@@ -131,11 +103,11 @@ export default function EuropeanBoardShowcase() {
                   <div className={styles.emblemStats}>
                     <div className={styles.emblemStat}>
                       <span className={styles.statVal}>India's Youngest</span>
-                      <span className={styles.statDesc}>Board Certified</span>
+                      <span className={styles.statDesc}>European Board Certified Hand Surgeon</span>
                     </div>
                     <div className={styles.emblemStat}>
-                      <span className={styles.statVal}>EBHS / FESSH</span>
-                      <span className={styles.statDesc}>European Board</span>
+                      <span className={styles.statVal}>New Delhi's 1st</span>
+                      <span className={styles.statDesc}>Plastic Surgeon (EDHS)</span>
                     </div>
                   </div>
                 </div>

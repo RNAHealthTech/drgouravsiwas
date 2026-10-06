@@ -8,7 +8,7 @@
 .heroHeader {
   position: relative;
   background-color: var(--bg-dark);
-  background-image: linear-gradient(135deg, rgba(42, 33, 24, 0.94) 0%, rgba(42, 33, 24, 0.8) 100%), url('/images/hero-poster.jpg');
+  background-image: linear-gradient(135deg, rgba(30, 22, 16, 0.96) 0%, rgba(42, 33, 24, 0.92) 100%), url('/images/dr_gourav_official.jpg');
   background-size: cover;
   background-position: center;
   border-bottom: 1px solid rgba(212, 175, 55, 0.25);
@@ -135,42 +135,114 @@
   gap: 50px;
 }
 
-/* Image Visual Card */
-.featuredImageCard {
+/* Professional Service Banner (no stock photos) */
+.serviceBanner {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(62, 39, 35, 0.08);
-  border: 1px solid rgba(62, 39, 35, 0.08);
-  background: #eae5d9;
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #3d2b1a 50%, #2a2118 100%);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 15px 40px rgba(42, 33, 24, 0.15);
+  padding: 48px 48px 0 48px;
 }
 
-.featuredImage {
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.featuredImageCard:hover .featuredImage {
-  transform: scale(1.02);
-}
-
-.imageOverlayBadge {
+.serviceBannerBg {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background: rgba(42, 33, 24, 0.85);
-  backdrop-filter: blur(10px);
-  color: #ffffff;
-  padding: 10px 18px;
-  border-radius: var(--radius-md);
-  font-size: 0.8rem;
-  letter-spacing: 0.05em;
+  inset: 0;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 55%),
+    radial-gradient(circle at 10% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 45%);
+  pointer-events: none;
+}
+
+.serviceBannerContent {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  margin-bottom: 36px;
+}
+
+.serviceBannerIcon {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1.5px solid rgba(212, 175, 55, 0.3);
   display: flex;
   align-items: center;
-  gap: 10px;
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  justify-content: center;
+}
+
+.serviceBannerText {
+  flex: 1;
+  min-width: 0;
+}
+
+.serviceBannerCategory {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--secondary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.serviceBannerTitle {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.serviceBannerTagline {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.serviceBannerFooter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  flex-wrap: wrap;
+}
+
+.serviceBannerBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 768px) {
+  .serviceBanner {
+    padding: 32px 24px 0 24px;
+  }
+  .serviceBannerContent {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .serviceBannerTitle {
+    font-size: 1.45rem;
+  }
+  .serviceBannerFooter {
+    gap: 16px;
+  }
 }
 
 /* Content Blocks */
@@ -318,7 +390,7 @@
 }
 
 .checkIcon {
-  color: #10b981;
+  color: #ACB296;
   flex-shrink: 0;
 }
 
@@ -631,14 +703,14 @@
 
 /* Emergency Helpline Card */
 .emergencyCard {
-  background: linear-gradient(135deg, #173F59 0%, #244E68 100%);
+  background: linear-gradient(135deg, #2B1D16 0%, #3D261C 100%);
   color: #ffffff;
   border-radius: var(--radius-lg);
   padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(172, 178, 150, 0.4);
 }
 
 .emergencyCardHeader {
@@ -648,7 +720,7 @@
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #fca5a5;
+  color: #F8EED3;
   font-weight: 700;
 }
 
@@ -661,7 +733,7 @@
 
 .emergencyCardText {
   font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.5;
 }
 
@@ -671,12 +743,13 @@
   justify-content: center;
   gap: 8px;
   padding: 12px 18px;
-  background: #ffffff;
-  color: #173F59;
+  background: #FEF7E7;
+  color: #664637;
   border-radius: var(--radius-full);
   font-weight: 700;
   font-size: 0.88rem;
   text-decoration: none;
+  border: 1.5px solid #ACB296;
   transition: all 0.2s ease;
 }
 

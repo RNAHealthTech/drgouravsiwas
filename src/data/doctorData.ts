@@ -57,7 +57,7 @@ export interface Testimonial {
   patientName: string;
   condition: string;
   feedback: string;
-  type: "Cosmetic" | "Reconstructive" | "Hand" | "General";
+  type: "Reconstructive" | "Hand" | "General";
   rating: number;
 }
 
@@ -95,6 +95,7 @@ export interface DoctorProfile {
   opdTimings: OpdTiming[];
   fees: Fee[];
   bio: string;
+  philosophy?: string;
   skills: string[];
   interests: string[];
   testimonials: Testimonial[];
@@ -103,11 +104,11 @@ export interface DoctorProfile {
 
 export const doctorData: DoctorProfile = {
   name: "Dr. Gourav Siwas",
-  designation: "Associate Consultant- Hand, wrist & Reconstructive Microsurgery",
-  specialty: "Plastic, Hand & Reconstructive Microsurgeon",
-  department: "Department of Plastic, Cosmetic & Hand Microsurgery",
-  hospital: "Max Smart Super Speciality hospital, Saket",
-  hospitalAddress: "Max Smart Super Speciality hospital, Saket, New Delhi",
+  designation: "Dual Board Certified Hand, Wrist & Reconstructive Plastic Surgeon",
+  specialty: "Hand, Wrist & Reconstructive Plastic Surgeon",
+  department: "Department of Plastic Surgery",
+  hospital: "Sir Ganga Ram Hospital, New Delhi",
+  hospitalAddress: "Sir Ganga Ram Hospital (SGRH), Rajinder Nagar, New Delhi - 110060",
   email: "siwasgourav@gmail.com",
   phone: "+91-8950406670",
   phoneAlt: "+91-8950406670",
@@ -115,8 +116,8 @@ export const doctorData: DoctorProfile = {
   casualtyPhone: "+91-8950406670",
   ambulancePhone: "+91-8950406670",
   whatsapp: "+918950406670",
-  bookingUrl: "#",
-  mapsUrl: "https://maps.google.com",
+  bookingUrl: "https://appointment.sgrh.com",
+  mapsUrl: "https://maps.google.com/?q=Sir+Ganga+Ram+Hospital+New+Delhi",
   imageUrl: "/images/dr_gourav_portrait.jpg",
   portraitUrl: "/images/dr_gourav_portrait.jpg",
   logoUrl: "/images/dr_gourav_logo.png",
@@ -124,28 +125,24 @@ export const doctorData: DoctorProfile = {
   ebhsPhotoUrl: "/images/dr_gourav_ebhs_award.jpg",
   mentorshipPhotoUrl: "/images/dr_gourav_mentorship.jpg",
   languages: ["English", "Hindi"],
-  bio: "I am a board certified Plastic & Reconstructive Surgeon & India’s youngest European board certified Hand surgeon with fellowship in Hand & Upper Extremity Surgery. I am sincere and passionately dedicated towards ethical patient care, I am a team player with an eye for detail. I have strong creative and analytical skills which I incorporate in surgical decision making. I am a firm believer of learning and sharing my knowledge and expertise with my juniors, colleagues and seniors. I believe in both ability and availability as a surgeon. I intend to pursue my career as a dedicated plastic, hand & reconstructive microsurgeon serving mankind.",
+  bio: "Dr. Gourav Siwas is a board certified Plastic & Reconstructive Surgeon & India’s youngest European board certified Hand surgeon with fellowship in Hand & Upper Extremity Surgery.\n\nHe is sincere and passionately dedicated towards ethical patient care, He is a team player with an eye for detail. He has strong creative and analytical skills which he incorporates in surgical decision making. He is a firm believer of learning and sharing his knowledge and expertise with his juniors, colleagues and seniors. He believes in both ability and availability as a surgeon.",
+  philosophy: "His philosophy is 'Adding life to years!'",
   skills: [
     "Hand & Wrist Surgery",
-    "Microvascular surgery",
-    "Brachial plexus surgery",
-    "Nerve surgery",
-    "Diabetic foot reconstruction",
-    "Pediatric plastic surgery",
-    "Maxillo-facial reconstruction",
-    "Oncoplastic surgery",
-    "Breast surgery",
-    "Trauma surgery",
-    "Gender Affirmation surgery",
-    "Burn Management",
-    "Post burn Reconstruction",
-    "Aesthetic surgery"
+    "Brachial Plexus Reconstruction",
+    "Microvascular Surgery & Replantation",
+    "Peripheral Nerve Surgery",
+    "Tendon & Ligament Repair",
+    "Congenital Hand Conditions",
+    "Plastic & Reconstructive Surgery",
+    "Trauma & Flap Reconstruction",
+    "Aesthetic Hand Surgery"
   ],
   interests: [
     "Hand & Wrist Surgery",
-    "Microvascular surgery",
-    "Reconstructive surgery",
-    "Aesthetic surgery"
+    "Brachial Plexus Reconstruction",
+    "Microvascular Surgery",
+    "Reconstructive Surgery"
   ],
   education: [
     { degree: "European Diploma in Hand Surgery", institution: "Switzerland", year: "2026" },
@@ -156,11 +153,11 @@ export const doctorData: DoctorProfile = {
     { degree: "CLASS X", institution: "St. John’s School, Faridabad, Haryana", year: "2009" }
   ],
   positions: [
-    { role: "Associate Consultant- Hand, wrist & Reconstructive Microsurgery", institution: "Max Smart Super Speciality hospital, Saket, New Delhi", period: "September 2025 - Present" },
+    { role: "Associate Consultant- Hand, wrist & Reconstructive Microsurgery", institution: "Max Smart Super Speciality hospital, Saket, New Delhi", period: "September 2025 - Aug 2026" },
     { role: "Fellow - Hand and Upper Extremity Surgery", institution: "Max Healthcare, New Delhi", period: "March - August 2025" },
-    { role: "Clinical Assistant - Plastic, Cosmetic, Hand and Microsurgery", institution: "Sir Ganga Ram Hospital, New Delhi", period: "June 2024 - February 2025" },
+    { role: "Clinical Assistant - Plastic, Hand and Microsurgery", institution: "Sir Ganga Ram Hospital, New Delhi", period: "June 2024 - February 2025" },
     { role: "Clinical observer-Hand & Reconstructive Microsurgery", institution: "Ganga hospital, Coimbatore", period: "February 2024" },
-    { role: "Resident - Plastic, Cosmetic, Hand and Microsurgery", institution: "Sir Ganga Ram Hospital, New Delhi", period: "June 2018 - May 2024" },
+    { role: "Resident - Plastic, Hand and Microsurgery", institution: "Sir Ganga Ram Hospital, New Delhi", period: "June 2018 - May 2024" },
     { role: "Junior Resident - Orthopedics (Paraplegia)", institution: "Pt. B. D. Sharma, PGIMS, Rohtak", period: "Jan 2018 - May 2018" }
   ],
   memberships: [
@@ -183,7 +180,7 @@ export const doctorData: DoctorProfile = {
   ],
   awards: [
     { name: "Delhi’s 1st successful bilateral Hand Transplant Team Member", organization: "Sir Ganga Ram Hospital", year: "January 2024" },
-    { name: "India’s Youngest and Delhi’s 1st Plastic surgeon to earn European Diploma in Hand Surgery (EDHS)", organization: "EBOPRAS", year: "2026" }
+    { name: "India’s Youngest and Delhi’s 1st Plastic surgeon to earn European Diploma in Hand Surgery (EDHS)", organization: "Switzerland", year: "2026" }
   ],
   presentations: [
     { title: "Clinical, Functional and Radiological outcomes of Lunate excision with Scapho-Capitate Arthrodesis for Advanced Keinbóck Disease: A 5-Year Follow-up Study", event: "APFSSH-APFSHT-APWA-ISSH-SHTI CONGRESS 2025 Mumbai", date: "2025", type: "Paper" },
@@ -204,17 +201,29 @@ export const doctorData: DoctorProfile = {
     "Runners up in Cricket competition at sports meet of Sir Ganga Ram hospital in 2022.",
     "General secretary of 2nd Sports & Cultural meet of Sir Ganga Ram hospital, New Delhi."
   ],
-  dissertation: "During DrNB, performed my thesis work titled ‘PROSPECTIVE COMPARITIVE STUDY OF FUNCTIONAL & AESTHETIC OUTCOMES OF THENAR VS V-Y FLAP FOR FINGERTIP INJURIES IN CHILDREN’ under Dr Mahesh Mangal.",
+  dissertation: "PROSPECTIVE COMPARATIVE STUDY OF FUNCTIONAL & AESTHETIC OUTCOMES OF THENAR VS V-Y FLAP FOR FINGERTIP INJURIES IN CHILDREN",
   opdTimings: [
     {
       type: "General OPD",
+      days: "Monday",
+      time: "09:00 AM - 10:00 AM & 04:00 PM - 06:00 PM",
+      location: "Sir Ganga Ram Hospital, New Delhi"
+    },
+    {
+      type: "Private OPD",
       days: "Monday - Saturday",
-      time: "09:00 AM - 11:00 AM",
-      location: "Room No. F-52, Department of Plastic Surgery, Sir Ganga Ram Hospital, New Delhi"
+      time: "08:00 AM - 10:00 AM",
+      location: "Room No. F-52, A Block, Plastic Surgery, Sir Ganga Ram Hospital, New Delhi"
+    },
+    {
+      type: "Other Clinic / Emergency",
+      days: "24/7 Round the Clock",
+      time: "24/7 Emergency Services Available",
+      location: "Sir Ganga Ram Hospital, Rajinder Nagar, New Delhi - 110060"
     }
   ],
   fees: [
-    { type: "Consultation", amount: 1500 }
+    { type: "Consultation", amount: 1000 }
   ],
   testimonials: []
 };

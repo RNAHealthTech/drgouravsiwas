@@ -2,7 +2,7 @@
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background-color: var(--primary, #3e2723);
+  background-color: var(--primary, #664637);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +15,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  background-color: var(--primary, #3e2723);
+  background-color: var(--primary, #664637);
   transform-origin: top;
   z-index: 2;
 }
@@ -49,7 +49,7 @@
   display: block;
   font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
   font-size: clamp(1.4rem, 3vw, 2rem);
-  color: var(--secondary, #d4af37);
+  color: var(--secondary, #ACB296);
   letter-spacing: 0.25em;
   text-transform: uppercase;
 }
@@ -77,11 +77,11 @@
   width: clamp(1rem, 2.5vw, 2.5rem);
 }
 
-/* Gold divider line */
+/* Divider line */
 .divider {
   width: clamp(120px, 25vw, 260px);
   height: 1.5px;
-  background: linear-gradient(90deg, transparent, var(--secondary, #d4af37), transparent);
+  background: linear-gradient(90deg, transparent, var(--secondary, #ACB296), transparent);
   margin: 24px auto 20px;
   transform-origin: left;
 }
@@ -112,7 +112,7 @@
   font-family: var(--font-serif, 'Playfair Display', serif);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--secondary, #d4af37);
+  color: var(--secondary, #ACB296);
   letter-spacing: 0.04em;
   z-index: 3;
 }
@@ -124,7 +124,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, var(--secondary, #d4af37), #b8963e);
+  background: linear-gradient(90deg, var(--secondary, #ACB296), #969F82);
   transform-origin: left;
   z-index: 3;
 }

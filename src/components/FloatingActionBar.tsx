@@ -26,10 +26,10 @@ export default function FloatingActionBar() {
             <a
               href={`tel:${doctorData.phone}`}
               className={`${styles.actionBtn} ${styles.callBtn}`}
-              title="Call Sir Ganga Ram Hospital"
+              title="Call 8950406670"
             >
               <span className={styles.btnIcon}>📞</span>
-              <span className={styles.btnText}>Call SGRH</span>
+              <span className={styles.btnText}>8950406670</span>
             </a>
 
             <a
@@ -49,7 +49,7 @@ export default function FloatingActionBar() {
               title="Book OPD Consultation"
             >
               <span className={styles.btnIcon}>🗓️</span>
-              <span className={styles.btnText}>Book OPD (₹1500)</span>
+              <span className={styles.btnText}>Book OPD (₹1000)</span>
             </button>
 
             <a

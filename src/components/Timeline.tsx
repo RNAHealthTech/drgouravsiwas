@@ -35,9 +35,15 @@ export default function Timeline() {
                   </div>
                 </ScrollReveal>
               ))}
+            </div>
 
+            <ScrollReveal direction="left">
+              <h3 className={styles.columnTitle} style={{ marginTop: '20px' }}>Workshops &amp; Courses</h3>
+            </ScrollReveal>
+
+            <div className={styles.timeline}>
               {doctorData.trainings.map((train, idx) => (
-                <ScrollReveal key={`train-${idx}`} direction="left" delay={(doctorData.positions.length + idx) * 100} duration={600} className={styles.timelineItem}>
+                <ScrollReveal key={`train-${idx}`} direction="left" delay={idx * 100} duration={600} className={styles.timelineItem}>
                   <div>
                     <div className={`${styles.timelineDot} ${styles.timelineDotAlt}`}></div>
                     <div className={`${styles.timelineCard} glass-card`}>
@@ -53,7 +59,7 @@ export default function Timeline() {
 
           <div className={styles.column}>
             <ScrollReveal direction="right">
-              <h3 className={styles.columnTitle}>Awards & Memberships</h3>
+              <h3 className={styles.columnTitle}>Awards &amp; Accomplishments</h3>
             </ScrollReveal>
 
             <div className={styles.awardSection}>
@@ -85,7 +91,7 @@ export default function Timeline() {
 
             <div className={styles.membershipSection}>
               <ScrollReveal direction="right" delay={150}>
-                <h4 className={styles.sectionSubtitle}>Professional Societies</h4>
+                <h3 className={styles.columnTitle} style={{ marginTop: '20px', marginBottom: '20px' }}>Memberships of Professional Societies</h3>
               </ScrollReveal>
               <div className={styles.membershipList}>
                 {doctorData.memberships.map((member, idx) => (
@@ -98,7 +104,6 @@ export default function Timeline() {
                       </div>
                       <div className={styles.memberInfo}>
                         <h5 className={styles.memberName}>{member.name}</h5>
-                        <span className={styles.memberYear}>Active since {member.year}</span>
                       </div>
                     </div>
                   </ScrollReveal>

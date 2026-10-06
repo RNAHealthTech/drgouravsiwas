@@ -11,19 +11,14 @@ import styles from '../shared-page.module.css';
 export default function ProceduresPage() {
   const procedures = [
     {
-      title: "Cosmetic & Aesthetic Surgery",
-      description: "Enhancing facial features, body contours, and skin aesthetics using advanced surgical and non-surgical procedures for natural, refined results.",
-      image: "/images/procedure-1.jpg"
+      title: "Hand & Extremity Microsurgery",
+      description: "Intricate repairs of severed nerves, tendons, and blood vessels in the hand, including emergency finger replantations.",
+      image: "/images/finger-reconstruction-real.jpg"
     },
     {
       title: "Reconstructive Microsurgery",
       description: "Precision microvascular tissue transfers to rebuild complex defects from cancer removal, severe trauma, or infections.",
-      image: "/images/procedure-2.jpg"
-    },
-    {
-      title: "Hand & Extremity Microsurgery",
-      description: "Intricate repairs of severed nerves, tendons, and blood vessels in the hand, including emergency finger replantations.",
-      image: "/images/procedure-3.jpg"
+      image: "/images/reconstructive-surgeries-real.jpg"
     }
   ];
 
@@ -45,14 +40,14 @@ export default function ProceduresPage() {
             transition={{ delay: 0.2 }}
             className={styles.pageSubtitle}
           >
-            Comprehensive solutions in aesthetic refinement and microvascular reconstruction.
+            Comprehensive solutions in hand surgery and microvascular reconstruction.
           </motion.p>
         </div>
       </header>
 
       <div style={{ background: 'var(--primary)', color: 'var(--secondary)', padding: '16px 0', borderBottom: '1px solid rgba(212,175,55,0.2)' }}>
         <Marquee speed={40} gradient={false}>
-          <span style={{ margin: '0 40px', fontSize: '1rem', fontFamily: 'var(--font-serif)', fontStyle: 'italic', letterSpacing: '0.05em' }}>✦ AESTHETIC REFINEMENT</span>
+          <span style={{ margin: '0 40px', fontSize: '1rem', fontFamily: 'var(--font-serif)', fontStyle: 'italic', letterSpacing: '0.05em' }}>✦ PERIPHERAL NERVE SURGERY</span>
           <span style={{ margin: '0 40px', fontSize: '1rem', fontFamily: 'var(--font-serif)', fontStyle: 'italic', letterSpacing: '0.05em' }}>✦ RECONSTRUCTIVE SURGERY</span>
           <span style={{ margin: '0 40px', fontSize: '1rem', fontFamily: 'var(--font-serif)', fontStyle: 'italic', letterSpacing: '0.05em' }}>✦ HAND & NERVE REPAIR</span>
           <span style={{ margin: '0 40px', fontSize: '1rem', fontFamily: 'var(--font-serif)', fontStyle: 'italic', letterSpacing: '0.05em' }}>✦ MAXILLOFACIAL TRAUMA</span>

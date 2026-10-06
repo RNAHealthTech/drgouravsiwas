@@ -72,40 +72,25 @@ export default function EmergencyTraumaGuide() {
 
           <div className={`${styles.hotlineCard} glass-card`}>
             <div className={styles.hotlineTop}>
-              <div className={styles.hotlineBadge}>Emergency Hotline</div>
+              <div className={styles.hotlineBadge}>Emergency</div>
               <h3>Sir Ganga Ram Hospital 24/7 Casualty</h3>
               <p>For acute hand injuries, industrial accidents, and emergency reconstructive triage, reach out directly:</p>
             </div>
 
             <div className={styles.phoneList}>
-              <a href="tel:+911142251097" className={styles.phoneItem}>
+              <a href="tel:+918950406670" className={styles.phoneItem}>
                 <span className={styles.phoneIcon}>📞</span>
                 <div className={styles.phoneText}>
-                  <strong>Casualty Line 1</strong>
-                  <span>+91 11-4225 1097</span>
-                </div>
-              </a>
-
-              <a href="tel:+911142251098" className={styles.phoneItem}>
-                <span className={styles.phoneIcon}>📞</span>
-                <div className={styles.phoneText}>
-                  <strong>Casualty Line 2</strong>
-                  <span>+91 11-4225 1098</span>
-                </div>
-              </a>
-
-              <a href="tel:+911142253030" className={styles.phoneItem}>
-                <span className={styles.phoneIcon}>🚑</span>
-                <div className={styles.phoneText}>
-                  <strong>SGRH Ambulance Service</strong>
-                  <span>+91 11-4225 3030</span>
+                  <strong>Dr. Gourav Siwas</strong>
+                  <span className={styles.phoneRole}>Consultant Hand Surgeon</span>
+                  <span className={styles.phoneNum}>8950406670</span>
                 </div>
               </a>
             </div>
 
             <div className={styles.addressBox}>
               <strong>📍 Destination:</strong>
-              <span>Casualty / Emergency Dept, Sir Ganga Ram Hospital Marg, Rajinder Nagar, New Delhi - 110060</span>
+              <span>Sir Ganga Ram Hospital, Rajinder Nagar, New Delhi - 110060</span>
             </div>
 
             <a

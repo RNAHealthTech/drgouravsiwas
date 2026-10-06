@@ -18,7 +18,7 @@ export default function OpdSchedule() {
       <div className="container">
         <div className="section-title">
           <h2>OPD Schedule & Consultation Tariffs</h2>
-          <p>Official consultation schedule & department room timings at {doctorData.hospital}</p>
+          <p>Official consultation schedule & department room timings at Sir Ganga Ram Hospital</p>
         </div>
 
         <div className={styles.grid}>
@@ -137,7 +137,7 @@ export default function OpdSchedule() {
                       </svg>
                     </span>
                     <div className={styles.detailText}>
-                      <strong>Evening Timings</strong>
+                      <strong>Timings</strong>
                       <span>{privateOpd.time}</span>
                     </div>
                   </div>
@@ -150,7 +150,7 @@ export default function OpdSchedule() {
                       </svg>
                     </span>
                     <div className={styles.detailText} style={{ flexGrow: 1 }}>
-                      <strong>Consultation Location</strong>
+                      <strong>Department / Room</strong>
                       <span>{privateOpd.location}</span>
                     </div>
                     <a 
@@ -212,7 +212,7 @@ export default function OpdSchedule() {
                     </span>
                     <div className={styles.detailText}>
                       <strong>Emergency Availability</strong>
-                      <span>{emergencyOpd.time} ({emergencyOpd.days})</span>
+                      <span>24/7 Emergency Services Available</span>
                     </div>
                   </div>
 
@@ -223,8 +223,8 @@ export default function OpdSchedule() {
                       </svg>
                     </span>
                     <div className={styles.detailText}>
-                      <strong>Casualty / Emergency Numbers</strong>
-                      <span>{doctorData.casualtyPhone}</span>
+                      <strong>Doctor Emergency Contact</strong>
+                      <span>+91 8950406670</span>
                     </div>
                   </div>
 
@@ -267,7 +267,7 @@ export default function OpdSchedule() {
 
           <div className={`${styles.feeCard} glass-card`}>
             <h3 className={styles.feeTitle}>Consultation Tariffs</h3>
-            <p className={styles.feeSubtitle}>Official fee structure at Sir Ganga Ram Hospital</p>
+            <p className={styles.feeSubtitle}>Official fee structure at Sir Ganga Ram Hospital - Pvt. OPD.</p>
             
             <div className={styles.feeList}>
               {doctorData.fees.map((fee, idx) => (

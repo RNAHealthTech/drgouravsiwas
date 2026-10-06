@@ -8,6 +8,8 @@ import {
   ChevronRight,
   ArrowRight,
   PhoneCall,
+  Phone,
+  Mail,
   Activity,
   Bone,
   Shield,
@@ -86,7 +88,6 @@ export default function Header() {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services', isDropdown: true },
-    { name: 'Blog', href: '/blog' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' },
   ];
@@ -111,7 +112,7 @@ export default function Header() {
             </div>
             <div className={styles.logoTextGroup}>
               <span className={styles.logoName}>Dr. Gourav Siwas</span>
-              <span className={styles.logoTitle}>Plastic & Hand Surgeon</span>
+              <span className={styles.logoTitle}>Hand, Wrist &amp; Reconstructive Plastic Surgeon</span>
             </div>
           </Link>
         </div>
@@ -241,13 +242,29 @@ export default function Header() {
         </nav>
 
         <div className={styles.ctaGroup}>
+          <a
+            href="tel:+918950406670"
+            className={styles.headerContactLink}
+            title="Call Dr. Gourav Siwas (8950406670)"
+          >
+            <Phone size={14} />
+            <span className={styles.headerContactText}>8950406670</span>
+          </a>
+          <a
+            href="mailto:siwasgourav@gmail.com"
+            className={styles.headerContactLink}
+            title="Email Dr. Gourav Siwas (siwasgourav@gmail.com)"
+          >
+            <Mail size={14} />
+            <span className={styles.headerContactText}>siwasgourav@gmail.com</span>
+          </a>
           <button
             onClick={() => {
               closeAllMenus();
               openBooking();
             }}
             className="btn btn-primary"
-            style={{ padding: '12px 24px', fontSize: '0.8rem' }}
+            style={{ padding: '10px 22px', fontSize: '0.8rem' }}
           >
             Book Appointment
           </button>
@@ -262,6 +279,25 @@ export default function Header() {
           <span></span>
           <span></span>
         </button>
+      </div>
+
+      <div className={styles.mobileSubBar}>
+        <a
+          href="tel:+918950406670"
+          className={styles.mobileSubBtn}
+          title="Call Dr. Gourav Siwas (8950406670)"
+        >
+          <Phone size={12} />
+          <span>8950406670</span>
+        </a>
+        <a
+          href="mailto:siwasgourav@gmail.com"
+          className={styles.mobileSubBtn}
+          title="Email Dr. Gourav Siwas (siwasgourav@gmail.com)"
+        >
+          <Mail size={12} />
+          <span>siwasgourav@gmail.com</span>
+        </a>
       </div>
 
       <div className={`${styles.mobilePanel} ${isMenuOpen ? styles.mobilePanelOpen : ''}`}>
@@ -290,26 +326,30 @@ export default function Header() {
                       <Link
                         href="/services"
                         onClick={closeAllMenus}
-                        className={styles.mobileServiceItem}
-                        style={{ fontWeight: 600, color: 'var(--secondary)' }}
+                        className={styles.mobileOverviewLink}
                       >
-                        All Services Overview →
+                        <span>All Services Overview</span>
+                        <span>→</span>
                       </Link>
+
                       {serviceCategories.map((cat) => {
                         const catServices = servicesData.filter((s) => s.category === cat.id);
                         return (
-                          <div key={cat.id}>
+                          <div key={cat.id} className={styles.mobileCategoryGroup}>
                             <div className={styles.mobileServiceCategory}>{cat.label}</div>
-                            {catServices.map((service) => (
-                              <Link
-                                key={service.id}
-                                href={`/services/${service.slug}`}
-                                onClick={closeAllMenus}
-                                className={styles.mobileServiceItem}
-                              >
-                                {service.shortTitle || service.title}
-                              </Link>
-                            ))}
+                            <div className={styles.mobileServicesList}>
+                              {catServices.map((service) => (
+                                <Link
+                                  key={service.id}
+                                  href={`/services/${service.slug}`}
+                                  onClick={closeAllMenus}
+                                  className={styles.mobileServiceItem}
+                                >
+                                  <span className={styles.serviceDot}>•</span>
+                                  <span>{service.shortTitle || service.title}</span>
+                                </Link>
+                              ))}
+                            </div>
                           </div>
                         );
                       })}
@@ -330,13 +370,21 @@ export default function Header() {
               </Link>
             );
           })}
+          <div className={styles.mobileContactRow}>
+            <a href="tel:+918950406670" className={styles.mobileContactBtn}>
+              <Phone size={15} /> 8950406670
+            </a>
+            <a href="mailto:siwasgourav@gmail.com" className={styles.mobileContactBtn}>
+              <Mail size={15} /> siwasgourav@gmail.com
+            </a>
+          </div>
           <button
             onClick={() => {
               closeAllMenus();
               openBooking();
             }}
             className="btn btn-primary"
-            style={{ marginTop: '24px', width: '100%' }}
+            style={{ marginTop: '20px', width: '100%' }}
           >
             Book Appointment
           </button>

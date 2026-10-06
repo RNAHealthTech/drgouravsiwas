@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Clock,
@@ -18,7 +17,9 @@ import {
   Sparkles,
   HelpCircle,
   FileText,
-  AlertCircle
+  AlertCircle,
+  Award,
+  Star
 } from 'lucide-react';
 import { useBooking } from '@/context/BookingContext';
 import { ServiceItem, servicesData } from '@/data/servicesData';
@@ -89,17 +90,30 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
       <section className={styles.layoutSection}>
         <div className={styles.layoutGrid}>
           <main className={styles.mainContent}>
-            <div className={styles.featuredImageCard}>
-              <Image
-                src={service.image || '/images/procedure-1.jpg'}
-                alt={service.title}
-                fill
-                priority
-                className={styles.featuredImage}
-              />
-              <div className={styles.imageOverlayBadge}>
-                <Stethoscope size={16} color="var(--secondary)" />
-                <span>Sir Ganga Ram Hospital • Board Certified Hand & Plastic Surgery</span>
+            <div className={styles.serviceBanner}>
+              <div className={styles.serviceBannerBg} />
+              <div className={styles.serviceBannerContent}>
+                <div className={styles.serviceBannerIcon}>
+                  <Stethoscope size={38} color="var(--secondary)" />
+                </div>
+                <div className={styles.serviceBannerText}>
+                  <div className={styles.serviceBannerCategory}>
+                    <Sparkles size={12} />
+                    <span>{service.categoryLabel}</span>
+                  </div>
+                  <h2 className={styles.serviceBannerTitle}>{service.title}</h2>
+                  <div className={styles.serviceBannerTagline}>{service.tagline}</div>
+                </div>
+              </div>
+              <div className={styles.serviceBannerFooter}>
+                <div className={styles.serviceBannerBadge}>
+                  <Award size={14} color="var(--secondary)" />
+                  <span>Sir Ganga Ram Hospital</span>
+                </div>
+                <div className={styles.serviceBannerBadge}>
+                  <Star size={14} color="var(--secondary)" />
+                  <span>European Board Certified Hand Surgeon</span>
+                </div>
               </div>
             </div>
 

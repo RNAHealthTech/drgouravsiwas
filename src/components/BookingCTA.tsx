@@ -19,7 +19,7 @@ export default function BookingCTA() {
         </ScrollReveal>
         <ScrollReveal direction="up" delay={200}>
           <p className={styles.ctaDesc}>
-            Whether you are considering a cosmetic enhancement or require reconstructive consultation, schedule an appointment to discuss your clinical pathways with {doctorData.name}.
+            Whether you are considering a reconstructive consultation or specialized hand surgery, schedule an appointment to discuss your clinical pathways with {doctorData.name}.
           </p>
         </ScrollReveal>
         <ScrollReveal direction="up" delay={300}>

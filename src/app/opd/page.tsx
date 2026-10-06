@@ -48,7 +48,7 @@ export default function OpdPage() {
 
             <ScrollReveal direction="left" delay={200} duration={800}>
               <div className={`${styles.guideCard} glass-card`}>
-                <h3>✨ Aesthetic / Cosmetic Consultation Prep</h3>
+                <h3>✨ Reconstructive Surgery Consultation Prep</h3>
                 <ul>
                   <li>
                     <span className={styles.checkIcon}>✓</span>

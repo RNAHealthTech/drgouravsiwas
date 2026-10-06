@@ -211,14 +211,14 @@
 }
 
 .notice {
-  background-color: #fffbeb;
-  border: 1px solid #fef3c7;
+  background-color: rgba(172, 178, 150, 0.18);
+  border: 1.5px solid rgba(172, 178, 150, 0.45);
   border-radius: var(--radius-sm);
   padding: 16px;
 }
 
 .notice p {
   font-size: 0.85rem;
-  color: #b45309;
+  color: #553e32;
   line-height: 1.5;
 }

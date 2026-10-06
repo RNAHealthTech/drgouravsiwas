@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
 import styles from './Achievements.module.css';
 
@@ -43,14 +44,73 @@ export default function Achievements() {
             <ScrollReveal direction="left" delay={250} duration={850}>
               <div className={`${styles.credentialCard} glass-card`}>
                 <div className={styles.credIcon}>🤝</div>
-                <div className={styles.credContent}>
+                <div className={styles.credContent} style={{ width: '100%' }}>
                   <h4>Professional Memberships</h4>
                   <p>Full member of prestigious national and international surgical associations:</p>
-                  <div className={styles.membershipsList}>
-                    <span className={styles.membershipBadge} style={{ background: '#fef3c7', color: '#92400e', borderColor: '#fde68a' }}>⭐ EDHS (European Board)</span>
-                    <span className={styles.membershipBadge}>APSI (Plastic Surgery)</span>
-                    <span className={styles.membershipBadge}>ISSH (Hand Surgery)</span>
-                    <span className={styles.membershipBadge}>MNAMS (Med Sciences)</span>
+                  
+                  <div className={styles.membershipsGrid}>
+                    <div className={styles.membershipItem}>
+                      <div className={styles.logoCircle}>
+                        <Image
+                          src="/images/logos/logo-fessh.svg"
+                          alt="FESSH Logo"
+                          width={48}
+                          height={48}
+                          className={styles.logoImg}
+                        />
+                      </div>
+                      <span className={styles.membershipLabel}>
+                        FESSH
+                        <span className={styles.membershipSubLabel}>(European Board)</span>
+                      </span>
+                    </div>
+
+                    <div className={styles.membershipItem}>
+                      <div className={styles.logoCircle}>
+                        <Image
+                          src="/images/logos/logo-apsi.svg"
+                          alt="APSI Logo"
+                          width={48}
+                          height={48}
+                          className={styles.logoImg}
+                        />
+                      </div>
+                      <span className={styles.membershipLabel}>
+                        APSI
+                        <span className={styles.membershipSubLabel}>(Plastic Surgery)</span>
+                      </span>
+                    </div>
+
+                    <div className={styles.membershipItem}>
+                      <div className={styles.logoCircle}>
+                        <Image
+                          src="/images/logos/logo-issh.svg"
+                          alt="ISSH Logo"
+                          width={48}
+                          height={48}
+                          className={styles.logoImg}
+                        />
+                      </div>
+                      <span className={styles.membershipLabel}>
+                        ISSH
+                        <span className={styles.membershipSubLabel}>(Hand Surgery)</span>
+                      </span>
+                    </div>
+
+                    <div className={styles.membershipItem}>
+                      <div className={styles.logoCircle}>
+                        <Image
+                          src="/images/logos/logo-mnams.svg"
+                          alt="MNAMS Logo"
+                          width={48}
+                          height={48}
+                          className={styles.logoImg}
+                        />
+                      </div>
+                      <span className={styles.membershipLabel}>
+                        MNAMS
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>

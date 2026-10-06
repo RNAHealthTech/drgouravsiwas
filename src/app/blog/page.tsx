@@ -64,7 +64,7 @@ export default function BlogPage() {
             transition={{ delay: 0.2 }}
             className={styles.pageSubtitle}
           >
-            Explore the latest advancements in plastic, cosmetic, and reconstructive microsurgery.
+            Explore the latest advancements in hand, wrist, and reconstructive plastic surgery.
           </motion.p>
         </div>
       </header>

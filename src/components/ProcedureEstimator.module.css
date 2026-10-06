@@ -121,21 +121,21 @@
 }
 
 .tagAesthetic {
-  background: #fdf2f8;
-  color: #db2777;
-  border: 1px solid #fbcfe8;
+  background: rgba(248, 238, 211, 0.65);
+  color: #664637;
+  border: 1.5px solid rgba(102, 70, 55, 0.25);
 }
 
 .tagMicrosurgery {
-  background: #eff6ff;
-  color: #2563eb;
-  border: 1px solid #bfdbfe;
+  background: rgba(172, 178, 150, 0.35);
+  color: #3b281f;
+  border: 1.5px solid #ACB296;
 }
 
 .tagReconstructive {
-  background: #ecfdf5;
-  color: #059669;
-  border: 1px solid #a7f3d0;
+  background: rgba(172, 178, 150, 0.5);
+  color: #241812;
+  border: 1.5px solid #8f9579;
 }
 
 .durationPill {
@@ -218,7 +218,7 @@
   padding: 14px;
   background: var(--primary-light);
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(0, 124, 122, 0.15);
+  border: 1px solid rgba(172, 178, 150, 0.4);
 }
 
 .metricIcon {
@@ -247,7 +247,7 @@
 
 .techniqueBlock {
   padding: 16px;
-  background: #f8fafc;
+  background: var(--bg-secondary);
   border-radius: var(--radius-sm);
   border-left: 4px solid var(--secondary);
 }

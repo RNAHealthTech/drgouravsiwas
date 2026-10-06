@@ -77,13 +77,6 @@ export const serviceCategories: ServiceCategory[] = [
     iconName: 'Layers'
   },
   {
-    id: 'cosmetic-aesthetic',
-    label: 'Cosmetic & Aesthetic Surgery',
-    shortLabel: 'Cosmetic',
-    description: 'Refined rhinoplasty, blepharoplasty, liposuction, gynaecomastia, and body sculpting.',
-    iconName: 'Sparkles'
-  },
-  {
     id: 'trauma-burns',
     label: 'Emergency Trauma & Burn Care',
     shortLabel: 'Burns & Trauma',
@@ -96,6 +89,13 @@ export const serviceCategories: ServiceCategory[] = [
     shortLabel: 'Pediatric Hand',
     description: 'Congenital syndactyly, polydactyly, thumb reconstruction, and pediatric hand trauma.',
     iconName: 'HeartHandshake'
+  },
+  {
+    id: 'cosmetic-aesthetic',
+    label: 'Cosmetic & Aesthetic Surgery',
+    shortLabel: 'Cosmetic & Aesthetic',
+    description: 'Refined cosmetic plastic surgery, scar revision, and aesthetic body/facial contouring.',
+    iconName: 'Smile'
   }
 ];
 
@@ -108,13 +108,13 @@ export const servicesData: ServiceItem[] = [
     shortTitle: 'Carpal Tunnel Release',
     category: 'hand-wrist',
     categoryLabel: 'Hand & Wrist Surgery',
-    tagline: 'Precision decompression of the median nerve to eliminate tingling, numbness, and restore hand strength.',
+    tagline: 'Decompression of the median nerve to eliminate tingling, numbness, and restore hand strength.',
     heroSubtitle: 'Minimally invasive open and endoscopic releases with immediate nerve decompression and accelerated functional rehabilitation.',
     iconName: 'Activity',
-    image: '/images/services/hand-microsurgery.jpg',
+    image: '/images/dr_gourav_official.jpg',
     overview: [
       'Carpal Tunnel Syndrome occurs when the median nerve becomes compressed as it travels through the narrow carpal tunnel at the wrist base. Chronic compression leads to progressive tingling, nocturnal pain, sensory blunting in the thumb, index, and long fingers, and ultimately irreversible thenar muscle wasting.',
-      'As India’s youngest European Board Certified Hand Surgeon (EDHS), Dr. Gourav Siwas performs micro-targeted carpal tunnel release utilizing high-magnification optical loupes or endoscopic instrumentation. The transverse carpal ligament is meticulously divided, completely relieving intracarpal pressure while preserving sensory branches.',
+      'As India’s youngest European Board Certified Hand Surgeon (EDHS), Dr. Gourav Siwas performs carpal tunnel release utilizing high-magnification optical loupes or endoscopic instrumentation. The transverse carpal ligament is meticulously divided, completely relieving intracarpal pressure while preserving sensory branches.',
       'Most procedures are performed under Wide-Awake Local Anesthesia No Tourniquet (WALANT) or gentle sedation, allowing same-day discharge and immediate finger mobility.'
     ],
     conditionsTreated: [
@@ -133,11 +133,11 @@ export const servicesData: ServiceItem[] = [
     quickFacts: {
       procedureTime: '20 - 40 Minutes',
       anesthesia: 'WALANT / Local Anesthesia / Sedation',
-      hospitalStay: 'Day Care (Discharge in 2 Hours)',
+      hospitalStay: 'Day Care',
       downtime: '3 - 7 Days (Light desk activities)',
       followUp: 'Day 5, Day 14 (Suture removal), Week 6',
       successRate: '98% Symptomatic Relief',
-      location: 'Sir Ganga Ram Hospital / Max Smart Super Speciality'
+      location: 'Sir Ganga Ram Hospital'
     },
     gsApproachSteps: [
       {
@@ -194,7 +194,7 @@ export const servicesData: ServiceItem[] = [
     tagline: 'Restoring wrist kinematics through precision headless compression screw fixation and vascularized bone grafting.',
     heroSubtitle: 'Specialized management of acute waist fractures, chronic nonunions, and avascular necrosis (AVN) of the proximal pole.',
     iconName: 'Bone',
-    image: '/images/services/hand-microsurgery.jpg',
+    image: '/images/dr_gourav_official.jpg',
     overview: [
       'The scaphoid is the pivotal bone bridging the proximal and distal carpal rows. Because of its precarious retrograde blood supply, undiagnosed or inadequately treated fractures carry an exceptionally high risk of nonunion and avascular necrosis, ultimately leading to Scaphoid Nonunion Advanced Collapse (SNAC wrist).',
       'Dr. Gourav Siwas brings specialized cadaveric training and European Board certification in scaphoid reconstruction. Utilizing percutaneous or open headless cannulated compression screws (such as Herbert or Acutrak screws), stable compression is achieved with microscopic alignment.',
@@ -271,7 +271,7 @@ export const servicesData: ServiceItem[] = [
     tagline: 'Microsurgical 4-to-6 strand core suture repairs paired with early active mobilization for pristine hand kinematics.',
     heroSubtitle: 'Zone-specific restoration of finger bending and straightening following glass cuts, machinery accidents, and trauma.',
     iconName: 'Shield',
-    image: '/images/services/hand-microsurgery.jpg',
+    image: '/images/dr_gourav_official.jpg',
     overview: [
       'Hand tendons are the delicate cables connecting forearm muscles to the finger bones. When severed—frequently in "No Man’s Land" (Zone II of the flexor tendon sheath)—meticulous surgical repair is mandatory to restore finger bending without adhesions or gapping.',
       'Dr. Gourav Siwas utilizes advanced high-tensile 4-strand and 6-strand core sutures reinforced with microscopic epitendinous running sutures. This delivers the robust biomechanical strength necessary to tolerate Early Active Mobilization (EAM) protocols, minimizing debilitating adhesions.',
@@ -347,7 +347,7 @@ export const servicesData: ServiceItem[] = [
     tagline: 'Instant restoration of smooth, pain-free finger glide by relieving inflamed pulley constrictions.',
     heroSubtitle: 'Minimally invasive A1 pulley release restoring instantaneous digit extension and eliminating painful locking.',
     iconName: 'Scissors',
-    image: '/images/services/hand-microsurgery.jpg',
+    image: '/images/dr_gourav_official.jpg',
     overview: [
       'Stenosing tenosynovitis (Trigger Finger) occurs when inflammation and thickening of the flexor tendon sheath constricts the A1 pulley at the palm base. When flexing the finger, the swollen tendon nodule catches, causing clicking, locking, and severe morning stiffness.',
       'De Quervain’s tenosynovitis affects the first dorsal compartment at the radial wrist, causing agonizing pain when lifting babies, turning door knobs, or texting.',
@@ -419,7 +419,7 @@ export const servicesData: ServiceItem[] = [
     tagline: 'High-magnification epineurial and fascicular coaptation restoring sensation, motor control, and preventing debilitating neuromas.',
     heroSubtitle: 'Operating microscope reconstruction of median, ulnar, radial, and digital nerves using autologous nerve grafts and bio-conduits.',
     iconName: 'Zap',
-    image: '/images/services/hand-microsurgery.jpg',
+    image: '/images/dr_gourav_official.jpg',
     overview: [
       'Peripheral nerves are the biological wiring transmitting brain signals to muscles and sensory data from the fingertips. Trauma from sharp lacerations, fractures, or crush injuries severs these delicate axons, leading to complete numbness, paralysis, and excruciating neuroma pain if left untreated.',
       'Dr. Gourav Siwas performs microneural coaptation under high-power operating microscopes using 9-0 and 10-0 monofilament sutures. By matching individual fascicles and securing tension-free epineurial alignment, axonal regeneration is optimized.',
@@ -492,7 +492,7 @@ export const servicesData: ServiceItem[] = [
     tagline: 'Restoring shoulder stability, elbow flexion, and hand grasp through innovative nerve transfers and grafting.',
     heroSubtitle: 'Comprehensive microsurgical reconstruction for high-energy motorcycle brachial plexus avulsions and obstetric birth palsies.',
     iconName: 'Activity',
-    image: '/images/services/hand-microsurgery.jpg',
+    image: '/images/dr_gourav_official.jpg',
     overview: [
       'The brachial plexus is the complex network of nerves originating from cervical nerve roots (C5-T1) that powers the entire upper extremity. High-speed road traffic accidents can rupture or avulse these roots from the spinal cord, leaving the arm completely flaccid and insensate.',
       'Dr. Gourav Siwas utilizes advanced nerve transfer techniques (neurotization), where expendable donor nerves (such as the spinal accessory nerve, intercostal nerves, or Oberlin fascicular transfers from the ulnar and median nerves) are rerouted directly to target muscles.',
@@ -565,7 +565,7 @@ export const servicesData: ServiceItem[] = [
     tagline: 'Decompressing the ulnar nerve at the elbow to eliminate ring/little finger numbness and prevent claw hand.',
     heroSubtitle: 'In-situ decompression and submuscular/subcutaneous anterior transposition preserving intrinsic hand dexterity.',
     iconName: 'Activity',
-    image: '/images/services/hand-microsurgery.jpg',
+    image: '/images/dr_gourav_official.jpg',
     overview: [
       'Cubital Tunnel Syndrome is the second most common compression neuropathy of the upper extremity. The ulnar nerve passes behind the medial epicondyle ("funny bone") inside a rigid fibro-osseous tunnel. Repetitive bending or prolonged leaning on elbows leads to ischemia and progressive clawing of the ring and little fingers.',
       'Dr. Gourav Siwas performs decompression with or without anterior transposition depending on the nerve’s stability during intraoperative elbow flexion.',
@@ -589,7 +589,7 @@ export const servicesData: ServiceItem[] = [
       downtime: '1 - 2 Weeks',
       followUp: 'Day 10 (Suture inspection), Week 4',
       successRate: '95% Symptom Resolution',
-      location: 'Sir Ganga Ram Hospital / Max Smart'
+      location: 'Sir Ganga Ram Hospital'
     },
     gsApproachSteps: [
       {
@@ -637,7 +637,7 @@ export const servicesData: ServiceItem[] = [
     tagline: 'Life-changing emergency microvascular surgery reattaching amputated digits, hands, and upper extremities.',
     heroSubtitle: 'Member of Sir Ganga Ram Hospital’s landmark bilateral hand transplant team providing 24x7 emergency replantation.',
     iconName: 'Droplet',
-    image: '/images/services/hand-microsurgery.jpg',
+    image: '/images/dr_gourav_official.jpg',
     overview: [
       'Traumatic total or subtotal amputation of fingers, thumbs, or hands is a devastating surgical emergency. Successful replantation requires re-establishing biological circulation through microscopic arteries and veins smaller than 1 millimeter in diameter.',
       'Having been an integral team member in Delhi’s 1st successful bilateral Hand Transplant at Sir Ganga Ram Hospital in January 2024, Dr. Gourav Siwas brings elite microsurgical expertise to acute amputations.',
@@ -660,7 +660,7 @@ export const servicesData: ServiceItem[] = [
       hospitalStay: '5 - 7 Days (Microvascular monitoring)',
       downtime: '6 - 12 Weeks (Rehabilitation phase)',
       followUp: 'Twice Weekly initially, then Monthly',
-      successRate: '85 - 90% Viability Rate with prompt presentation',
+      successRate: '>90% Viability Rate with prompt presentation',
       location: '24x7 Microsurgical Emergency, Sir Ganga Ram Hospital'
     },
     gsApproachSteps: [
@@ -848,387 +848,6 @@ export const servicesData: ServiceItem[] = [
     relatedSlugs: ['free-tissue-transfer', 'trauma-burns']
   },
 
-  // 11. RHINOPLASTY (COSMETIC & FUNCTIONAL)
-  {
-    id: 'rhinoplasty',
-    slug: 'rhinoplasty',
-    title: 'Advanced Rhinoplasty (Cosmetic & Functional Nose Surgery)',
-    shortTitle: 'Rhinoplasty',
-    category: 'cosmetic-aesthetic',
-    categoryLabel: 'Cosmetic & Aesthetic Surgery',
-    tagline: 'Sculpting balanced facial harmony while perfecting nasal breathing through preservation and structural techniques.',
-    heroSubtitle: 'Authored research on composite augmentation grafts; expert open, closed, and revision rhinoplasty at Sir Ganga Ram Hospital.',
-    iconName: 'Smile',
-    image: '/images/services/cosmetic-rhinoplasty.jpg',
-    overview: [
-      'Rhinoplasty is widely considered the most artistically demanding and architecturally complex cosmetic procedure. The nose is the focal center of the face, and even a fraction of a millimeter change impacts facial harmony and the internal breathing airway.',
-      'Dr. Gourav Siwas brings distinguished academic research to rhinoplasty, having published and presented on five-component composite augmentation grafts and structured nasal tip shaping at national APSICON conferences.',
-      'Whether addressing a dorsal hump, bulbous tip, crooked septum, droopy nose, or breathing obstruction, Dr. Siwas tailors each procedure to enhance natural ethnic facial proportions without creating an unnatural, operated appearance.'
-    ],
-    conditionsTreated: [
-      'Dorsal hump reduction (smoothing out nasal bridge bump)',
-      'Refining wide, bulbous, or droopy nasal tips',
-      'Correcting deviated septum causing one-sided nasal obstruction',
-      'Restoring nasal height in saddle nose deformities using cartilage grafts',
-      'Revision rhinoplasty after prior unsatisfactory surgeries'
-    ],
-    candidateChecklist: [
-      'Patients seeking subtle, natural enhancement of nasal contours',
-      'Individuals with breathing obstruction combined with aesthetic concerns',
-      'Fully developed facial skeleton (typically age 17 and above)'
-    ],
-    quickFacts: {
-      procedureTime: '2 - 3.5 Hours',
-      anesthesia: 'General Anesthesia (Absolute Comfort)',
-      hospitalStay: 'Day Care or 1 Night Stay',
-      downtime: '7 - 10 Days (External cast worn)',
-      followUp: 'Day 7 (Cast removal), Month 1, Month 3, Month 6, Year 1',
-      successRate: 'Exceptional Patient Satisfaction',
-      location: 'Sir Ganga Ram Hospital / Max Smart Super Speciality'
-    },
-    gsApproachSteps: [
-      {
-        step: '01',
-        title: '3D Aesthetic & Airway Analysis',
-        description: 'Comprehensive evaluation of naso-frontal angle, tip projection, rotation, and internal/external nasal valves.'
-      },
-      {
-        step: '02',
-        title: 'Structural Cartilage Architecture',
-        description: 'Precise component hump reduction preserving the dorsal aesthetic lines with spreader grafts for airway stability.'
-      },
-      {
-        step: '03',
-        title: 'Refined Tip Suture Sculpting',
-        description: 'Columellar strut and cephalic dome suturing delivering defined, natural tip projection that does not droop with time.'
-      },
-      {
-        step: '04',
-        title: 'Gentle Splinting & Rapid Recovery',
-        description: 'Dissolvable internal packing and lightweight thermoplast external splint removed on day 7.'
-      }
-    ],
-    recoveryPhases: [
-      { phase: 'Days 1 - 7', duration: 'First Week', details: 'Nasal splint in place. Mild puffiness around eyes settles within 4-5 days. Pain is minimal.' },
-      { phase: 'Day 7', duration: 'Splint Removal', details: 'Splint removed to reveal new bridge profile! Return to work and social activities.' },
-      { phase: 'Month 1 - 3', duration: 'Refinement', details: '80% of swelling resolves. Gym and non-contact exercise resumed.' },
-      { phase: 'Year 1', duration: 'Final Definition', details: 'Final subtle tip definition fully establishes as skin re-drapes completely.' }
-    ],
-    faqs: [
-      {
-        question: 'Will rhinoplasty leave visible scars?',
-        answer: 'In open rhinoplasty, a tiny stair-step incision is made across the columella (the tissue between the nostrils), which heals to become virtually undetectable within a few weeks.'
-      },
-      {
-        question: 'Will my breathing be affected?',
-        answer: 'Dr. Siwas places equal emphasis on functional airway reconstruction. Septoplasty and turbinate reduction are combined with cosmetic sculpting so breathing is preserved or significantly improved.'
-      }
-    ],
-    relatedSlugs: ['blepharoplasty', 'liposuction-body-contouring', 'scar-revision']
-  },
-
-  // 12. BLEPHAROPLASTY (EYELID SURGERY)
-  {
-    id: 'blepharoplasty',
-    slug: 'blepharoplasty',
-    title: 'Blepharoplasty (Upper & Lower Eyelid Rejuvenation)',
-    shortTitle: 'Blepharoplasty',
-    category: 'cosmetic-aesthetic',
-    categoryLabel: 'Cosmetic & Aesthetic Surgery',
-    tagline: 'Restoring a rested, youthful, and alert eye contour without altering your natural facial expression.',
-    heroSubtitle: 'Precision eyelid surgery addressing hooded upper lids, under-eye bags, and tear-trough hollows with discreet micro-incisions.',
-    iconName: 'Scan',
-    image: '/images/procedure-1.jpg',
-    overview: [
-      'The eyes are the first feature people notice and the earliest area to reveal tiredness, stress, and natural aging. Over time, upper eyelid skin stretches, producing a heavy, hooded look that may obstruct peripheral vision, while orbital fat herniates in the lower lids to create stubborn under-eye bags.',
-      'Blepharoplasty is not about altering your eye shape; it is about discreetly rejuvenating the eye frame. Dr. Gourav Siwas performs tailored upper and lower blepharoplasties, focusing on tissue repositioning rather than aggressive fat excision to avoid a hollowed, sunken appearance.',
-      'Upper eyelid incisions are meticulously hidden inside the natural supratarsal fold, while lower blepharoplasty utilizes transconjunctival (inside the eyelid) or subciliary access with fat transposition into the tear trough.'
-    ],
-    conditionsTreated: [
-      'Heavy, drooping upper eyelid skin that creates a tired, aged look or touches eyelashes',
-      'Upper eyelid skin folds obstructing the superior and peripheral visual field',
-      'Prominent puffy under-eye bags unyielding to creams or sleep',
-      'Deep tear trough depressions casting dark circles below the lower eyelids'
-    ],
-    candidateChecklist: [
-      'Healthy individuals bothered by tired or heavy eyelid appearance',
-      'Realistic expectations seeking natural, refreshed eye aesthetics',
-      'Adequate tear film and healthy ocular surface'
-    ],
-    quickFacts: {
-      procedureTime: '45 - 90 Minutes',
-      anesthesia: 'Local Anesthesia with Sedation / General Anesthesia',
-      hospitalStay: 'Day Care (Discharge in 2-3 Hours)',
-      downtime: '7 - 10 Days',
-      followUp: 'Day 5 (Suture removal), Week 2, Month 2',
-      successRate: 'High Satisfaction with Lasting Rejuvenation',
-      location: 'Sir Ganga Ram Hospital / Max Smart'
-    },
-    gsApproachSteps: [
-      {
-        step: '01',
-        title: 'Micro-Precise Caliper Markings',
-        description: 'Pre-operative upright markings measuring eyelid excursion and pinch test to prevent lagophthalmos (inability to close eyes).'
-      },
-      {
-        step: '02',
-        title: 'Upper Crease Incision & Skin Excision',
-        description: 'Removal of precise ellipse of excess skin and conservative debulking of nasal fat pad without hollowing.'
-      },
-      {
-        step: '03',
-        title: 'Lower Lid Fat Repositioning',
-        description: 'Repositioning prominent orbital fat into the hollow tear trough groove to create a seamless lid-cheek junction.'
-      },
-      {
-        step: '04',
-        title: 'Subcuticular Invisible Closure',
-        description: 'Closure with hair-thin 6-0 sutures that leave an imperceptible scar tucked within the natural eyelid crease.'
-      }
-    ],
-    recoveryPhases: [
-      { phase: 'Days 1 - 3', duration: 'Cool Compresses', details: 'Cold ice packs reduce swelling and bruising. Reading and mobile screens minimized.' },
-      { phase: 'Day 5', duration: 'Suture Removal', details: 'Fine eyelid stitches painlessly removed. Makeup can be gently worn after day 7.' },
-      { phase: 'Week 2', duration: 'Back to Social Life', details: 'Residual bruising fades. Fresh, refreshed, and well-rested appearance is visible.' }
-    ],
-    faqs: [
-      {
-        question: 'Will blepharoplasty change the shape of my eyes?',
-        answer: 'No. The philosophy of Dr. Gourav Siwas is natural preservation. You will look rested and energized—like you had a great vacation—not as though you had surgery.'
-      },
-      {
-        question: 'Are the scars visible?',
-        answer: 'Upper eyelid incisions sit directly in the natural eyelid fold and are invisible with eyes open. Lower incisions are either completely hidden inside the eyelid (transconjunctival) or right beneath the lower lash line.'
-      }
-    ],
-    relatedSlugs: ['rhinoplasty', 'liposuction-body-contouring', 'scar-revision']
-  },
-
-  // 13. LIPOSUCTION & BODY CONTOURING
-  {
-    id: 'liposuction-body-contouring',
-    slug: 'liposuction-body-contouring',
-    title: 'High-Definition Liposuction & Body Contouring',
-    shortTitle: 'Liposuction',
-    category: 'cosmetic-aesthetic',
-    categoryLabel: 'Cosmetic & Aesthetic Surgery',
-    tagline: 'Targeted sculpting of stubborn fat deposits to unveil natural muscle definition and sculpted contours.',
-    heroSubtitle: 'Tumescent and power-assisted liposuction of the abdomen, flanks, back, arms, thighs, and double chin.',
-    iconName: 'Activity',
-    image: '/images/services/body-contouring.jpg',
-    overview: [
-      'Even with rigorous exercise and disciplined nutrition, localized fat deposits on the abdomen, love handles, back, thighs, and double chin often prove genetically resistant to weight loss. Liposuction is not a weight loss procedure; it is a body sculpting art form designed to reshape contours and highlight muscle anatomy.',
-      'Dr. Gourav Siwas employs advanced tumescent super-wet techniques and micro-cannulas to selectively remove deep and superficial fat layers with minimal bruising and smooth, natural skin retraction.',
-      'Safety and anatomical precision are paramount, ensuring smooth transitions without lumpiness or contour irregularities.'
-    ],
-    conditionsTreated: [
-      'Stubborn abdominal fat pockets and love handles (flanks)',
-      'Submental fat fullness causing a double chin and blurred jawline',
-      'Bra rolls, back fat bulges, and upper arm flabbiness',
-      'Inner and outer thigh fullness ("saddlebags")',
-      'Gynecomastia and chest fat in men'
-    ],
-    candidateChecklist: [
-      'Individuals within or near their healthy target body weight (BMI under 30)',
-      'Good underlying skin tone and elasticity',
-      'Stubborn localized fat pockets unresponsive to diet and exercise'
-    ],
-    quickFacts: {
-      procedureTime: '1.5 - 3 Hours (Dependent on zones)',
-      anesthesia: 'Tumescent Local / Sedation / General Anesthesia',
-      hospitalStay: 'Day Care or Overnight Observation',
-      downtime: '3 - 5 Days',
-      followUp: 'Day 5, Week 2, Month 1, Month 3',
-      successRate: 'Permanent Fat Cell Reduction in treated zones',
-      location: 'Sir Ganga Ram Hospital / Max Smart'
-    },
-    gsApproachSteps: [
-      {
-        step: '01',
-        title: 'Topographical Anatomic Marking',
-        description: 'Upright vector mapping highlighting natural athletic contours and transition zones.'
-      },
-      {
-        step: '02',
-        title: 'Tumescent Super-Wet Infiltration',
-        description: 'Infusion of physiological saline with adrenaline and local anesthetic to achieve bloodless fat emulsification.'
-      },
-      {
-        step: '03',
-        title: 'Multi-Planar Micro-Cannula Sculpting',
-        description: 'Criss-cross aspiration utilizing fine 3mm cannulas ensuring even layer reduction and zero grooving.'
-      },
-      {
-        step: '04',
-        title: 'Custom Compression Garment Fitting',
-        description: 'Application of medical-grade compression garment to promote immediate skin adherence and minimize fluid retention.'
-      }
-    ],
-    recoveryPhases: [
-      { phase: 'Days 1 - 3', duration: 'Early Recovery', details: 'Mild soreness akin to an intense gym workout. Walking encouraged from evening of day 1.' },
-      { phase: 'Week 1', duration: 'Back to Work', details: 'Return to desk jobs. Swelling begins to taper.' },
-      { phase: 'Weeks 2 - 6', duration: 'Compression Wear', details: 'Compression garment worn consistently. Light gym cardio permitted at week 3.' },
-      { phase: 'Months 2 - 3', duration: 'Sculpted Results', details: 'Final defined waistline, sculpted jawline, and athletic contours fully emerge.' }
-    ],
-    faqs: [
-      {
-        question: 'Do fat cells come back after liposuction?',
-        answer: 'No. The fat cells removed during liposuction are permanently eliminated. As long as you maintain a relatively stable weight, the sculpted contour remains permanent.'
-      },
-      {
-        question: 'Will liposuction tighten loose skin?',
-        answer: 'Patients with good skin elasticity achieve excellent skin contraction after liposuction. If significant skin laxity is present, combining liposuction with an abdominoplasty (tummy tuck) may be recommended.'
-      }
-    ],
-    relatedSlugs: ['gynaecomastia', 'tummy-tuck', 'rhinoplasty']
-  },
-
-  // 14. GYNAECOMASTIA (MALE BREAST REDUCTION)
-  {
-    id: 'gynaecomastia',
-    slug: 'gynaecomastia',
-    title: 'Gynaecomastia Correction (Male Breast Reduction)',
-    shortTitle: 'Gynaecomastia',
-    category: 'cosmetic-aesthetic',
-    categoryLabel: 'Cosmetic & Aesthetic Surgery',
-    tagline: 'Restoring a flat, firm, and masculine chest contour through dual liposuction and glandular excision.',
-    heroSubtitle: 'Discreet periareolar micro-excision combined with high-definition chest contouring for lasting confidence.',
-    iconName: 'User',
-    image: '/images/services/body-contouring.jpg',
-    overview: [
-      'Gynaecomastia—the benign enlargement of male breast tissue—affects millions of men due to hormonal fluctuations, medications, or genetics. It often causes profound psychological distress, self-consciousness when wearing fitted shirts, and avoidance of swimming or sports.',
-      'True gynaecomastia involves a combination of glandular breast tissue (rubbery disk behind the areola) and surrounding fatty deposits. Diet and exercise alone cannot eliminate the glandular component.',
-      'Dr. Gourav Siwas performs a comprehensive dual-technique approach: tumescent liposuction to sculpt the chest borders, followed by a minimal-access Webster periareolar incision to excise the glandular tissue cleanly, creating a naturally flat, masculine pectoral contour.'
-    ],
-    conditionsTreated: [
-      'Prominent, puffy nipples and rounded chest fullness resembling female breasts',
-      'Firm, rubbery glandular mass felt directly beneath the areola',
-      'Asymmetry in chest size between left and right sides',
-      'Social avoidance and embarrassment wearing t-shirts or swimwear'
-    ],
-    candidateChecklist: [
-      'Men with stable chest enlargement after puberty (age 17+)',
-      'Normal endocrine workup or stable medical parameters',
-      'Desire for a permanent, flat masculine chest profile'
-    ],
-    quickFacts: {
-      procedureTime: '60 - 90 Minutes',
-      anesthesia: 'General Anesthesia / Twilight Sedation',
-      hospitalStay: 'Day Care (Home on same evening)',
-      downtime: '3 - 5 Days',
-      followUp: 'Day 5, Week 2 (Suture check), Week 6',
-      successRate: 'Permanent Correction with high self-esteem boost',
-      location: 'Sir Ganga Ram Hospital / Max Smart'
-    },
-    gsApproachSteps: [
-      {
-        step: '01',
-        title: 'Pectoral Boundary Marking',
-        description: 'Mapping the sternal and lateral margins of the pectoralis major muscle.'
-      },
-      {
-        step: '02',
-        title: 'Tumescent Chest Liposuction',
-        description: 'Feathering fat from the chest and axillary fold to achieve a smooth, tapered transition.'
-      },
-      {
-        step: '03',
-        title: 'Micro-Periareolar Glandular Excision',
-        description: 'Concealed semi-circular incision along the lower half of the areola to excise the dense glandular bud with precision.'
-      },
-      {
-        step: '04',
-        title: 'Pressure Garment Application',
-        description: 'Immediate chest compression vest preventing seroma and promoting flat skin adherence.'
-      }
-    ],
-    recoveryPhases: [
-      { phase: 'Days 1 - 3', duration: 'First 72 Hours', details: 'Minimal pain, well controlled with tablets. Chest vest worn 24/7.' },
-      { phase: 'Day 4', duration: 'Back to Work', details: 'Desk work resumed. Showering permitted with waterproof dressings.' },
-      { phase: 'Weeks 3 - 4', duration: 'Gym & Fitness', details: 'Light cardio and jogging resumed. Chest weightlifting re-introduced at week 6.' }
-    ],
-    faqs: [
-      {
-        question: 'Can gynaecomastia come back after surgery?',
-        answer: 'Since the glandular tissue and fat cells are physically removed, recurrence is exceptionally rare unless significant weight gain or anabolic steroid use occurs.'
-      }
-    ],
-    relatedSlugs: ['liposuction-body-contouring', 'tummy-tuck']
-  },
-
-  // 15. TUMMY TUCK (ABDOMINOPLASTY)
-  {
-    id: 'tummy-tuck',
-    slug: 'tummy-tuck',
-    title: 'Abdominoplasty (Tummy Tuck & Muscle Plication)',
-    shortTitle: 'Tummy Tuck',
-    category: 'cosmetic-aesthetic',
-    categoryLabel: 'Cosmetic & Aesthetic Surgery',
-    tagline: 'Flattening the abdomen, repairing separated rectus muscles (diastasis recti), and excising excess lax skin.',
-    heroSubtitle: 'Complete abdominal wall restoration for post-pregnancy changes and massive weight loss patients.',
-    iconName: 'Wind',
-    image: '/images/services/body-contouring.jpg',
-    overview: [
-      'Pregnancy and significant weight loss frequently cause permanent overstretching of abdominal skin and separation of the vertical abdominal muscles (diastasis recti). No amount of crunches or dieting can tighten stretched skin or pull separated muscles back together.',
-      'An abdominoplasty (tummy tuck) performed by Dr. Gourav Siwas restores both internal muscular firmness and external skin tightness. The rectus abdominis muscles are plicated along the midline, excess hanging skin and lower abdominal stretch marks are excised, and the umbilicus (belly button) is artistically repositioned.',
-      'The low-bikini incision is positioned carefully so it remains completely hidden beneath normal swimwear and undergarments.'
-    ],
-    conditionsTreated: [
-      'Hanging apron of loose abdominal skin (panniculus) after pregnancy or weight loss',
-      'Diastasis recti (core muscle separation causing a persistent protruding belly pooch)',
-      'Severe lower abdominal stretch marks and scarred C-section indentations',
-      'Weak core support leading to postural back fatigue'
-    ],
-    candidateChecklist: [
-      'Women who have completed their childbearing',
-      'Men and women following massive weight loss with stable body weight',
-      'Non-smokers in good overall cardiovascular health'
-    ],
-    quickFacts: {
-      procedureTime: '2.5 - 3.5 Hours',
-      anesthesia: 'General Anesthesia',
-      hospitalStay: '1 - 2 Nights Stay',
-      downtime: '10 - 14 Days',
-      followUp: 'Day 5, Day 14, Month 1, Month 3',
-      successRate: 'Transformative Body Silhouette',
-      location: 'Department of Plastic Surgery, Sir Ganga Ram Hospital'
-    },
-    gsApproachSteps: [
-      {
-        step: '01',
-        title: 'Low Bikini Line Incision',
-        description: 'Marked precisely along the low pelvic fold so it remains hidden inside low-rise underwear.'
-      },
-      {
-        step: '02',
-        title: 'Internal Muscle Plication (Corset Repair)',
-        description: 'Double-row heavy suture plication of the rectus sheath, instantly restoring a firm internal abdominal wall and narrowing the waistline.'
-      },
-      {
-        step: '03',
-        title: 'Skin Re-Draping & Umbilicoplasty',
-        description: 'Pulling excess skin taut, excising lower redundant tissue, and creating a natural, youthful hooded belly button.'
-      },
-      {
-        step: '04',
-        title: 'Progressive Tension Suture Technique',
-        description: 'Internal quilting sutures that eliminate dead space, minimizing seroma risk and often eliminating the need for uncomfortable surgical drains.'
-      }
-    ],
-    recoveryPhases: [
-      { phase: 'Days 1 - 7', duration: 'First Week', details: 'Rest in a comfortable flexed posture. Walking gently every few hours to promote circulation.' },
-      { phase: 'Weeks 2 - 3', duration: 'Standing Upright', details: 'Full upright posture regained. Return to desk work.' },
-      { phase: 'Week 6+', duration: 'Full Activity', details: 'Abdominal binder weaned. Core exercise and normal workouts resumed.' }
-    ],
-    faqs: [
-      {
-        question: 'Will my C-section scar be removed?',
-        answer: 'Yes! In standard tummy tucks, the old C-section scar is completely excised along with the redundant lower abdominal skin apron.'
-      }
-    ],
-    relatedSlugs: ['liposuction-body-contouring', 'gynaecomastia']
-  },
-
   // 16. BURN RECONSTRUCTION
   {
     id: 'burn-reconstruction',
@@ -1297,10 +916,81 @@ export const servicesData: ServiceItem[] = [
         answer: 'Severe contractures causing functional impairment (like inability to close eyes or bend fingers) are released urgently. For aesthetic scars, waiting 6-12 months for scar maturation is ideal.'
       }
     ],
-    relatedSlugs: ['free-tissue-transfer', 'tendon-repair', 'scar-revision']
+    relatedSlugs: ['free-tissue-transfer', 'tendon-repair']
   },
 
-  // 17. PEDIATRIC HAND ANOMALIES (SYNDACTYLY / POLYDACTYLY)
+  // 17. 24/7 EMERGENCY TRAUMA CARE
+  {
+    id: 'emergency-trauma-care',
+    slug: 'emergency-trauma-care',
+    title: '24/7 Acute Emergency Trauma & Soft Tissue Care',
+    shortTitle: '24/7 Trauma Care',
+    category: 'trauma-burns',
+    categoryLabel: 'Emergency Trauma & Burn Care',
+    tagline: 'Round-the-clock emergency microvascular salvage, laceration repairs, and complex polytrauma soft tissue reconstruction.',
+    heroSubtitle: 'Immediate, hospital-backed trauma intervention with dual European and National Board certified plastic surgical precision.',
+    iconName: 'ShieldAlert',
+    image: '/images/procedure-3.jpg',
+    overview: [
+      'Acute trauma to the upper extremity, face, and soft tissues requires urgent, expert surgical intervention to prevent irreversible functional loss and severe cosmetic deformities.',
+      'Dr. Gourav Siwas provides comprehensive 24/7 emergency trauma care at Sir Ganga Ram Hospital, New Delhi. Services range from intricate repair of severed tendons, nerves, and arteries to high-magnification digital replantation and immediate coverage of complex wounds.',
+      'Emergency admissions and casualty consultations are available round the clock with dedicated operating room access.'
+    ],
+    conditionsTreated: [
+      'Complex hand, wrist, and extremity lacerations involving nerves and tendons',
+      'Industrial and domestic crush injuries with open bone exposure',
+      'Facial bone fractures and soft tissue trauma',
+      'Acute skin loss requiring emergency local or microvascular flap coverage'
+    ],
+    candidateChecklist: [
+      'Acute traumatic injury requiring emergency plastic or reconstructive intervention',
+      'Available 24/7 via Sir Ganga Ram Hospital casualty and emergency line'
+    ],
+    quickFacts: {
+      procedureTime: 'Emergency / Case Dependent',
+      anesthesia: 'WALANT / Regional Block / General Anesthesia',
+      hospitalStay: 'Day Care to Inpatient Admission',
+      downtime: 'Variable based on injury severity',
+      followUp: 'Emergency post-op review and phased rehabilitation',
+      successRate: 'Maximized Limb & Functional Salvage',
+      location: 'Emergency / Plastic Surgery, Sir Ganga Ram Hospital'
+    },
+    gsApproachSteps: [
+      {
+        step: '01',
+        title: 'Emergency Triage & Vital Stabilization',
+        description: 'Rapid multidisciplinary assessment, bleeding control, and radiologic evaluation.'
+      },
+      {
+        step: '02',
+        title: 'Atraumatic Wound Debridement',
+        description: 'Meticulous removal of contaminated and non-viable tissues while conserving critical structures.'
+      },
+      {
+        step: '03',
+        title: 'Micro-Anatomical Repair',
+        description: 'Precision microscopic repair of neurovascular bundles, tendons, and bony fixation.'
+      },
+      {
+        step: '04',
+        title: 'Definitive Soft Tissue Coverage',
+        description: 'Immediate local or free flap coverage to protect exposed nerves, vessels, and bone.'
+      }
+    ],
+    recoveryPhases: [
+      { phase: 'Phase 1', duration: 'Acute Healing', details: 'Wound protection, edema reduction, and antibiotic support.' },
+      { phase: 'Phase 2', duration: 'Rehabilitation', details: 'Targeted hand and occupational therapy to regain maximum function.' }
+    ],
+    faqs: [
+      {
+        question: 'Is emergency plastic surgery available 24/7?',
+        answer: 'Yes, round-the-clock emergency plastic, reconstructive, and hand trauma coverage is available at Sir Ganga Ram Hospital.'
+      }
+    ],
+    relatedSlugs: ['burn-reconstruction', 'finger-replantation', 'tendon-repair']
+  },
+
+  // 18. PEDIATRIC HAND ANOMALIES (SYNDACTYLY / POLYDACTYLY)
   {
     id: 'congenital-hand-anomalies',
     slug: 'congenital-hand-anomalies',
@@ -1311,7 +1001,7 @@ export const servicesData: ServiceItem[] = [
     tagline: 'Restoring natural hand anatomy, independent digit function, and confidence in children with congenital hand differences.',
     heroSubtitle: 'European Board Certified hand expertise in webbed fingers (syndactyly), extra digits (polydactyly), and thumb reconstruction.',
     iconName: 'HeartHandshake',
-    image: '/images/services/hand-microsurgery.jpg',
+    image: '/images/dr_gourav_official.jpg',
     overview: [
       'Congenital hand anomalies—such as webbed fingers (syndactyly), extra digits (polydactyly), or underdeveloped thumbs (hypoplasia)—can impact a child’s developmental milestones and dexterity if uncorrected.',
       'As India’s youngest European Board Certified Hand Surgeon, Dr. Gourav Siwas brings elite pediatric hand training, including research on fingertip reconstruction in children. Surgical separation of webbed fingers utilizes intricate zig-zag incisions and local flaps to reconstruct natural web spaces without tension, preventing contracture.',
@@ -1334,7 +1024,7 @@ export const servicesData: ServiceItem[] = [
       downtime: '2 - 3 Weeks (Protective soft cast)',
       followUp: 'Week 2 (Check dressings), Month 1, Year 1',
       successRate: 'Excellent Cosmetic & Functional Independence',
-      location: 'Sir Ganga Ram Hospital / Max Smart'
+      location: 'Sir Ganga Ram Hospital'
     },
     gsApproachSteps: [
       {
@@ -1370,77 +1060,6 @@ export const servicesData: ServiceItem[] = [
     ],
     relatedSlugs: ['carpal-tunnel-release', 'tendon-repair', 'finger-replantation']
   },
-
-  // 18. SCAR REVISION
-  {
-    id: 'scar-revision',
-    slug: 'scar-revision',
-    title: 'Precision Surgical Scar Revision',
-    shortTitle: 'Scar Revision',
-    category: 'cosmetic-aesthetic',
-    categoryLabel: 'Cosmetic & Aesthetic Surgery',
-    tagline: 'Minimizing, re-orienting, and camouflaging conspicuous traumatic or surgical scars into natural skin tension lines.',
-    heroSubtitle: 'Advanced W-plasty, Z-plasty, geometric broken line closure, and fractional resurfacing for facial and body scars.',
-    iconName: 'Scissors',
-    image: '/images/services/office-procedures.jpg',
-    overview: [
-      'Traumatic facial cuts, poorly healed surgical incisions, or past injuries can leave prominent, wide, raised, or tethered scars that draw unwanted attention. While no surgical procedure can completely erase a scar, plastic surgical scar revision can transform a glaring blemish into a faint, inconspicuous line aligned with natural skin folds.',
-      'Dr. Gourav Siwas uses microscopic closure techniques, geometric broken line excision (W-plasty/Z-plasty), and subcision to release deep tethering and realign scars with relaxed skin tension lines (RSTL).',
-      'The procedure is frequently performed under local anesthesia with minimal downtime.'
-    ],
-    conditionsTreated: [
-      'Widened, depressed, or hyperpigmented scars on the forehead, cheek, nose, or lips',
-      'Hypertrophic and tethered scars from previous surgeries or accidents',
-      'Scars that cross natural skin creases causing tightness or visual distortion',
-      'Notched lip or earlobe scars'
-    ],
-    candidateChecklist: [
-      'Scars mature for at least 6 months after the initial injury',
-      'Desire for aesthetic refinement and camouflage'
-    ],
-    quickFacts: {
-      procedureTime: '30 - 60 Minutes',
-      anesthesia: 'Local Anesthesia',
-      hospitalStay: 'Day Care (Walk-in Walk-out)',
-      downtime: '1 - 3 Days',
-      followUp: 'Day 5 (Suture removal), Month 1, Month 3',
-      successRate: 'Dramatic Improvement in Scar Conspicuity',
-      location: 'Sir Ganga Ram Hospital / Max Smart'
-    },
-    gsApproachSteps: [
-      {
-        step: '01',
-        title: 'Tension Line Mapping',
-        description: 'Analyzing the scar against the relaxed skin tension lines of Kraissl and Langer.'
-      },
-      {
-        step: '02',
-        title: 'Micro-Excision of Fibrotic Scar Tissue',
-        description: 'Atraumatic removal of the scarred dermal edges with vertical or angled beveling.'
-      },
-      {
-        step: '03',
-        title: 'Deep Multi-Layer Dermal Support',
-        description: 'Inverted absorbable sutures that relieve tension on the epidermal surface, preventing future scar widening.'
-      },
-      {
-        step: '04',
-        title: 'Hair-Thin Epidermal Alignment',
-        description: 'Micro-suturing with 6-0/7-0 monofilament sutures removed on day 5 to avoid stitch track marks.'
-      }
-    ],
-    recoveryPhases: [
-      { phase: 'Days 1 - 5', duration: 'Healing', details: 'Small micropore tape applied. Suture removal on day 5.' },
-      { phase: 'Month 1 - 6', duration: 'Scar Maturation', details: 'Silicone gel and sun protection applied daily. Scar fades into skin tone.' }
-    ],
-    faqs: [
-      {
-        question: 'Can a scar be 100% erased?',
-        answer: 'No technique can make skin like it was before injury, but plastic surgical revision can make scars virtually unnoticeable in regular social conversation.'
-      }
-    ],
-    relatedSlugs: ['blepharoplasty', 'rhinoplasty', 'burn-reconstruction']
-  }
 ];
 
 export function getServiceBySlug(slug: string): ServiceItem | undefined {

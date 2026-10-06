@@ -1,10 +1,10 @@
 .ctaBanner {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  color: #94a3b8;
+  background: linear-gradient(135deg, #2B1D16 0%, #3D261C 100%);
+  color: #F8EED3;
   text-align: center;
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(172, 178, 150, 0.2);
   padding: 80px 0;
   width: 100%;
 }
@@ -16,7 +16,7 @@
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(13, 148, 136, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(circle, rgba(172, 178, 150, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
   filter: blur(50px);
   pointer-events: none;
 }

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <circle cx="60" cy="60" r="56" fill="#ffffff" stroke="#4A3328" stroke-width="4"/>
+  <circle cx="60" cy="60" r="50" fill="none" stroke="#4A3328" stroke-opacity="0.15" stroke-width="2"/>
+  <text x="60" y="56" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="20" fill="#4A3328">MNAMS</text>
+  <text x="60" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="10" fill="#4A3328" letter-spacing="1.5">ACADEMY</text>
+</svg>

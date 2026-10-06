@@ -6,7 +6,7 @@ import styles from './faqs.module.css';
 interface FAQItem {
   question: string;
   answer: string;
-  category: 'general' | 'cosmetic' | 'hand' | 'cleft';
+  category: 'general' | 'hand' | 'cleft';
 }
 
 export default function FaqsPage() {
@@ -21,18 +21,8 @@ export default function FaqsPage() {
     },
     {
       question: "Are reconstructive surgeries performed at Sir Ganga Ram Hospital covered by insurance?",
-      answer: "Yes, most reconstructive procedures—such as cleft lip/palate repairs, hand trauma repairs, burn contracture release, and free tissue transfer reconstructions—are medically necessary and generally covered by corporate health insurance and TPAs. Purely cosmetic/aesthetic procedures (like rhinoplasty for cosmetic reasons or liposuction) are typically not covered by insurance. SGRH insurance helpdesk can verify specific plans.",
+      answer: "Yes, most reconstructive procedures—such as cleft lip/palate repairs, hand trauma repairs, burn contracture release, and free tissue transfer reconstructions—are medically necessary and generally covered by corporate health insurance and TPAs. SGRH insurance helpdesk can verify specific plans.",
       category: "general"
-    },
-    {
-      question: "What is the typical recovery time after a Rhinoplasty (Nose Job) or Liposuction?",
-      answer: "For Rhinoplasty, initial swelling and bruising resolve within 10 to 14 days, though the final nose shape refines over 6 to 12 months. For Liposuction, patients can usually return to light office activities within 3 to 5 days, while heavy physical exercise should be avoided for 3 to 4 weeks. A compression garment is worn for 4 to 6 weeks to support contouring.",
-      category: "cosmetic"
-    },
-    {
-      question: "Will I have visible scars after a cosmetic surgery procedure?",
-      answer: "As a specialist plastic surgeon, Dr. Gourav Siwas uses refined techniques to place incisions along natural skin folds, hair lines, or inconspicuous aesthetic units. Once fully healed, these incisions fade and blend seamlessly. Detailed pre- and post-operative scar management protocols (including silicone gel/sheets and sun protection) are provided for optimal aesthetic healing.",
-      category: "cosmetic"
     },
     {
       question: "What is Hand Microsurgery and when is it required?",
@@ -51,7 +41,7 @@ export default function FaqsPage() {
     },
     {
       question: "How do I prepare for my first consultation with Dr. Gourav Siwas?",
-      answer: "Please bring all prior medical reports, current prescription list, and details of any allergies. If seeking reconstructive options, any surgical histories or imaging reports (CT scans, X-rays) are helpful. If seeking cosmetic procedures, prepare a clear list of your goals and questions so Dr. Gourav Siwas can design a personalized surgical plan.",
+      answer: "Please bring all prior medical reports, current prescription list, and details of any allergies. If seeking reconstructive options, any surgical histories or imaging reports (CT scans, X-rays) are helpful. ",
       category: "general"
     }
   ];
@@ -71,7 +61,6 @@ export default function FaqsPage() {
   const categories = [
     { id: 'all', name: 'All FAQs' },
     { id: 'general', name: 'General Questions' },
-    { id: 'cosmetic', name: 'Aesthetic & Cosmetic' },
     { id: 'hand', name: 'Hand & Microsurgery' },
     { id: 'cleft', name: 'Cleft & Craniofacial' }
   ];
@@ -81,7 +70,7 @@ export default function FaqsPage() {
       <div className="container">
         <div className="section-title">
           <h2>Patient FAQs</h2>
-          <p>Common questions regarding plastic, cosmetic, and hand reconstructive surgeries</p>
+          <p>Common questions regarding hand, wrist, and reconstructive plastic surgeries</p>
         </div>
 
         <div className={styles.tabsWrapper}>

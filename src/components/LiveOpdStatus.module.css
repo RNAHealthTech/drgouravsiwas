@@ -36,13 +36,13 @@
 }
 
 .dotActive {
-  background: #10b981;
-  box-shadow: 0 0 8px #10b981;
+  background: #ACB296;
+  box-shadow: 0 0 8px rgba(172, 178, 150, 0.9);
 }
 
 .dotInactive {
-  background: #f59e0b;
-  box-shadow: 0 0 6px #f59e0b;
+  background: #664637;
+  box-shadow: 0 0 6px rgba(102, 70, 55, 0.7);
 }
 
 .pulseRing {

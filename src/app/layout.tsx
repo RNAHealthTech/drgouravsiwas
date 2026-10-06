@@ -19,13 +19,13 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Dr. Gourav Siwas | Plastic, Cosmetic & Hand Microsurgeon | Sir Ganga Ram Hospital",
-  description: "Official profile and appointment booking portal for Dr. Gourav Siwas, Associate Hony. Active Visiting Consultant in Plastic, Cosmetic & Hand Microsurgery at Sir Ganga Ram Hospital, New Delhi. Specializing in aesthetic procedures, hand replantations, and microvascular reconstructions.",
-  keywords: "Dr. Gourav Siwas, Plastic Surgeon Delhi, Cosmetic Surgeon, Hand Microsurgery, Sir Ganga Ram Hospital, Reconstructive Surgery, Rhinoplasty Delhi, Hand Replantation Delhi",
+  title: "Dr. Gourav Siwas | Hand, Wrist & Reconstructive Plastic Surgeon | Sir Ganga Ram Hospital",
+  description: "Official profile and appointment booking portal for Dr. Gourav Siwas, Dual Board Certified Hand, Wrist & Reconstructive Plastic Surgeon at the Department of Plastic Surgery, Sir Ganga Ram Hospital, New Delhi. Specialising in hand trauma, replantation, brachial plexus reconstruction, peripheral nerve surgery, tendon & ligament repair, and congenital hand conditions.",
+  keywords: "Dr. Gourav Siwas, Hand Surgeon Delhi, Wrist Surgeon Delhi, Reconstructive Plastic Surgeon, Hand Microsurgery, Sir Ganga Ram Hospital, Replantation Delhi, Brachial Plexus Surgery Delhi, European Board Certified Hand Surgeon, EDHS",
   authors: [{ name: "Dr. Gourav Siwas" }],
   openGraph: {
-    title: "Dr. Gourav Siwas | Plastic, Cosmetic & Hand Microsurgeon",
-    description: "Official profile and appointment booking portal for Dr. Gourav Siwas at Sir Ganga Ram Hospital, New Delhi.",
+    title: "Dr. Gourav Siwas | Hand, Wrist & Reconstructive Plastic Surgeon",
+    description: "Official profile and appointment booking portal for Dr. Gourav Siwas at the Department of Plastic Surgery, Sir Ganga Ram Hospital, New Delhi.",
     type: "website",
     locale: "en_IN",
     siteName: "Sir Ganga Ram Hospital",
