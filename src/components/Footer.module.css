@@ -43,43 +43,64 @@
   gap: 16px;
 }
 
-.footerLogoContainer {
+.logoLink {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logoEmblemWrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
   background: #ffffff;
-  padding: 14px 28px;
-  border-radius: var(--radius-sm);
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  border: 1.5px solid rgba(172, 178, 150, 0.4);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  border: 1.5px solid rgba(217, 119, 6, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.logoLink:hover .logoEmblemWrap {
+  transform: scale(1.05);
+  border-color: rgba(217, 119, 6, 0.8);
+}
+
+.logoEmblem {
   width: 100%;
-  max-width: 420px;
+  height: 100%;
+  object-fit: cover;
 }
 
-.footerLogoImg {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
+.logoTextGroup {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  padding-left: 16px;
 }
 
-.logoText {
-  color: var(--text-white);
-  font-size: 1.1rem;
-  font-family: var(--font-serif) !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.02em;
-  line-height: 1.2;
-}
-
-.logoSubtext {
-  font-size: 0.7rem;
-  font-weight: 500;
-  color: var(--secondary);
+.logoName {
+  font-weight: 600;
+  font-size: 0.95rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  display: block;
-  margin-top: 4px;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.logoTitle {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
 .description {

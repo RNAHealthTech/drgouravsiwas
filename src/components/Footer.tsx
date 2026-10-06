@@ -15,15 +15,21 @@ export default function Footer() {
         <div className={styles.grid}>
           <div className={styles.column}>
             <div className={styles.brand}>
-              <div className={styles.footerLogoContainer}>
-                <Image
-                  src="/images/dr_gourav_logo.png"
-                  alt="Dr. Gourav Siwas — Hand, Wrist & Reconstructive Plastic Surgeon"
-                  width={320}
-                  height={160}
-                  className={styles.footerLogoImg}
-                />
-              </div>
+              <Link href="/" className={styles.logoLink}>
+                <div className={styles.logoEmblemWrap}>
+                  <Image
+                    src="/images/dr_gourav_emblem.jpg"
+                    alt="Dr. Gourav Siwas Logo"
+                    width={46}
+                    height={46}
+                    className={styles.logoEmblem}
+                  />
+                </div>
+                <div className={styles.logoTextGroup}>
+                  <span className={styles.logoName}>Dr. Gourav Siwas</span>
+                  <span className={styles.logoTitle}>Hand, Wrist &amp; Reconstructive Plastic Surgeon</span>
+                </div>
+              </Link>
             </div>
             <p className={styles.description}>
               {doctorData.department} at {doctorData.hospital}. Specialized in complex hand trauma &amp; replantation, Plastic Surgery, microvascular reconstruction, and burns rehabilitation.
