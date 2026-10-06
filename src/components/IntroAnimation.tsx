@@ -96,16 +96,16 @@ export default function IntroAnimation() {
             animate={{ opacity: subVisible ? 1 : 0, y: subVisible ? 0 : 16 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            Plastic · Reconstructive · Hand Microsurgery
+            Hand, Wrist &amp; Reconstructive Plastic Surgeon
           </motion.p>
 
           <motion.p
             className={styles.tagline}
             initial={{ opacity: 0 }}
-            animate={{ opacity: subVisible ? 0.5 : 0 }}
+            animate={{ opacity: subVisible ? 0.7 : 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Sir Ganga Ram Hospital · Max Smart Super Speciality, New Delhi
+            Sir Ganga Ram Hospital, New Delhi
           </motion.p>
         </div>
 

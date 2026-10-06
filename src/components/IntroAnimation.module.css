@@ -88,20 +88,22 @@
 
 /* Subtitle */
 .subtitle {
-  font-size: clamp(0.85rem, 2vw, 1.15rem);
-  color: rgba(255, 255, 255, 0.75);
+  font-size: clamp(0.85rem, 2vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.9);
   text-transform: uppercase;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.14em;
   font-family: var(--font-sans, 'Inter', sans-serif);
-  font-weight: 400;
+  font-weight: 500;
+  padding: 0 16px;
 }
 
 .tagline {
-  margin-top: 12px;
-  font-size: clamp(0.7rem, 1.5vw, 0.88rem);
-  color: rgba(255, 255, 255, 0.38);
-  letter-spacing: 0.12em;
+  margin-top: 10px;
+  font-size: clamp(0.72rem, 1.5vw, 0.9rem);
+  color: var(--secondary, #ACB296);
+  letter-spacing: 0.1em;
   font-family: var(--font-sans, 'Inter', sans-serif);
+  font-weight: 500;
 }
 
 /* GS monogram corner */

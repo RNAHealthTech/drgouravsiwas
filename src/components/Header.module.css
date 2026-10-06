@@ -50,15 +50,17 @@
 }
 
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   width: 100%;
+  gap: 16px;
 }
 
 .logo {
-  flex: 1;
   display: flex;
   align-items: center;
+  min-width: 0;
 }
 
 .logoLink {
@@ -66,7 +68,7 @@
   align-items: center;
   gap: 16px;
   text-decoration: none;
-  flex: 0 0 auto;
+  flex-shrink: 0;
 }
 
 .logoEmblemWrap {
@@ -103,25 +105,28 @@
 }
 
 .logoName {
-  font-weight: 500;
-  font-size: 0.95rem;
+  font-weight: 600;
+  font-size: 0.92rem;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.08em;
   color: var(--text-white);
   transition: color 0.3s ease;
 }
 
 .logoTitle {
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.7);
   transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
 .nav {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -537,17 +542,14 @@
 .ctaGroup {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding-left: 16px;
-  margin-left: 8px;
-  border-left: 1px solid rgba(255, 255, 255, 0.15);
-  flex: 1;
   justify-content: flex-end;
+  gap: 8px;
 }
 
 .scrolled .ctaGroup {
   border-left-color: rgba(62, 39, 35, 0.18);
 }
+
 
 .headerContactLink {
   display: inline-flex;
@@ -784,6 +786,30 @@
   display: none;
 }
 
+@media (max-width: 1360px) {
+  .container {
+    gap: 12px;
+  }
+
+  .nav {
+    gap: 14px;
+  }
+
+  .navLink {
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+  }
+
+  .headerContactText {
+    display: none;
+  }
+
+  .headerContactLink {
+    padding: 6px;
+    border-radius: 50%;
+  }
+}
+
 @media (max-width: 1024px) {
   .header {
     height: auto;
@@ -794,7 +820,13 @@
   }
 
   .container {
+    display: flex;
     height: 52px;
+    justify-content: space-between;
+  }
+
+  .logo {
+    flex: 0 0 auto;
   }
 
   .nav,
