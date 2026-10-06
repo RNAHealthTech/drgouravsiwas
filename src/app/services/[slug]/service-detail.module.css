@@ -520,80 +520,120 @@
   gap: 30px;
 }
 
-/* Quick Facts Card */
-.factsCard {
-  background: #ffffff;
+/* Modern Consultation Card in Sidebar */
+.consultCard {
+  background: linear-gradient(135deg, #ffffff 0%, #faf8f5 100%);
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(62, 39, 35, 0.08);
-  box-shadow: 0 8px 30px rgba(62, 39, 35, 0.06);
-  padding: 30px 26px;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 10px 35px rgba(42, 33, 24, 0.08);
+  padding: 32px 28px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
 
-.factsCard::before {
+.consultCard::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--secondary), #965b20);
+  background: linear-gradient(90deg, var(--secondary) 0%, #965b20 50%, var(--secondary) 100%);
 }
 
-.factsCardTitle {
-  font-family: var(--font-serif);
-  font-size: 1.4rem;
-  color: var(--primary);
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.factsBadge {
-  font-family: var(--font-sans);
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  background: rgba(212, 175, 55, 0.15);
-  color: #965b20;
-  padding: 4px 10px;
-  border-radius: var(--radius-full);
-}
-
-.factsList {
+.consultHeader {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-bottom: 26px;
+  gap: 8px;
 }
 
-.factRow {
-  display: flex;
+.consultCardBadge {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(62, 39, 35, 0.06);
-  font-size: 0.88rem;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: #965b20;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  width: fit-content;
 }
 
-.factLabelGroup {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.consultCardTitle {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: var(--primary);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.consultCardDoctorRole {
+  font-size: 0.82rem;
+  line-height: 1.5;
   color: var(--text-muted);
+  font-weight: 400;
 }
 
-.factIcon {
+.consultLocationPill {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(212, 175, 55, 0.06);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  font-size: 0.82rem;
+}
+
+.locationIcon {
   color: var(--secondary);
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
-.factValue {
+.consultLocationPill div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.consultLocationPill strong {
+  color: var(--primary);
   font-weight: 600;
+}
+
+.consultLocationPill span {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.consultMetaHighlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(62, 39, 35, 0.08);
+}
+
+.metaHighlightItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 500;
   color: var(--text-main);
-  text-align: right;
-  max-width: 170px;
+}
+
+.metaIcon {
+  color: var(--secondary);
+  flex-shrink: 0;
 }
 
 .sidebarActionGroup {

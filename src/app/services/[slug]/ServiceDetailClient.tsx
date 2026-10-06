@@ -254,61 +254,23 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
           </main>
 
           <aside className={styles.sidebar}>
-            <div className={styles.factsCard}>
-              <div className={styles.factsCardTitle}>
-                <span>Quick Facts</span>
-                <span className={styles.factsBadge}>Clinical Guide</span>
+            <div className={styles.consultCard}>
+              <div className={styles.consultHeader}>
+                <div className={styles.consultCardBadge}>
+                  <Sparkles size={13} />
+                  <span>Specialist Consultation</span>
+                </div>
+                <h3 className={styles.consultCardTitle}>Consult Dr. Gourav Siwas</h3>
+                <p className={styles.consultCardDoctorRole}>
+                  European Board Certified Hand, Wrist &amp; Reconstructive Surgeon
+                </p>
               </div>
 
-              <div className={styles.factsList}>
-                <div className={factRowStyle}>
-                  <div className={styles.factLabelGroup}>
-                    <Clock size={16} className={styles.factIcon} />
-                    <span>Duration</span>
-                  </div>
-                  <span className={styles.factValue}>{service.quickFacts.procedureTime}</span>
-                </div>
-
-                <div className={styles.factRow}>
-                  <div className={styles.factLabelGroup}>
-                    <ShieldCheck size={16} className={styles.factIcon} />
-                    <span>Anesthesia</span>
-                  </div>
-                  <span className={styles.factValue}>{service.quickFacts.anesthesia}</span>
-                </div>
-
-                <div className={styles.factRow}>
-                  <div className={styles.factLabelGroup}>
-                    <Building size={16} className={styles.factIcon} />
-                    <span>Hospital Stay</span>
-                  </div>
-                  <span className={styles.factValue}>{service.quickFacts.hospitalStay}</span>
-                </div>
-
-                <div className={styles.factRow}>
-                  <div className={styles.factLabelGroup}>
-                    <Calendar size={16} className={styles.factIcon} />
-                    <span>Downtime</span>
-                  </div>
-                  <span className={styles.factValue}>{service.quickFacts.downtime}</span>
-                </div>
-
-                <div className={styles.factRow}>
-                  <div className={styles.factLabelGroup}>
-                    <CheckCircle2 size={16} className={styles.factIcon} />
-                    <span>Success Rate</span>
-                  </div>
-                  <span className={styles.factValue}>{service.quickFacts.successRate}</span>
-                </div>
-
-                <div className={styles.factRow} style={{ borderBottom: 'none' }}>
-                  <div className={styles.factLabelGroup}>
-                    <Building size={16} className={styles.factIcon} />
-                    <span>Hospital</span>
-                  </div>
-                  <span className={styles.factValue} style={{ fontSize: '0.8rem' }}>
-                    Sir Ganga Ram Hospital
-                  </span>
+              <div className={styles.consultLocationPill}>
+                <Building size={16} className={styles.locationIcon} />
+                <div>
+                  <strong>Sir Ganga Ram Hospital</strong>
+                  <span>Room No. 2325, OPD Block, New Delhi</span>
                 </div>
               </div>
 
@@ -318,8 +280,8 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                   onClick={() => openBooking()}
                   className={styles.sidebarBtnPrimary}
                 >
-                  <Calendar size={16} />
-                  <span>Book Consultation</span>
+                  <Calendar size={18} />
+                  <span>Book OPD Appointment</span>
                 </button>
 
                 <a
@@ -328,9 +290,20 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                   rel="noopener noreferrer"
                   className={styles.sidebarBtnSecondary}
                 >
-                  <MessageCircle size={16} />
-                  <span>Chat on WhatsApp</span>
+                  <MessageCircle size={18} />
+                  <span>WhatsApp Enquiry</span>
                 </a>
+              </div>
+
+              <div className={styles.consultMetaHighlights}>
+                <div className={styles.metaHighlightItem}>
+                  <ShieldCheck size={16} className={styles.metaIcon} />
+                  <span>EDHS Certified Expert</span>
+                </div>
+                <div className={styles.metaHighlightItem}>
+                  <Clock size={16} className={styles.metaIcon} />
+                  <span>OPD Mon &ndash; Sat</span>
+                </div>
               </div>
             </div>
 

@@ -132,7 +132,7 @@ function ServicesContent() {
                           <Icon size={26} strokeWidth={1.75} />
                         </div>
                         <span className={styles.cardBadge}>
-                          {service.quickFacts.anesthesia.split('/')[0]}
+                          {service.categoryLabel}
                         </span>
                       </div>
                       <h3 className={styles.serviceTitle}>{service.shortTitle || service.title}</h3>
@@ -141,11 +141,8 @@ function ServicesContent() {
 
                     <div className={styles.cardFooter}>
                       <span className={styles.viewDetailsLink}>
-                        <span>View Procedure Guide</span>
-                        <ArrowRight size={14} />
-                      </span>
-                      <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
-                        {service.quickFacts.procedureTime}
+                        <span>Explore Procedure Guide</span>
+                        <ArrowRight size={14} className={styles.arrowIcon} />
                       </span>
                     </div>
                   </Link>
