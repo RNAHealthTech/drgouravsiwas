@@ -61,5 +61,63 @@ export default async function ServiceDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  return <ServiceDetailClient service={service} />;
+  const procedureSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalProcedure',
+    name: service.title,
+    description: Array.isArray(service.overview) ? service.overview.join(' ') : service.tagline,
+    procedureType: 'https://schema.org/SurgicalProcedure',
+    bodyLocation: service.categoryLabel,
+    relevantSpecialty: {
+      '@type': 'MedicalSpecialty',
+      name: 'Plastic and Reconstructive Surgery',
+    },
+    howPerformed: service.tagline,
+    performer: {
+      '@type': 'Physician',
+      name: 'Dr. Gourav Siwas',
+      jobTitle: 'Dual Board Certified Hand, Wrist & Reconstructive Plastic Surgeon',
+      hospitalAffiliation: 'Sir Ganga Ram Hospital, New Delhi',
+    },
+    followup: service.quickFacts?.downtime || 'Personalized post-operative rehabilitation protocol',
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://drgouravsiwas.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Services',
+        item: 'https://drgouravsiwas.com/services',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: service.title,
+        item: `https://drgouravsiwas.com/services/${service.slug}`,
+      },
+    ],
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(procedureSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <ServiceDetailClient service={service} />
+    </>
+  );
 }
