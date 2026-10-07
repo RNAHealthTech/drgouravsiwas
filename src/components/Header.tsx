@@ -7,7 +7,6 @@ import {
   ChevronDown,
   ChevronRight,
   ArrowRight,
-  PhoneCall,
   Phone,
   Mail,
   Activity,
@@ -58,9 +57,10 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 30);
     };
 
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -87,6 +87,7 @@ export default function Header() {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
+    { name: 'Specialties', href: '/expertise' },
     { name: 'Services', href: '/services', isDropdown: true },
     { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' },

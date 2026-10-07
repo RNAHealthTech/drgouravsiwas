@@ -26,15 +26,21 @@ export default function AppointmentModal({ isOpen, onClose, selectedType = 'Dire
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
+    let timer1: NodeJS.Timeout;
+    let timer2: NodeJS.Timeout;
     if (isOpen) {
-      setShouldRender(true);
-      const timer = setTimeout(() => setIsAnimating(true), 20);
-      return () => clearTimeout(timer);
+      timer1 = setTimeout(() => {
+        setShouldRender(true);
+        setIsAnimating(true);
+      }, 10);
     } else {
-      setIsAnimating(false);
-      const timer = setTimeout(() => setShouldRender(false), 300);
-      return () => clearTimeout(timer);
+      timer1 = setTimeout(() => setIsAnimating(false), 0);
+      timer2 = setTimeout(() => setShouldRender(false), 300);
     }
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
   }, [isOpen]);
 
   if (!shouldRender) return null;

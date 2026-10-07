@@ -72,7 +72,7 @@ export default function ScrollReveal({
     }
   };
 
-  const Component = as as any;
+  const Component = (as || 'div') as React.ElementType;
 
   const combinedClassName = `reveal ${getDirectionClass()} ${
     isRevealed ? 'reveal-active' : ''
@@ -87,7 +87,7 @@ export default function ScrollReveal({
   };
 
   return (
-    <Component ref={elementRef as any} className={combinedClassName} style={customStyle}>
+    <Component ref={elementRef} className={combinedClassName} style={customStyle}>
       {children}
     </Component>
   );

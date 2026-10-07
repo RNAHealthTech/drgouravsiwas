@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { doctorData } from '@/data/doctorData';
@@ -20,6 +20,7 @@ import EuropeanBoardShowcase from '@/components/EuropeanBoardShowcase';
 import OpdSchedule from '@/components/OpdSchedule';
 import EmergencyTraumaGuide from '@/components/EmergencyTraumaGuide';
 import HeroCanvasAnimation from '@/components/HeroCanvasAnimation';
+import Expertise from '@/components/Expertise';
 export default function Home() {
   const { openBooking } = useBooking();
   const heroRef = useRef<HTMLElement>(null);
@@ -56,7 +57,7 @@ export default function Home() {
     { title: 'International Academic Exchange & Clinical Mentorship', src: '/images/dr_gourav_mentorship.jpg' },
     { title: 'European Board of Hand Surgery Official Certification (EDHS)', src: '/images/cert-edhs.jpg' },
     { title: 'Advanced Microsurgery Fellowship — Ganga Hospital', src: '/images/cert-ganga-microsurgery.png' },
-    { title: 'Dr. Gourav Siwas — Plastic, Reconstructive & Hand Surgeon', src: '/images/dr_gourav_portrait.jpg' },
+    { title: 'Dr. Gourav Siwas — Plastic, Reconstructive & Hand Surgeon', src: '/images/dr_gourav_portrait_hd.jpg' },
   ];
 
   return (
@@ -77,10 +78,10 @@ export default function Home() {
           <motion.div className={styles.heroContent} initial="hidden" animate="visible" variants={stagger}>
             <motion.div variants={fadeUp} className={styles.heroDoctorAvatar}>
               <Image
-                src="/images/dr_gourav_portrait.jpg"
+                src="/images/dr_gourav_portrait_hd.jpg"
                 alt="Dr. Gourav Siwas"
-                width={120}
-                height={120}
+                width={160}
+                height={200}
                 className={styles.heroAvatarImg}
                 priority
               />
@@ -221,19 +222,15 @@ export default function Home() {
         </div>
       </section>
 
+      <Expertise />
+
       <section id="procedures" className={styles.procedures}>
         <div className="container">
           <motion.div 
             className={styles.sectionCenter}
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
           >
-            <h2 className={styles.expertiseHeading}>Areas of Expertise</h2>
-            <div className={styles.expertisePillsRow}>
-              {['Hand Surgery', 'Wrist Surgery', 'Brachial Plexus', 'Microsurgery', 'Reconstructive Surgery', 'Plastic Surgery'].map((item, idx) => (
-                <span key={idx} className={styles.expertisePill}>{item}</span>
-              ))}
-            </div>
-            <h3 className={styles.proceduresHeading}>Procedures</h3>
+            <h2 className={styles.proceduresHeading}>Procedures</h2>
           </motion.div>
 
           <div className={styles.proceduresSwiperWrap}>

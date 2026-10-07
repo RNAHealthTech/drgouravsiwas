@@ -27,8 +27,8 @@ export default function AboutPage() {
             transition={{ duration: 0.5 }}
             style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}
           >
-            <div style={{ width: '100px', height: '100px', borderRadius: '50%', border: '3px solid var(--secondary)', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.4), 0 0 20px rgba(172,178,150,0.3)' }}>
-              <Image src="/images/dr_gourav_portrait.jpg" alt="Dr. Gourav Siwas" width={100} height={100} style={{ objectFit: 'cover' }} priority />
+            <div style={{ width: '120px', height: '148px', borderRadius: '16px', border: '3px solid var(--secondary)', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.4), 0 0 20px rgba(172,178,150,0.3)' }}>
+              <Image src="/images/dr_gourav_portrait_hd.jpg" alt="Dr. Gourav Siwas" width={140} height={175} style={{ objectFit: 'cover' }} priority />
             </div>
           </motion.div>
 

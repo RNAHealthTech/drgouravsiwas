@@ -102,11 +102,11 @@ export default function EuropeanBoardShowcase() {
 
                   <div className={styles.emblemStats}>
                     <div className={styles.emblemStat}>
-                      <span className={styles.statVal}>India's Youngest</span>
+                      <span className={styles.statVal}>India&apos;s Youngest</span>
                       <span className={styles.statDesc}>European Board Certified Hand Surgeon</span>
                     </div>
                     <div className={styles.emblemStat}>
-                      <span className={styles.statVal}>New Delhi's 1st</span>
+                      <span className={styles.statVal}>New Delhi&apos;s 1st</span>
                       <span className={styles.statDesc}>Plastic Surgeon (EDHS)</span>
                     </div>
                   </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -49,14 +49,9 @@ const iconMap: Record<string, React.ElementType> = {
 function ServicesContent() {
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get('category');
+  const initialTab = (categoryParam && serviceCategories.some((c) => c.id === categoryParam)) ? categoryParam : 'hand-wrist';
 
-  const [activeTab, setActiveTab] = useState<string>('hand-wrist');
-
-  useEffect(() => {
-    if (categoryParam && serviceCategories.some((c) => c.id === categoryParam)) {
-      setActiveTab(categoryParam);
-    }
-  }, [categoryParam]);
+  const [activeTab, setActiveTab] = useState<string>(initialTab);
 
   const filteredServices = servicesData.filter((s) => s.category === activeTab);
 

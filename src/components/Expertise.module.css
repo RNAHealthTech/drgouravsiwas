@@ -1,15 +1,79 @@
 .expertise {
   background-color: transparent;
   position: relative;
+  scroll-margin-top: 100px;
+}
+
+.tabsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.tabBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  background: #ffffff;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.tabBtn:hover {
+  background: rgba(172, 178, 150, 0.18);
+  color: var(--primary);
+  border-color: rgba(102, 70, 55, 0.3);
+  transform: translateY(-2px);
+}
+
+.tabBtnActive {
+  background: var(--primary) !important;
+  color: var(--text-white) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 4px 16px rgba(102, 70, 55, 0.25);
+  transform: translateY(-2px);
+}
+
+.tabBtnActive .tabIcon svg {
+  stroke: var(--text-white);
+}
+
+.tabIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabIcon svg {
+  width: 18px;
+  height: 18px;
+  transition: stroke 0.3s ease;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
 }
 
-@media (max-width: 768px) {
+.singleCardWrap {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+@media (max-width: 992px) {
   .grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -17,10 +81,15 @@
 }
 
 .card {
-  padding: 32px;
+  padding: 36px 40px;
   display: flex;
   flex-direction: column;
   height: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid rgba(102, 70, 55, 0.14);
+  box-shadow: 0 10px 30px rgba(102, 70, 55, 0.05);
+  transition: all 0.35s ease;
 }
 
 .iconWrapper {

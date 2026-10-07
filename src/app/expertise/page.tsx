@@ -35,7 +35,7 @@ export default function ExpertisePage() {
                   <div className={styles.stars}>
                     {"★".repeat(t.rating)}
                   </div>
-                  <p className={styles.testimonialFeedback}>"{t.feedback}"</p>
+                  <p className={styles.testimonialFeedback}>&ldquo;{t.feedback}&rdquo;</p>
                 </div>
               </ScrollReveal>
             ))}

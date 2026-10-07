@@ -35,8 +35,8 @@ export default function Achievements() {
               <div className={`${styles.credentialCard} glass-card`}>
                 <div className={styles.credIcon}>🏥</div>
                 <div className={styles.credContent}>
-                  <h4>Delhi's 1st Bilateral Hand Transplant</h4>
-                  <p>Part of the esteemed surgical team that performed Delhi's first successful bilateral hand transplant in January 2024 at Sir Ganga Ram Hospital.</p>
+                  <h4>Delhi&apos;s 1st Bilateral Hand Transplant</h4>
+                  <p>Part of the esteemed surgical team that performed Delhi&apos;s first successful bilateral hand transplant in January 2024 at Sir Ganga Ram Hospital.</p>
                 </div>
               </div>
             </ScrollReveal>

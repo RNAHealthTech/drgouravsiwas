@@ -13,7 +13,7 @@ interface ClientLayoutProps {
 }
 
 function ClientLayoutContent({ children }: { children: React.ReactNode }) {
-  const { isBookingOpen, bookingType, openBooking, closeBooking } = useBooking();
+  const { isBookingOpen, bookingType, closeBooking } = useBooking();
 
   return (
     <>

@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { X, Award, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import styles from './CertificatesGallery.module.css';
 
 const certificates = [
@@ -18,6 +18,15 @@ const certificates = [
   },
   {
     id: 2,
+    title: 'Member of National Academy of Medical Sciences (MNAMS)',
+    issuer: 'National Academy of Medical Sciences (India), New Delhi',
+    year: '2024',
+    location: 'New Delhi, India',
+    image: '/images/cert-mnams.jpg',
+    badge: '📜 Member MNAMS',
+  },
+  {
+    id: 3,
     title: 'EBHS 30th Anniversary Convocation Ceremony',
     issuer: 'European Board of Hand Surgery Examination — Basel Stage',
     year: '2026',
@@ -26,7 +35,7 @@ const certificates = [
     badge: '🎖️ Convocation Milestone',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Fellowship — Hand & Upper Extremity Surgery',
     issuer: 'Max Institute of Medical Education, Max Healthcare',
     year: '2025',
@@ -35,7 +44,7 @@ const certificates = [
     badge: '⭐ Fellowship',
   },
   {
-    id: 4,
+    id: 5,
     title: 'International Academic Mentorship & Faculty Fellowship',
     issuer: 'Global Hand & Reconstructive Microsurgery Exchange',
     year: '2025',
@@ -44,7 +53,7 @@ const certificates = [
     badge: '🤝 Faculty Mentorship',
   },
   {
-    id: 5,
+    id: 6,
     title: 'Hands-on Course in Microsurgery',
     issuer: 'Ganga Microsurgery Training Institute',
     year: '2022',
@@ -53,7 +62,7 @@ const certificates = [
     badge: '🔬 Microsurgery',
   },
   {
-    id: 6,
+    id: 7,
     title: 'Membership Certificate — APSI',
     issuer: 'Association of Plastic Surgeons of India',
     year: '2024',
@@ -62,7 +71,7 @@ const certificates = [
     badge: '📜 Membership',
   },
   {
-    id: 7,
+    id: 8,
     title: 'Membership Certificate — ISSH',
     issuer: 'Indian Society for Surgery of the Hand',
     year: '2025',
@@ -71,7 +80,7 @@ const certificates = [
     badge: '📜 Membership',
   },
   {
-    id: 8,
+    id: 9,
     title: 'Certificate of Participation — WSRM 2023',
     issuer: '12th Congress of World Society for Reconstructive Microsurgery',
     year: '2023',

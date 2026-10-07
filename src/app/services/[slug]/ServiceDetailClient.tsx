@@ -380,5 +380,3 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
     </div>
   );
 }
-
-const factRowStyle = styles.factRow;

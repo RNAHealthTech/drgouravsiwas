@@ -48,7 +48,7 @@ export default function TestimonialsPage() {
                     <Star key={i} size={16} fill="currentColor" />
                   ))}
                 </div>
-                <p style={{ fontStyle: 'italic', fontSize: '1.1rem', marginBottom: '32px', flexGrow: 1 }}>"{t.feedback}"</p>
+                <p style={{ fontStyle: 'italic', fontSize: '1.1rem', marginBottom: '32px', flexGrow: 1 }}>&ldquo;{t.feedback}&rdquo;</p>
                 <div style={{ borderTop: '1px solid var(--border)', paddingTop: '24px' }}>
                   <strong style={{ display: 'block', fontFamily: 'var(--font-serif)', color: 'var(--primary)', fontSize: '1.2rem' }}>{t.patientName}</strong>
                   <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-muted)' }}>{t.condition}</span>

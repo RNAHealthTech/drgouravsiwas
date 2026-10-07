@@ -128,7 +128,7 @@ export default function ContactPage() {
             style={{ textAlign: 'center', marginBottom: '60px' }}
           >
             <h2 style={{ fontSize: '3rem', color: 'var(--primary)', marginBottom: '16px' }}>OPD Schedule</h2>
-            <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)' }}>Plan your visit according to Dr. Gourav's availability.</p>
+            <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)' }}>Plan your visit according to Dr. Gourav&apos;s availability.</p>
           </motion.div>
           <OpdSchedule />
         </div>
