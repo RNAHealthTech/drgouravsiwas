@@ -53,6 +53,7 @@ export default function Home() {
   ];
 
   const galleryImages = [
+    { title: 'Member of National Academy of Medical Sciences (MNAMS) — Plastic & Reconstructive Surgery (2024)', src: '/images/cert-mnams.jpg' },
     { title: 'European Diploma in Hand Surgery (Basel, Switzerland)', src: '/images/dr_gourav_ebhs_award.jpg' },
     { title: 'International Academic Exchange & Clinical Mentorship', src: '/images/dr_gourav_mentorship.jpg' },
     { title: 'European Board of Hand Surgery Official Certification (EDHS)', src: '/images/cert-edhs.jpg' },
