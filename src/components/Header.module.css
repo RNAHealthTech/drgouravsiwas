@@ -48,30 +48,34 @@
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
-  gap: 16px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 28px;
+  gap: 20px;
 }
 
 .logo {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
   min-width: 0;
 }
 
 .logoLink {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   text-decoration: none;
   flex-shrink: 0;
 }
 
 .logoEmblemWrap {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 10px;
   overflow: hidden;
   background: #ffffff;
@@ -99,22 +103,23 @@
   display: flex;
   flex-direction: column;
   border-left: 1px solid rgba(128, 128, 128, 0.4);
-  padding-left: 16px;
+  padding-left: 14px;
 }
 
 .logoName {
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: 0.90rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text-white);
   transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
 .logoTitle {
-  font-size: 0.62rem;
+  font-size: 0.58rem;
   font-weight: 500;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.035em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.7);
   transition: color 0.3s ease;
@@ -125,7 +130,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 18px;
+  flex-shrink: 0;
 }
 
 .navLink {
@@ -133,13 +139,13 @@
   font-weight: 500;
   color: rgba(255, 255, 255, 0.9);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   position: relative;
-  padding: 8px 0;
+  padding: 8px 3px;
   transition: color 0.3s ease;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   cursor: pointer;
   background: transparent;
   border: none;
@@ -542,47 +548,55 @@
   align-items: center;
   justify-content: flex-end;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .scrolled .ctaGroup {
   border-left-color: rgba(62, 39, 35, 0.18);
 }
 
-
 .headerContactLink {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.88);
   font-size: 0.68rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   text-decoration: none;
   transition: all 0.25s ease;
   padding: 5px 10px;
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   white-space: nowrap;
 }
 
 .headerContactLink:hover {
   color: var(--secondary);
   border-color: var(--secondary);
-  background: rgba(172, 178, 150, 0.15);
+  background: rgba(172, 178, 150, 0.18);
   transform: translateY(-1px);
 }
 
 .scrolled .headerContactLink {
-  color: var(--text-main);
-  background: rgba(102, 70, 55, 0.05);
-  border-color: var(--border);
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(212, 175, 55, 0.22);
 }
 
 .scrolled .headerContactLink:hover {
-  color: var(--primary);
-  border-color: var(--primary);
-  background: rgba(172, 178, 150, 0.2);
+  color: var(--secondary);
+  border-color: var(--secondary);
+  background: rgba(212, 175, 55, 0.16);
+}
+
+.headerBookBtn {
+  padding: 9px 18px !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.05em !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
 }
 
 .mobileContactRow {
@@ -784,9 +798,10 @@
   display: none;
 }
 
-@media (max-width: 1360px) {
+@media (max-width: 1380px) {
   .container {
-    gap: 12px;
+    gap: 14px;
+    padding: 0 20px;
   }
 
   .nav {
@@ -798,17 +813,60 @@
     letter-spacing: 0.06em;
   }
 
-  .headerContactText {
+  .headerEmailText {
     display: none;
   }
 
-  .headerContactLink {
-    padding: 6px;
+  .headerEmailLink {
+    padding: 6px 8px;
     border-radius: 50%;
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
+  .container {
+    gap: 10px;
+    padding: 0 16px;
+  }
+
+  .nav {
+    gap: 10px;
+  }
+
+  .navLink {
+    font-size: 0.64rem;
+    letter-spacing: 0.04em;
+    padding: 6px 1px;
+  }
+
+  .logoTextGroup {
+    padding-left: 10px;
+  }
+
+  .logoName {
+    font-size: 0.84rem;
+  }
+
+  .logoTitle {
+    font-size: 0.56rem;
+  }
+
+  .headerPhoneText {
+    display: none;
+  }
+
+  .headerPhoneLink {
+    padding: 6px 8px;
+    border-radius: 50%;
+  }
+
+  .headerBookBtn {
+    padding: 8px 14px !important;
+    font-size: 0.72rem !important;
+  }
+}
+
+@media (max-width: 1100px) {
   .header {
     height: auto;
     min-height: 86px;
@@ -821,6 +879,7 @@
     display: flex;
     height: 52px;
     justify-content: space-between;
+    padding: 0 20px;
   }
 
   .logo {

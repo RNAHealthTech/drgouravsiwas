@@ -109,10 +109,10 @@ export default function Home() {
           </motion.div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className={styles.heroScroll}
-          initial={{ opacity: 0 }} 
-          animate={{ opacity: 1 }} 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ delay: 2 }}
         >
           <span>Scroll</span>
@@ -134,7 +134,7 @@ export default function Home() {
         <div className="container">
           <div className={styles.aboutGrid}>
             <div className={styles.aboutImgCol}>
-              <motion.div 
+              <motion.div
                 className={styles.aboutImgInner}
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -146,12 +146,12 @@ export default function Home() {
                 </div>
                 <div className={styles.aboutFloat}>
                   <span className={styles.aboutFloatNum}>10+</span>
-                  <span className={styles.aboutFloatLabel}>Years of<br/>Excellence</span>
+                  <span className={styles.aboutFloatLabel}>Years of<br />Excellence</span>
                 </div>
               </motion.div>
             </div>
 
-            <motion.div 
+            <motion.div
               className={styles.aboutTextCol}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -159,7 +159,7 @@ export default function Home() {
               transition={{ duration: 0.9, delay: 0.2 }}
             >
               <span className={styles.sectionLabel}>About the Surgeon</span>
-              <h2 className={styles.sectionHeading}>Where Artistry<br/>Meets Precision</h2>
+              <h2 className={styles.sectionHeading}>Where Artistry<br />Meets Precision</h2>
               <div className={styles.aboutBio}>
                 <p>
                   Dr. Gourav Siwas is a board certified Plastic &amp; Reconstructive Surgeon &amp; India’s youngest European board certified Hand surgeon with fellowship in Hand &amp; Upper Extremity Surgery.
@@ -202,8 +202,8 @@ export default function Home() {
             {stats.map((s, i) => {
               const IconComp = s.icon;
               return (
-                <motion.div 
-                  key={i} 
+                <motion.div
+                  key={i}
                   className={styles.statCard}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -228,7 +228,7 @@ export default function Home() {
 
       <section id="procedures" className={styles.procedures}>
         <div className="container">
-          <motion.div 
+          <motion.div
             className={styles.sectionCenter}
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
           >
@@ -285,7 +285,7 @@ export default function Home() {
       <section className={styles.parallax}>
         <div className={styles.parallaxBg} />
         <div className={styles.parallaxInner}>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -309,7 +309,7 @@ export default function Home() {
 
       <section className={styles.testimonials}>
         <div className="container">
-          <motion.div 
+          <motion.div
             className={styles.sectionCenter}
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
           >
@@ -356,7 +356,7 @@ export default function Home() {
 
       <section className={styles.gallery}>
         <div className="container">
-          <motion.div 
+          <motion.div
             className={styles.sectionCenter}
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
           >
@@ -399,7 +399,7 @@ export default function Home() {
 
       <section className={styles.cta}>
         <div className="container">
-          <motion.div 
+          <motion.div
             className={styles.ctaInner}
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}

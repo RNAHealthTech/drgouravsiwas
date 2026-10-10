@@ -9,7 +9,7 @@ export default function OpdSchedule() {
   const [activeTab, setActiveTab] = useState<'general' | 'private' | 'emergency'>('general');
   const { openBooking } = useBooking();
 
-  const generalOpd = doctorData.opdTimings.find(t => t.type.includes('General'));
+  const generalOpd = doctorData.opdTimings.find(t => t.type.includes('General') || t.type.includes('OPD'));
   const privateOpd = doctorData.opdTimings.find(t => t.type.includes('Private'));
   const emergencyOpd = doctorData.opdTimings.find(t => t.type.includes('Other') || t.type.includes('Emergency'));
 
@@ -17,7 +17,7 @@ export default function OpdSchedule() {
     <section id="opd" className={styles.opd}>
       <div className="container">
         <div className="section-title">
-          <h2>OPD Schedule & Consultation Tariffs</h2>
+          <h2>OPD Consultation Schedule</h2>
           <p>Official consultation schedule & department room timings at Sir Ganga Ram Hospital</p>
         </div>
 
@@ -83,7 +83,7 @@ export default function OpdSchedule() {
                       </svg>
                     </span>
                     <div className={styles.detailText} style={{ flexGrow: 1 }}>
-                      <strong>Department / Room</strong>
+                      <strong>Department / Location</strong>
                       <span>{generalOpd.location}</span>
                     </div>
                     <a 
@@ -150,7 +150,7 @@ export default function OpdSchedule() {
                       </svg>
                     </span>
                     <div className={styles.detailText} style={{ flexGrow: 1 }}>
-                      <strong>Department / Room</strong>
+                      <strong>Department / Location</strong>
                       <span>{privateOpd.location}</span>
                     </div>
                     <a 
@@ -219,18 +219,6 @@ export default function OpdSchedule() {
                   <div className={styles.detailRow}>
                     <span className={styles.detailIcon}>
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                      </svg>
-                    </span>
-                    <div className={styles.detailText}>
-                      <strong>Doctor Emergency Contact</strong>
-                      <span>+91 8950406670</span>
-                    </div>
-                  </div>
-
-                  <div className={styles.detailRow}>
-                    <span className={styles.detailIcon}>
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <rect width="20" height="16" x="2" y="4" rx="2" />
                         <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                       </svg>
@@ -266,25 +254,12 @@ export default function OpdSchedule() {
           </div>
 
           <div className={`${styles.feeCard} glass-card`}>
-            <h3 className={styles.feeTitle}>Consultation Tariffs</h3>
-            <p className={styles.feeSubtitle}>Official fee structure at Sir Ganga Ram Hospital - Pvt. OPD.</p>
+            <h3 className={styles.feeTitle}>Consultation Guidelines</h3>
+            <p className={styles.feeSubtitle}>Official OPD at Department of Plastic Surgery, Sir Ganga Ram Hospital.</p>
             
-            <div className={styles.feeList}>
-              {doctorData.fees.map((fee, idx) => (
-                <div key={idx} className={styles.feeItem}>
-                  <div className={styles.feeType}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="3" style={{ marginRight: '8px' }}>
-                      <circle cx="12" cy="12" r="10" />
-                    </svg>
-                    <strong>{fee.type}</strong>
-                  </div>
-                  <span className={styles.feePrice}>₹{fee.amount}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className={styles.notice}>
-              <p><strong>Note:</strong> Consultation fees are payable directly at Sir Ganga Ram Hospital counters or via official portal. We do not solicit unofficial outside payment links.</p>
+            <div className={styles.notice} style={{ marginTop: '16px' }}>
+              <p><strong>Appointment Registration:</strong> Consultations can be scheduled through our booking portal or directly at Sir Ganga Ram Hospital OPD reception desks.</p>
+              <p style={{ marginTop: '12px' }}><strong>Emergency Trauma:</strong> For acute amputations, severed tendons, or burns, the 24x7 Emergency Microsurgical unit is immediately available at the hospital casualty.</p>
             </div>
           </div>
         </div>

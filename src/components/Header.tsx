@@ -89,6 +89,7 @@ export default function Header() {
     { name: 'About', href: '/about' },
     { name: 'Specialties', href: '/expertise' },
     { name: 'Services', href: '/services', isDropdown: true },
+    { name: 'Media', href: '/media' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' },
   ];
@@ -245,27 +246,26 @@ export default function Header() {
         <div className={styles.ctaGroup}>
           <a
             href="tel:+918950406670"
-            className={styles.headerContactLink}
+            className={`${styles.headerContactLink} ${styles.headerPhoneLink}`}
             title="Call Dr. Gourav Siwas (8950406670)"
           >
-            <Phone size={14} />
-            <span className={styles.headerContactText}>8950406670</span>
+            <Phone size={13} />
+            <span className={styles.headerPhoneText}>8950406670</span>
           </a>
           <a
             href="mailto:siwasgourav@gmail.com"
-            className={styles.headerContactLink}
+            className={`${styles.headerContactLink} ${styles.headerEmailLink}`}
             title="Email Dr. Gourav Siwas (siwasgourav@gmail.com)"
           >
-            <Mail size={14} />
-            <span className={styles.headerContactText}>siwasgourav@gmail.com</span>
+            <Mail size={13} />
+            <span className={styles.headerEmailText}>siwasgourav@gmail.com</span>
           </a>
           <button
             onClick={() => {
               closeAllMenus();
               openBooking();
             }}
-            className="btn btn-primary"
-            style={{ padding: '10px 22px', fontSize: '0.8rem' }}
+            className={`btn btn-primary ${styles.headerBookBtn}`}
           >
             Book Appointment
           </button>

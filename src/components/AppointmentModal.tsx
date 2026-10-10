@@ -15,10 +15,9 @@ export default function AppointmentModal({ isOpen, onClose, selectedType = 'Dire
   const [date, setDate] = useState('');
   const [timeSlot, setTimeSlot] = useState('');
   const [name, setName] = useState('');
-  const [mobile, setMobile] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -45,12 +44,10 @@ export default function AppointmentModal({ isOpen, onClose, selectedType = 'Dire
 
   if (!shouldRender) return null;
 
-  const currentFee = doctorData.fees.find(f => f.type === consultationType)?.amount || 1000;
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
@@ -62,38 +59,40 @@ export default function AppointmentModal({ isOpen, onClose, selectedType = 'Dire
     setDate('');
     setTimeSlot('');
     setName('');
-    setMobile('');
     setEmail('');
     setMessage('');
     onClose();
   };
 
   const timeSlots = [
-    "09:00 AM - 09:30 AM",
-    "09:30 AM - 10:00 AM",
-    "10:00 AM - 10:30 AM",
-    "10:30 AM - 11:00 AM",
-    "04:00 PM - 04:30 PM",
-    "04:30 PM - 05:00 PM",
-    "05:00 PM - 05:30 PM",
-    "05:30 PM - 06:00 PM"
+    "08:00 AM - 09:00 AM",
+    "09:00 AM - 10:00 AM",
+    "10:00 AM - 11:00 AM",
+    "11:00 AM - 12:00 PM",
+    "12:00 PM - 01:00 PM",
+    "02:00 PM - 03:00 PM",
+    "03:00 PM - 04:00 PM",
+    "04:00 PM - 05:00 PM",
+    "05:00 PM - 06:00 PM",
+    "06:00 PM - 07:00 PM",
+    "07:00 PM - 08:00 PM"
   ];
 
   return (
     <div className={`${styles.overlay} ${isAnimating ? styles.overlayActive : ''}`} onClick={resetForm}>
       <div className={`${styles.modal} ${isAnimating ? styles.modalActive : ''}`} onClick={e => e.stopPropagation()}>
         <button className={styles.closeBtn} onClick={resetForm}>&times;</button>
-        
+
         {!isSuccess ? (
           <>
             <h3 className={styles.title}>Book a Consultation</h3>
             <p className={styles.subtitle}>With {doctorData.name}</p>
-            
+
             <div className={styles.doctorBrief}>
               <div className={styles.doctorInfo}>
                 <strong>{doctorData.name}</strong>
-                <span>Associate Consultant- Hand, wrist &amp; Reconstructive Microsurgery</span>
-                <span>Plastic, Hand &amp; Reconstructive Microsurgeon</span>
+                <span>Consultant Hand &amp; Microsurgery</span>
+                <span>Department of Plastic Surgery, Sir Ganga Ram Hospital</span>
               </div>
             </div>
 
@@ -102,13 +101,12 @@ export default function AppointmentModal({ isOpen, onClose, selectedType = 'Dire
                 <span className={styles.label}>Select Consultation Type:</span>
                 <div className={styles.feeCards}>
                   {doctorData.fees.map((fee) => (
-                    <div 
+                    <div
                       key={fee.type}
                       className={`${styles.feeCard} ${consultationType === fee.type ? styles.feeCardActive : ''}`}
                       onClick={() => setConsultationType(fee.type)}
                     >
                       <span className={styles.feeTypeName}>{fee.type}</span>
-                      <span className={styles.feeAmount}>₹{fee.amount}</span>
                     </div>
                   ))}
                 </div>
@@ -117,20 +115,20 @@ export default function AppointmentModal({ isOpen, onClose, selectedType = 'Dire
               <div className={styles.row}>
                 <div className="form-group" style={{ flex: 1 }}>
                   <label className="form-label">Preferred Date</label>
-                  <input 
-                    type="date" 
-                    className="form-input" 
-                    required 
+                  <input
+                    type="date"
+                    className="form-input"
+                    required
                     min={new Date().toISOString().split('T')[0]}
                     value={date}
                     onChange={e => setDate(e.target.value)}
                   />
                 </div>
-                
+
                 <div className="form-group" style={{ flex: 1 }}>
                   <label className="form-label">Preferred Time Slot</label>
-                  <select 
-                    className="form-input" 
+                  <select
+                    className="form-input"
                     required
                     value={timeSlot}
                     onChange={e => setTimeSlot(e.target.value)}
@@ -145,61 +143,48 @@ export default function AppointmentModal({ isOpen, onClose, selectedType = 'Dire
 
               <div className="form-group">
                 <label className="form-label">Patient Name</label>
-                <input 
-                  type="text" 
-                  className="form-input" 
-                  placeholder="Enter patient full name" 
-                  required 
+                <input
+                  type="text"
+                  className="form-input"
+                  placeholder="Enter patient full name"
+                  required
                   value={name}
                   onChange={e => setName(e.target.value)}
                 />
               </div>
 
               <div className="form-group">
-                <label className="form-label">Mobile Number</label>
-                <input 
-                  type="tel" 
-                  className="form-input" 
-                  placeholder="10-digit mobile number" 
-                  pattern="[6-9][0-9]{9}"
-                  required 
-                  value={mobile}
-                  onChange={e => setMobile(e.target.value)}
-                />
-              </div>
-
-              <div className="form-group">
                 <label className="form-label">Email Address</label>
-                <input 
-                  type="email" 
-                  className="form-input" 
-                  placeholder="Enter email address" 
-                  required 
+                <input
+                  type="email"
+                  className="form-input"
+                  placeholder="Enter email address"
+                  required
                   value={email}
                   onChange={e => setEmail(e.target.value)}
                 />
               </div>
 
               <div className="form-group">
-                <label className="form-label">Medical History / Clinical Notes (Optional)</label>
-                <textarea 
-                  className="form-input" 
-                  placeholder="Briefly describe the reason for appointment (e.g. Hand injury, Rhinoplasty, Scar revision)"
+                <label className="form-label">Reason for Consultation (Optional)</label>
+                <textarea
+                  className="form-input"
+                  placeholder="Briefly describe the concern (e.g. Hand injury, Wrist pain, Nerve reconstruction, Flap surgery)"
                   value={message}
                   onChange={e => setMessage(e.target.value)}
                 />
               </div>
 
-              <button 
+              <button
                 id="modal-submit-btn"
-                type="submit" 
-                className="btn btn-primary" 
+                type="submit"
+                className="btn btn-primary"
                 style={{ width: '100%', marginTop: '10px' }}
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
                   <div className={styles.spinner}></div>
-                ) : `Submit Appointment Request (Pay ₹${currentFee} at Hospital Desk)`}
+                ) : 'Submit Appointment Request'}
               </button>
             </form>
           </>
@@ -216,8 +201,7 @@ export default function AppointmentModal({ isOpen, onClose, selectedType = 'Dire
             </p>
             <div className={styles.receipt}>
               <div><strong>Type:</strong> {consultationType}</div>
-              <div><strong>Tariff:</strong> ₹{currentFee} (Payable at hospital counter)</div>
-              <div><strong>Location:</strong> {doctorData.opdTimings[0].location}</div>
+              <div><strong>Location:</strong> Department of Plastic Surgery, Sir Ganga Ram Hospital</div>
             </div>
             <button className="btn btn-primary" onClick={resetForm} style={{ marginTop: '20px' }}>
               Close Window

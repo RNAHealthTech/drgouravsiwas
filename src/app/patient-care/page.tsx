@@ -147,8 +147,8 @@ export default function PatientCarePage() {
               <h3>Consultation Timings (OPD Hours)</h3>
               <p>For check-ups, follow-ups, and suture removals, visit {doctorData.name} during his OPD hours at Sir Ganga Ram Hospital:</p>
               <div className={styles.opdGrid}>
-                <span className={styles.opdBadge}>📍 Room No. F-52, Plastic Surgery OPD</span>
-                <span className={styles.opdBadge}>🗓️ Mon - Sat (09:00 AM - 11:00 AM & 04:00 PM - 06:00 PM)</span>
+                <span className={styles.opdBadge}>📍 Department of Plastic Surgery, Sir Ganga Ram Hospital</span>
+                <span className={styles.opdBadge}>🗓️ Mon - Sat (08:00 AM - 08:00 PM)</span>
                 <span className={styles.opdBadge}>📞 +91 11-4225 4000 / Emergency Casualty</span>
               </div>
             </div>

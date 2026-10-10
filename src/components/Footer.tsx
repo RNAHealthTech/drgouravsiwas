@@ -42,6 +42,7 @@ export default function Footer() {
               <li><Link href="/">Home</Link></li>
               <li><Link href="/about">About & Qualifications</Link></li>
               <li><Link href="/expertise">Specialties & Procedures</Link></li>
+              <li><Link href="/media">Media & Press</Link></li>
               <li><Link href="/journey">Academic Journey</Link></li>
               <li><Link href="/opd">OPD Schedule & Tariffs</Link></li>
               <li><Link href="/faqs">Patient FAQs</Link></li>
@@ -57,7 +58,7 @@ export default function Footer() {
           <div className={styles.column}>
             <h4 className={styles.title}>Sir Ganga Ram Hospital</h4>
             <address className={styles.address}>
-              <strong>Room No. 2325, Department of Plastic Surgery</strong><br />
+              <strong>Department of Plastic Surgery, Sir Ganga Ram Hospital</strong><br />
               Sir Ganga Ram Hospital Marg,<br />
               Rajinder Nagar, New Delhi,<br />
               Delhi - 110060, India

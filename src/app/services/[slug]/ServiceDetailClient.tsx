@@ -270,7 +270,7 @@ export default function ServiceDetailClient({ service }: ServiceDetailClientProp
                 <Building size={16} className={styles.locationIcon} />
                 <div>
                   <strong>Sir Ganga Ram Hospital</strong>
-                  <span>Room No. 2325, OPD Block, New Delhi</span>
+                  <span>Department of Plastic Surgery, New Delhi</span>
                 </div>
               </div>
 

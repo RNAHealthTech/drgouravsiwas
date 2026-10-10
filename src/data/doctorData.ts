@@ -108,7 +108,7 @@ export const doctorData: DoctorProfile = {
   specialty: "Hand, Wrist & Reconstructive Plastic Surgeon",
   department: "Department of Plastic Surgery",
   hospital: "Sir Ganga Ram Hospital, New Delhi",
-  hospitalAddress: "Sir Ganga Ram Hospital (SGRH), Rajinder Nagar, New Delhi - 110060",
+  hospitalAddress: "Department of Plastic Surgery, Sir Ganga Ram Hospital, Rajinder Nagar, New Delhi - 110060",
   email: "siwasgourav@gmail.com",
   phone: "+91-8950406670",
   phoneAlt: "+91-8950406670",
@@ -204,22 +204,22 @@ export const doctorData: DoctorProfile = {
   dissertation: "PROSPECTIVE COMPARATIVE STUDY OF FUNCTIONAL & AESTHETIC OUTCOMES OF THENAR VS V-Y FLAP FOR FINGERTIP INJURIES IN CHILDREN",
   opdTimings: [
     {
-      type: "General OPD",
-      days: "Monday",
-      time: "09:00 AM - 10:00 AM & 04:00 PM - 06:00 PM",
-      location: "Sir Ganga Ram Hospital, New Delhi"
+      type: "OPD Consultation",
+      days: "Monday - Saturday",
+      time: "08:00 AM - 08:00 PM",
+      location: "Department of Plastic Surgery, Sir Ganga Ram Hospital"
     },
     {
       type: "Private OPD",
       days: "Monday - Saturday",
-      time: "08:00 AM - 10:00 AM",
-      location: "Room No. F-52, A Block, Plastic Surgery, Sir Ganga Ram Hospital, New Delhi"
+      time: "08:00 AM - 08:00 PM",
+      location: "Department of Plastic Surgery, Sir Ganga Ram Hospital"
     },
     {
-      type: "Other Clinic / Emergency",
+      type: "Emergency & Trauma",
       days: "24/7 Round the Clock",
       time: "24/7 Emergency Services Available",
-      location: "Sir Ganga Ram Hospital, Rajinder Nagar, New Delhi - 110060"
+      location: "Department of Plastic Surgery, Sir Ganga Ram Hospital"
     }
   ],
   fees: [

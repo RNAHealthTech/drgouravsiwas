@@ -7,7 +7,7 @@ export default function LiveOpdStatus() {
   const [status, setStatus] = useState<{ isOpen: boolean; text: string; nextSlot: string }>({
     isOpen: false,
     text: 'Checking OPD Status...',
-    nextSlot: 'Morning OPD: 09:00 AM - 11:00 AM'
+    nextSlot: 'OPD Timings: 08:00 AM - 08:00 PM'
   });
 
   useEffect(() => {
@@ -21,41 +21,29 @@ export default function LiveOpdStatus() {
       if (day === 0) {
         setStatus({
           isOpen: false,
-          text: 'Sunday: Regular OPD Closed (Emergency Casualty Open 24/7)',
-          nextSlot: 'Next OPD: Monday 09:00 AM (Room F-52)'
+          text: 'Sunday: Emergency Services Open 24/7',
+          nextSlot: 'Next OPD: Monday 08:00 AM'
         });
         return;
       }
 
-      if (timeInMins >= 540 && timeInMins < 660) {
+      if (timeInMins >= 480 && timeInMins < 1200) {
         setStatus({
           isOpen: true,
-          text: 'Morning OPD Active Now (Room F-52, SGRH)',
-          nextSlot: 'Open till 11:00 AM'
+          text: 'OPD Active Now (Department of Plastic Surgery, SGRH)',
+          nextSlot: 'Open till 08:00 PM'
         });
-      } else if (timeInMins >= 960 && timeInMins < 1080) {
-        setStatus({
-          isOpen: true,
-          text: 'Evening OPD Active Now (Room F-52, SGRH)',
-          nextSlot: 'Open till 06:00 PM'
-        });
-      } else if (timeInMins < 540) {
+      } else if (timeInMins < 480) {
         setStatus({
           isOpen: false,
-          text: 'Next OPD Starts Today at 09:00 AM',
-          nextSlot: 'Morning OPD: 09:00 AM - 11:00 AM (Room F-52)'
-        });
-      } else if (timeInMins >= 660 && timeInMins < 960) {
-        setStatus({
-          isOpen: false,
-          text: 'Next OPD Starts Today at 04:00 PM',
-          nextSlot: 'Evening Private OPD: 04:00 PM - 06:00 PM'
+          text: 'Next OPD Starts Today at 08:00 AM',
+          nextSlot: 'OPD Timings: 08:00 AM - 08:00 PM'
         });
       } else {
         setStatus({
           isOpen: false,
-          text: 'Today\'s OPD Concluded (Casualty Available 24/7)',
-          nextSlot: 'Next OPD: Tomorrow 09:00 AM (Room F-52)'
+          text: 'Today\'s OPD Concluded (24/7 Emergency Available)',
+          nextSlot: 'Next OPD: Tomorrow 08:00 AM'
         });
       }
     };

@@ -49,7 +49,7 @@ export default function ContactPage() {
                   <div>
                     <h4 style={{ fontSize: '1.1rem', color: 'var(--text-main)', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>LOCATION</h4>
                     <p style={{ color: 'var(--text-muted)', lineHeight: 1.6 }}>
-                      Sir Ganga Ram Hospital (SGRH), Rajinder Nagar, New Delhi - 110060
+                      Department of Plastic Surgery, Sir Ganga Ram Hospital, Rajinder Nagar, New Delhi - 110060
                     </p>
                   </div>
                 </div>
@@ -77,8 +77,8 @@ export default function ContactPage() {
                   <div>
                     <h4 style={{ fontSize: '1.1rem', color: 'var(--text-main)', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>WORKING HOURS</h4>
                     <p style={{ color: 'var(--text-muted)', lineHeight: 1.6 }}>
-                      OPD: 8:00 AM - 10:00 AM (Mon - Sat)<br />
-                      F-52, SGRH<br />
+                      OPD: 8:00 AM - 8:00 PM (Mon - Sat)<br />
+                      Department of Plastic Surgery, Sir Ganga Ram Hospital<br />
                       Sunday: Emergencies Only
                     </p>
                   </div>
