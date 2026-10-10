@@ -26,10 +26,10 @@ export default function FloatingActionBar() {
             <a
               href={`tel:${doctorData.phone}`}
               className={`${styles.actionBtn} ${styles.callBtn}`}
-              title="Call 8950406670"
+              title="Call Dr. Gourav Siwas"
+              aria-label="Call Dr. Gourav Siwas"
             >
               <span className={styles.btnIcon}>📞</span>
-              <span className={styles.btnText}>8950406670</span>
             </a>
 
             <a
@@ -46,10 +46,10 @@ export default function FloatingActionBar() {
             <button
               onClick={() => openBooking('Direct (Hospital OPD)')}
               className={`${styles.actionBtn} ${styles.bookBtn} btn-shine-wrapper`}
-              title="Book OPD Consultation"
+              title="Book Appointment"
             >
               <span className={styles.btnIcon}>🗓️</span>
-              <span className={styles.btnText}>Book OPD (₹1000)</span>
+              <span className={styles.btnText}>Book Appointment</span>
             </button>
 
             <a

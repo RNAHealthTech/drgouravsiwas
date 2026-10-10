@@ -64,6 +64,8 @@
   background: rgba(172, 178, 150, 0.15);
   color: #FEF7E7;
   border: 1px solid rgba(172, 178, 150, 0.35);
+  padding: 10px 14px;
+  justify-content: center;
 }
 
 .callBtn:hover {
@@ -169,10 +171,8 @@
     font-size: 0.72rem;
   }
 
-  /* Call button number 8950406670 is ALWAYS visible as requested */
-  .callBtn .btnText {
-    display: inline !important;
-    font-weight: 700;
+  .callBtn {
+    padding: 7px 11px;
   }
 
   /* WhatsApp button shows icon only on narrow screens */

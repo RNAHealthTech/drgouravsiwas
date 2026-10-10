@@ -87,9 +87,10 @@ export default function Home() {
                 priority
               />
             </motion.div>
-            <motion.span variants={fadeUp} className={styles.heroBadge}>
-              Consultant Hand &amp; Microsurgery, Sir Ganga Ram Hospital, New Delhi
-            </motion.span>
+            <motion.div variants={fadeUp} className={styles.heroBadge}>
+              <span className={styles.heroBadgeTitle}>Consultant Hand &amp; Microsurgery</span>
+              <span className={styles.heroBadgeHospital}>Sir Ganga Ram Hospital New Delhi</span>
+            </motion.div>
             <motion.h1 variants={fadeUp} className={styles.heroHeading}>
               Dr. Gourav Siwas
             </motion.h1>
@@ -293,8 +294,7 @@ export default function Home() {
           >
             <span className={styles.sectionLabelLight}>Philosophy</span>
             <h2 className={styles.parallaxHeading}>
-              <span className={styles.parallaxMainQuote}>&ldquo;Adding Life to Years,</span>
-              <span className={styles.parallaxSubQuote}>not just Years to Life.&rdquo;</span>
+              <span className={styles.parallaxMainQuote}>&ldquo;Adding Life to Years&rdquo;</span>
             </h2>
             <p className={styles.parallaxSub}>
               Following international protocols with a compassionate,

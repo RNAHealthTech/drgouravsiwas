@@ -100,7 +100,7 @@ export default function IntroAnimation() {
             animate={{ opacity: subVisible ? 1 : 0, y: subVisible ? 0 : 14 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Hand · Wrist · Microsurgery · Plastic &amp; Reconstructive Surgery
+            Consultant Hand &amp; Microsurgery
           </motion.p>
 
           {/* Tagline */}
@@ -110,7 +110,7 @@ export default function IntroAnimation() {
             animate={{ opacity: subVisible ? 0.95 : 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-            Sir Ganga Ram Hospital, New Delhi
+            Sir Ganga Ram Hospital New Delhi
           </motion.p>
         </div>
 
