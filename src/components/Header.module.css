@@ -52,10 +52,10 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 28px;
-  gap: 20px;
+  padding: 0 20px;
+  gap: 12px;
 }
 
 .logo {
@@ -130,22 +130,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
+  gap: 12px;
   flex-shrink: 0;
 }
 
 .navLink {
-  font-size: 0.72rem;
+  font-size: 0.70rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.9);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   position: relative;
-  padding: 8px 3px;
+  padding: 6px 2px;
   transition: color 0.3s ease;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
   cursor: pointer;
   background: transparent;
   border: none;
@@ -592,9 +592,9 @@
 }
 
 .headerBookBtn {
-  padding: 9px 18px !important;
-  font-size: 0.78rem !important;
-  letter-spacing: 0.05em !important;
+  padding: 8px 16px !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.04em !important;
   white-space: nowrap !important;
   flex-shrink: 0 !important;
 }
@@ -798,45 +798,34 @@
   display: none;
 }
 
-@media (max-width: 1380px) {
-  .container {
-    gap: 14px;
-    padding: 0 20px;
-  }
-
-  .nav {
-    gap: 14px;
-  }
-
-  .navLink {
-    font-size: 0.68rem;
-    letter-spacing: 0.06em;
-  }
-
+@media (max-width: 1560px) {
   .headerEmailText {
     display: none;
   }
 
   .headerEmailLink {
-    padding: 6px 8px;
+    padding: 7px 8px;
     border-radius: 50%;
+  }
+
+  .nav {
+    gap: 11px;
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   .container {
     gap: 10px;
     padding: 0 16px;
   }
 
   .nav {
-    gap: 10px;
+    gap: 9px;
   }
 
   .navLink {
-    font-size: 0.64rem;
+    font-size: 0.67rem;
     letter-spacing: 0.04em;
-    padding: 6px 1px;
   }
 
   .logoTextGroup {
@@ -844,29 +833,40 @@
   }
 
   .logoName {
-    font-size: 0.84rem;
+    font-size: 0.85rem;
   }
 
   .logoTitle {
-    font-size: 0.56rem;
+    font-size: 0.54rem;
   }
+}
 
+@media (max-width: 1280px) {
   .headerPhoneText {
     display: none;
   }
 
   .headerPhoneLink {
-    padding: 6px 8px;
+    padding: 7px 8px;
     border-radius: 50%;
   }
 
+  .nav {
+    gap: 8px;
+  }
+
+  .navLink {
+    font-size: 0.65rem;
+    padding: 4px 1px;
+  }
+
   .headerBookBtn {
-    padding: 8px 14px !important;
+    padding: 8px 13px !important;
     font-size: 0.72rem !important;
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1180px) {
   .header {
     height: auto;
     min-height: 86px;

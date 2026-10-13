@@ -42,6 +42,7 @@ export default function Footer() {
               <li><Link href="/">Home</Link></li>
               <li><Link href="/about">About & Qualifications</Link></li>
               <li><Link href="/expertise">Specialties & Procedures</Link></li>
+              <li><Link href="/gallery">Clinical & Academic Gallery</Link></li>
               <li><Link href="/media">Media & Press</Link></li>
               <li><Link href="/journey">Academic Journey</Link></li>
               <li><Link href="/opd">OPD Schedule & Tariffs</Link></li>

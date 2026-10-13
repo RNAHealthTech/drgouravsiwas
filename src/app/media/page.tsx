@@ -2,22 +2,109 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Newspaper, ExternalLink, Mail } from 'lucide-react';
+import Link from 'next/link';
+import {
+  Newspaper,
+  ExternalLink,
+  Mail,
+  Play,
+  Video,
+  FileText,
+  Sparkles
+} from 'lucide-react';
 import { mediaData, MediaItem } from '@/data/mediaData';
 import { doctorData } from '@/data/doctorData';
 import BookingCTA from '@/components/BookingCTA';
 import styles from './media.module.css';
 
+const InstagramIcon = ({ size = 13 }: { size?: number }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+);
+
 export default function MediaPage() {
   const [activeCategory, setActiveCategory] = useState<string>('All');
 
-  const categories = ['All', 'National Press', 'TV Broadcast', 'Hospital News', 'Feature'];
+  const categories = ['All', 'National Press', 'TV Broadcast', 'Hospital News', 'Feature', 'Gallery'];
 
   const filteredItems = activeCategory === 'All'
     ? mediaData
     : mediaData.filter(item => item.category === activeCategory);
 
   const featuredItem = mediaData.find(item => item.highlight);
+
+  const getMediaAction = (item: MediaItem) => {
+    if (!item.link) return null;
+    const isYoutube = item.link.includes('youtube') || item.link.includes('youtu.be');
+    const isInstagram = item.link.includes('instagram.com');
+    const isInternal = item.link.startsWith('/');
+
+    let label = 'Read Article';
+    let iconElement = <ExternalLink size={13} />;
+
+    if (isYoutube) {
+      label = 'Watch Video';
+      iconElement = <Play size={13} fill="currentColor" />;
+    } else if (isInstagram) {
+      label = 'View on Instagram';
+      iconElement = <InstagramIcon size={13} />;
+    } else if (item.category === 'Gallery' || isInternal) {
+      label = 'Explore Details';
+      iconElement = <ExternalLink size={13} />;
+    }
+
+    if (isInternal) {
+      return (
+        <Link
+          href={item.link}
+          className="btn btn-secondary"
+          style={{
+            fontSize: '0.8rem',
+            padding: '7px 15px',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '6px',
+            borderRadius: '6px'
+          }}
+        >
+          <span>{label}</span>
+          {iconElement}
+        </Link>
+      );
+    }
+
+    return (
+      <a
+        href={item.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn btn-secondary"
+        style={{
+          fontSize: '0.8rem',
+          padding: '7px 15px',
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '6px',
+          borderRadius: '6px'
+        }}
+      >
+        <span>{label}</span>
+        {iconElement}
+      </a>
+    );
+  };
 
   return (
     <div className={styles.pageWrapper}>
@@ -36,16 +123,29 @@ export default function MediaPage() {
 
           {/* Filter Bar */}
           <div className={styles.filterBar}>
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                type="button"
-                className={`${styles.filterBtn} ${activeCategory === cat ? styles.filterBtnActive : ''}`}
-                onClick={() => setActiveCategory(cat)}
-              >
-                {cat}
-              </button>
-            ))}
+            {categories.map((cat) => {
+              const count = cat === 'All'
+                ? mediaData.length
+                : mediaData.filter(i => i.category === cat).length;
+              return (
+                <button
+                  key={cat}
+                  type="button"
+                  className={`${styles.filterBtn} ${activeCategory === cat ? styles.filterBtnActive : ''}`}
+                  onClick={() => setActiveCategory(cat)}
+                >
+                  <span>{cat}</span>
+                  <span style={{
+                    fontSize: '0.72rem',
+                    opacity: 0.85,
+                    marginLeft: '4px',
+                    fontWeight: 700
+                  }}>
+                    ({count})
+                  </span>
+                </button>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -67,26 +167,17 @@ export default function MediaPage() {
               </div>
               <div className={styles.featuredContent}>
                 <div className={styles.featuredBadgeGroup}>
-                  <span className={styles.landmarkBadge}>Featured Landmark</span>
+                  <span className={styles.landmarkBadge}>
+                    <Sparkles size={12} style={{ display: 'inline', marginRight: '4px' }} />
+                    Featured Landmark
+                  </span>
                   <span className={styles.sourceBadge}>{featuredItem.source}</span>
                 </div>
                 <h2 className={styles.featuredTitle}>{featuredItem.title}</h2>
                 <p className={styles.featuredSummary}>{featuredItem.summary}</p>
                 <div className={styles.featuredFooter}>
                   <span className={styles.featuredDate}>🗓️ {featuredItem.date}</span>
-                  {featuredItem.link ? (
-                    <a
-                      href={featuredItem.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-secondary"
-                      style={{ fontSize: '0.84rem', padding: '8px 18px' }}
-                    >
-                      Read Feature <ExternalLink size={14} style={{ marginLeft: '4px' }} />
-                    </a>
-                  ) : (
-                    <span className="badge badge-gold">Verified Clinical Record</span>
-                  )}
+                  {getMediaAction(featuredItem)}
                 </div>
               </div>
             </div>
@@ -94,42 +185,79 @@ export default function MediaPage() {
 
           {/* Media Grid */}
           <div className={styles.grid}>
-            {filteredItems.map((item: MediaItem) => (
-              <article key={item.id} className={styles.mediaCard}>
-                <div className={styles.cardImgWrap}>
-                  <Image
-                    src={item.image || '/images/dr_gourav_portrait_hd.jpg'}
-                    alt={item.title}
-                    fill
-                    className={styles.cardImg}
-                  />
-                </div>
-                <div className={styles.cardContent}>
-                  <div className={styles.cardMeta}>
-                    <span className={styles.cardSource}>{item.source}</span>
-                    <span className={styles.cardDate}>{item.date}</span>
-                  </div>
-                  <h3 className={styles.cardTitle}>{item.title}</h3>
-                  <p className={styles.cardSummary}>{item.summary}</p>
-                  <div className={styles.cardFooter}>
-                    {item.badge && <span className={styles.cardBadge}>{item.badge}</span>}
-                    {item.link ? (
-                      <a
-                        href={item.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-secondary"
-                        style={{ fontSize: '0.78rem', padding: '6px 14px' }}
-                      >
-                        Details <ExternalLink size={12} style={{ marginLeft: '4px' }} />
-                      </a>
-                    ) : (
-                      <span style={{ fontSize: '0.76rem', color: 'var(--text-light)' }}>Sir Ganga Ram Hospital</span>
+            {filteredItems.map((item: MediaItem) => {
+              const isYoutube = item.link?.includes('youtube') || item.link?.includes('youtu.be');
+              const isInstagram = item.link?.includes('instagram.com');
+
+              return (
+                <article key={item.id} className={styles.mediaCard}>
+                  <div className={styles.cardImgWrap}>
+                    <Image
+                      src={item.image || '/images/dr_gourav_portrait_hd.jpg'}
+                      alt={item.title}
+                      fill
+                      className={styles.cardImg}
+                    />
+                    {isYoutube && (
+                      <div style={{
+                        position: 'absolute',
+                        top: '12px',
+                        right: '12px',
+                        background: 'rgba(220, 38, 38, 0.94)',
+                        color: '#fff',
+                        padding: '4px 9px',
+                        borderRadius: '6px',
+                        fontSize: '0.72rem',
+                        fontWeight: 700,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '5px',
+                        boxShadow: '0 4px 10px rgba(0,0,0,0.3)'
+                      }}>
+                        <Play size={10} fill="#fff" /> YouTube Video
+                      </div>
+                    )}
+                    {isInstagram && (
+                      <div style={{
+                        position: 'absolute',
+                        top: '12px',
+                        right: '12px',
+                        background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
+                        color: '#fff',
+                        padding: '4px 9px',
+                        borderRadius: '6px',
+                        fontSize: '0.72rem',
+                        fontWeight: 700,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '5px',
+                        boxShadow: '0 4px 10px rgba(0,0,0,0.3)'
+                      }}>
+                        <InstagramIcon size={11} /> Instagram Post
+                      </div>
                     )}
                   </div>
-                </div>
-              </article>
-            ))}
+                  <div className={styles.cardContent}>
+                    <div className={styles.cardMeta}>
+                      <span className={styles.cardSource}>{item.source}</span>
+                      <span className={styles.cardDate}>{item.date}</span>
+                    </div>
+                    <h3 className={styles.cardTitle}>{item.title}</h3>
+                    <p className={styles.cardSummary}>{item.summary}</p>
+                    <div className={styles.cardFooter}>
+                      {item.badge && <span className={styles.cardBadge}>{item.badge}</span>}
+                      {item.link ? (
+                        getMediaAction(item)
+                      ) : (
+                        <span style={{ fontSize: '0.76rem', color: 'var(--text-light)' }}>
+                          Sir Ganga Ram Hospital
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
           </div>
 
           {/* Incoming Media Submission / Notice */}

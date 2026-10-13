@@ -89,6 +89,7 @@ export default function Header() {
     { name: 'About', href: '/about' },
     { name: 'Specialties', href: '/expertise' },
     { name: 'Services', href: '/services', isDropdown: true },
+    { name: 'Gallery', href: '/gallery' },
     { name: 'Media', href: '/media' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' },

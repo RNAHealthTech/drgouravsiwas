@@ -354,7 +354,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.gallery}>
+      <section className={styles.gallery} id="gallery">
         <div className="container">
           <motion.div
             className={styles.sectionCenter}
@@ -392,6 +392,17 @@ export default function Home() {
               </SwiperSlide>
             ))}
           </Swiper>
+
+          <div style={{ textAlign: 'center', marginTop: '36px' }}>
+            <Link
+              href="/gallery"
+              className="btn btn-primary"
+              style={{ padding: '12px 30px', fontSize: '0.92rem', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+            >
+              <span>Explore Complete Gallery &amp; Clinical Archive</span>
+              <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
       </section>
 
