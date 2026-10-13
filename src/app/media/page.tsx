@@ -2,14 +2,13 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import {
   Newspaper,
   ExternalLink,
   Mail,
   Play,
-  Video,
   FileText,
+  Calendar,
   Sparkles
 } from 'lucide-react';
 import { mediaData, MediaItem } from '@/data/mediaData';
@@ -37,7 +36,7 @@ const InstagramIcon = ({ size = 13 }: { size?: number }) => (
 export default function MediaPage() {
   const [activeCategory, setActiveCategory] = useState<string>('All');
 
-  const categories = ['All', 'National Press', 'TV Broadcast', 'Hospital News', 'Feature', 'Gallery'];
+  const categories = ['All', 'National Press', 'Academic Summits', 'Video & Broadcast', 'Social Media'];
 
   const filteredItems = activeCategory === 'All'
     ? mediaData
@@ -45,44 +44,29 @@ export default function MediaPage() {
 
   const featuredItem = mediaData.find(item => item.highlight);
 
+  // When 'All' is active, show the featured item in the hero banner and the other items in the grid to avoid duplication
+  const displayGridItems = activeCategory === 'All'
+    ? filteredItems.filter(item => item.id !== featuredItem?.id)
+    : filteredItems;
+
   const getMediaAction = (item: MediaItem) => {
     if (!item.link) return null;
     const isYoutube = item.link.includes('youtube') || item.link.includes('youtu.be');
     const isInstagram = item.link.includes('instagram.com');
-    const isInternal = item.link.startsWith('/');
+    const isSummit = item.category === 'Academic Summits';
 
-    let label = 'Read Article';
+    let label = 'Read Full Article';
     let iconElement = <ExternalLink size={13} />;
 
     if (isYoutube) {
-      label = 'Watch Video';
+      label = 'Watch Video Interview';
       iconElement = <Play size={13} fill="currentColor" />;
     } else if (isInstagram) {
       label = 'View on Instagram';
       iconElement = <InstagramIcon size={13} />;
-    } else if (item.category === 'Gallery' || isInternal) {
-      label = 'Explore Details';
+    } else if (isSummit) {
+      label = 'Visit Summit Portal';
       iconElement = <ExternalLink size={13} />;
-    }
-
-    if (isInternal) {
-      return (
-        <Link
-          href={item.link}
-          className="btn btn-secondary"
-          style={{
-            fontSize: '0.8rem',
-            padding: '7px 15px',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '6px',
-            borderRadius: '6px'
-          }}
-        >
-          <span>{label}</span>
-          {iconElement}
-        </Link>
-      );
     }
 
     return (
@@ -92,12 +76,13 @@ export default function MediaPage() {
         rel="noopener noreferrer"
         className="btn btn-secondary"
         style={{
-          fontSize: '0.8rem',
-          padding: '7px 15px',
+          fontSize: '0.82rem',
+          padding: '8px 16px',
           display: 'inline-flex',
           alignItems: 'center',
-          gap: '6px',
-          borderRadius: '6px'
+          gap: '7px',
+          borderRadius: '6px',
+          fontWeight: 600
         }}
       >
         <span>{label}</span>
@@ -112,13 +97,13 @@ export default function MediaPage() {
       <section className={styles.heroSection}>
         <div className="container">
           <span className={styles.heroBadge}>
-            <Newspaper size={14} /> Newsroom &amp; Media Presence
+            <Newspaper size={14} /> Verified News &amp; Media Presence
           </span>
           <h1 className={styles.heroTitle}>
             Press Coverage &amp; <span>Clinical Milestones</span>
           </h1>
           <p className={styles.heroSubtitle}>
-            National press features, television broadcasts, hospital bulletins, and surgical breakthroughs showcasing {doctorData.name}&apos;s microvascular reconstructive expertise at Sir Ganga Ram Hospital, New Delhi.
+            Verified national daily press features, prestigious surgical summits, television broadcasts, and landmark reconstructive breakthroughs documenting {doctorData.name}&apos;s microvascular expertise at Sir Ganga Ram Hospital, New Delhi.
           </p>
 
           {/* Filter Bar */}
@@ -173,7 +158,16 @@ export default function MediaPage() {
                   </span>
                   <span className={styles.sourceBadge}>{featuredItem.source}</span>
                 </div>
-                <h2 className={styles.featuredTitle}>{featuredItem.title}</h2>
+                <h2 className={styles.featuredTitle}>
+                  <a
+                    href={featuredItem.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: 'inherit', textDecoration: 'none' }}
+                  >
+                    {featuredItem.title}
+                  </a>
+                </h2>
                 <p className={styles.featuredSummary}>{featuredItem.summary}</p>
                 <div className={styles.featuredFooter}>
                   <span className={styles.featuredDate}>🗓️ {featuredItem.date}</span>
@@ -185,19 +179,28 @@ export default function MediaPage() {
 
           {/* Media Grid */}
           <div className={styles.grid}>
-            {filteredItems.map((item: MediaItem) => {
+            {displayGridItems.map((item: MediaItem) => {
               const isYoutube = item.link?.includes('youtube') || item.link?.includes('youtu.be');
               const isInstagram = item.link?.includes('instagram.com');
+              const isArticle = item.category === 'National Press';
+              const isSummit = item.category === 'Academic Summits';
 
               return (
                 <article key={item.id} className={styles.mediaCard}>
                   <div className={styles.cardImgWrap}>
-                    <Image
-                      src={item.image || '/images/dr_gourav_portrait_hd.jpg'}
-                      alt={item.title}
-                      fill
-                      className={styles.cardImg}
-                    />
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ display: 'block', width: '100%', height: '100%' }}
+                    >
+                      <Image
+                        src={item.image || '/images/dr_gourav_portrait_hd.jpg'}
+                        alt={item.title}
+                        fill
+                        className={styles.cardImg}
+                      />
+                    </a>
                     {isYoutube && (
                       <div style={{
                         position: 'absolute',
@@ -236,23 +239,68 @@ export default function MediaPage() {
                         <InstagramIcon size={11} /> Instagram Post
                       </div>
                     )}
+                    {isArticle && (
+                      <div style={{
+                        position: 'absolute',
+                        top: '12px',
+                        right: '12px',
+                        background: 'rgba(35, 24, 18, 0.88)',
+                        backdropFilter: 'blur(4px)',
+                        color: '#FEF7E7',
+                        padding: '4px 9px',
+                        borderRadius: '6px',
+                        fontSize: '0.72rem',
+                        fontWeight: 700,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '5px',
+                        boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
+                        border: '1px solid rgba(172, 178, 150, 0.35)'
+                      }}>
+                        <FileText size={10} /> Press Article
+                      </div>
+                    )}
+                    {isSummit && (
+                      <div style={{
+                        position: 'absolute',
+                        top: '12px',
+                        right: '12px',
+                        background: 'rgba(35, 24, 18, 0.92)',
+                        backdropFilter: 'blur(4px)',
+                        color: '#ACB296',
+                        padding: '4px 9px',
+                        borderRadius: '6px',
+                        fontSize: '0.72rem',
+                        fontWeight: 700,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '5px',
+                        boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
+                        border: '1px solid rgba(172, 178, 150, 0.45)'
+                      }}>
+                        <Calendar size={10} /> Academic Summit
+                      </div>
+                    )}
                   </div>
                   <div className={styles.cardContent}>
                     <div className={styles.cardMeta}>
                       <span className={styles.cardSource}>{item.source}</span>
                       <span className={styles.cardDate}>{item.date}</span>
                     </div>
-                    <h3 className={styles.cardTitle}>{item.title}</h3>
+                    <h3 className={styles.cardTitle}>
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: 'inherit', textDecoration: 'none' }}
+                      >
+                        {item.title}
+                      </a>
+                    </h3>
                     <p className={styles.cardSummary}>{item.summary}</p>
                     <div className={styles.cardFooter}>
                       {item.badge && <span className={styles.cardBadge}>{item.badge}</span>}
-                      {item.link ? (
-                        getMediaAction(item)
-                      ) : (
-                        <span style={{ fontSize: '0.76rem', color: 'var(--text-light)' }}>
-                          Sir Ganga Ram Hospital
-                        </span>
-                      )}
+                      {getMediaAction(item)}
                     </div>
                   </div>
                 </article>
@@ -262,9 +310,9 @@ export default function MediaPage() {
 
           {/* Incoming Media Submission / Notice */}
           <div className={styles.noticeBox}>
-            <h3 className={styles.noticeTitle}>Press Inquiries &amp; Article Updates</h3>
+            <h3 className={styles.noticeTitle}>Press Inquiries &amp; Academic Invitations</h3>
             <p className={styles.noticeDesc}>
-              Media releases, press clippings, and video broadcast features are actively being added. For press interviews, medical feature contributions, or verified clinical insights:
+              For scientific invitations, clinical keynote addresses on reconstructive &amp; hand surgery, or verified press commentary:
             </p>
             <a href={`mailto:${doctorData.email}`} className={styles.noticeCta}>
               <Mail size={15} /> Contact Media Desk ({doctorData.email})
