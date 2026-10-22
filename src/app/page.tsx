@@ -77,16 +77,6 @@ export default function Home() {
 
         <motion.div className={styles.heroInner} style={{ opacity: heroOpacity }}>
           <motion.div className={styles.heroContent} initial="hidden" animate="visible" variants={stagger}>
-            <motion.div variants={fadeUp} className={styles.heroDoctorAvatar}>
-              <Image
-                src="/images/dr_gourav_portrait_hd.jpg"
-                alt="Dr. Gourav Siwas"
-                width={160}
-                height={200}
-                className={styles.heroAvatarImg}
-                priority
-              />
-            </motion.div>
             <motion.div variants={fadeUp} className={styles.heroBadge}>
               <span className={styles.heroBadgeTitle}>Consultant Hand &amp; Microsurgery</span>
               <span className={styles.heroBadgeHospital}>Sir Ganga Ram Hospital New Delhi</span>

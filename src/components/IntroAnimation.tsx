@@ -6,22 +6,14 @@ import styles from './IntroAnimation.module.css';
 
 export default function IntroAnimation() {
   const [phase, setPhase] = useState<'intro' | 'exit' | 'done'>('intro');
-  const [lineVisible, setLineVisible] = useState(false);
-  const [subVisible, setSubVisible] = useState(false);
 
   useEffect(() => {
-    const t1 = setTimeout(() => setLineVisible(true), 400);
-    const t2 = setTimeout(() => setSubVisible(true), 850);
-    const t3 = setTimeout(() => setPhase('exit'), 2200);
-    const t4 = setTimeout(() => {
-      setPhase('done');
-    }, 3200);
+    const tExit = setTimeout(() => setPhase('exit'), 1100);
+    const tDone = setTimeout(() => setPhase('done'), 1600);
 
     return () => {
-      clearTimeout(t1);
-      clearTimeout(t2);
-      clearTimeout(t3);
-      clearTimeout(t4);
+      clearTimeout(tExit);
+      clearTimeout(tDone);
     };
   }, []);
 
@@ -33,7 +25,7 @@ export default function IntroAnimation() {
         className={styles.overlay}
         initial={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
+        transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
       >
         {/* Background split curtain exit */}
         {phase === 'exit' && (
@@ -42,13 +34,13 @@ export default function IntroAnimation() {
               className={`${styles.curtain} ${styles.curtainTop}`}
               initial={{ scaleY: 1 }}
               animate={{ scaleY: 0 }}
-              transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
+              transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
             />
             <motion.div
               className={`${styles.curtain} ${styles.curtainBottom}`}
               initial={{ scaleY: 1 }}
               animate={{ scaleY: 0 }}
-              transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1], delay: 0.05 }}
+              transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1], delay: 0.03 }}
             />
           </>
         )}
@@ -58,25 +50,25 @@ export default function IntroAnimation() {
           <div className={styles.drWrapper}>
             <motion.span
               className={styles.drText}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
               Dr.
             </motion.span>
           </div>
 
-          {/* Name — letter by letter */}
+          {/* Name — fast, elegant letter wave */}
           <div className={styles.nameWrapper}>
             {'Gourav Siwas'.split('').map((char, i) => (
               <motion.span
                 key={i}
                 className={char === ' ' ? styles.space : styles.nameLetter}
-                initial={{ opacity: 0, y: 50, rotateX: 90 }}
+                initial={{ opacity: 0, y: 30, rotateX: 60 }}
                 animate={{ opacity: 1, y: 0, rotateX: 0 }}
                 transition={{
-                  duration: 0.5,
-                  delay: 0.12 + i * 0.04,
+                  duration: 0.35,
+                  delay: 0.04 + i * 0.02,
                   ease: [0.16, 1, 0.3, 1],
                 }}
               >
@@ -89,26 +81,26 @@ export default function IntroAnimation() {
           <motion.div
             className={styles.divider}
             initial={{ scaleX: 0 }}
-            animate={{ scaleX: lineVisible ? 1 : 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.45, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           />
 
-          {/* Subtitle */}
+          {/* Subtitle — comes right with Gourav Siwas */}
           <motion.p
             className={styles.subtitle}
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: subVisible ? 1 : 0, y: subVisible ? 0 : 14 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
           >
             Consultant Hand &amp; Microsurgery
           </motion.p>
 
-          {/* Tagline */}
+          {/* Tagline — comes right with the subtitle */}
           <motion.p
             className={styles.tagline}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: subVisible ? 0.95 : 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 0.95, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
           >
             Sir Ganga Ram Hospital New Delhi
           </motion.p>
@@ -119,7 +111,7 @@ export default function IntroAnimation() {
           className={styles.cornerMark}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.25, duration: 0.6 }}
+          transition={{ delay: 0.08, duration: 0.35 }}
         >
           GS
         </motion.div>
@@ -129,7 +121,7 @@ export default function IntroAnimation() {
           className={styles.progressBar}
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ duration: 2.2, ease: 'linear' }}
+          transition={{ duration: 1.1, ease: 'linear' }}
         />
       </motion.div>
     </AnimatePresence>
