@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { Award } from 'lucide-react';
 import About from '@/components/About';
 import Achievements from '@/components/Achievements';
@@ -21,17 +20,6 @@ export default function AboutPage() {
       <header className={styles.pageHeader}>
         <div className={styles.pageHeaderBg}></div>
         <div className={`container ${styles.pageHeaderContent}`}>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.88 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}
-          >
-            <div style={{ width: '120px', height: '148px', borderRadius: '16px', border: '3px solid var(--secondary)', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.4), 0 0 20px rgba(172,178,150,0.3)' }}>
-              <Image src="/images/dr_gourav_portrait_hd.jpg" alt="Dr. Gourav Siwas" width={140} height={175} style={{ objectFit: 'cover' }} priority />
-            </div>
-          </motion.div>
-
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
