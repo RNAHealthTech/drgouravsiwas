@@ -15,11 +15,13 @@ export default function AppointmentModal({ isOpen, onClose, selectedType = 'Dire
   const [date, setDate] = useState('');
   const [timeSlot, setTimeSlot] = useState('');
   const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const [shouldRender, setShouldRender] = useState(isOpen);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -44,14 +46,46 @@ export default function AppointmentModal({ isOpen, onClose, selectedType = 'Dire
 
   if (!shouldRender) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage('');
 
-    setTimeout(() => {
+    try {
+      const response = await fetch('https://formspree.io/f/myeezzel', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          formType: 'Doctor Appointment Booking',
+          doctor: doctorData.name,
+          consultationType,
+          preferredDate: date,
+          preferredTimeSlot: timeSlot,
+          patientName: name,
+          phone,
+          email,
+          reason: message || 'Not provided',
+        }),
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+      } else {
+        const data = await response.json().catch(() => ({}));
+        const errText = 
+          data?.errors?.map((err: { message: string }) => err.message).join(', ') ||
+          data?.error ||
+          'Failed to submit appointment request. Please try again.';
+        setErrorMessage(errText);
+      }
+    } catch {
+      setErrorMessage('Network error. Please check your internet connection and try again.');
+    } finally {
       setIsSubmitting(false);
-      setIsSuccess(true);
-    }, 1200);
+    }
   };
 
   const resetForm = () => {
@@ -59,8 +93,10 @@ export default function AppointmentModal({ isOpen, onClose, selectedType = 'Dire
     setDate('');
     setTimeSlot('');
     setName('');
+    setPhone('');
     setEmail('');
     setMessage('');
+    setErrorMessage('');
     onClose();
   };
 
@@ -96,7 +132,11 @@ export default function AppointmentModal({ isOpen, onClose, selectedType = 'Dire
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} className={styles.form}>
+            <form onSubmit={handleSubmit} action="https://formspree.io/f/myeezzel" method="POST" className={styles.form}>
+              <input type="hidden" name="formType" value="Doctor Appointment Booking" />
+              <input type="hidden" name="doctor" value={doctorData.name} />
+              <input type="hidden" name="consultationType" value={consultationType} />
+
               <div className={styles.feeSelector}>
                 <span className={styles.label}>Select Consultation Type:</span>
                 <div className={styles.feeCards}>
@@ -117,6 +157,7 @@ export default function AppointmentModal({ isOpen, onClose, selectedType = 'Dire
                   <label className="form-label">Preferred Date</label>
                   <input
                     type="date"
+                    name="preferredDate"
                     className="form-input"
                     required
                     min={new Date().toISOString().split('T')[0]}
@@ -128,6 +169,7 @@ export default function AppointmentModal({ isOpen, onClose, selectedType = 'Dire
                 <div className="form-group" style={{ flex: 1 }}>
                   <label className="form-label">Preferred Time Slot</label>
                   <select
+                    name="preferredTimeSlot"
                     className="form-input"
                     required
                     value={timeSlot}
@@ -145,6 +187,7 @@ export default function AppointmentModal({ isOpen, onClose, selectedType = 'Dire
                 <label className="form-label">Patient Name</label>
                 <input
                   type="text"
+                  name="patientName"
                   className="form-input"
                   placeholder="Enter patient full name"
                   required
@@ -153,27 +196,50 @@ export default function AppointmentModal({ isOpen, onClose, selectedType = 'Dire
                 />
               </div>
 
-              <div className="form-group">
-                <label className="form-label">Email Address</label>
-                <input
-                  type="email"
-                  className="form-input"
-                  placeholder="Enter email address"
-                  required
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                />
+              <div className={styles.row}>
+                <div className="form-group" style={{ flex: 1 }}>
+                  <label className="form-label">Phone Number</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    className="form-input"
+                    placeholder="e.g. +91 98765 43210"
+                    required
+                    value={phone}
+                    onChange={e => setPhone(e.target.value)}
+                  />
+                </div>
+
+                <div className="form-group" style={{ flex: 1 }}>
+                  <label className="form-label">Email Address</label>
+                  <input
+                    type="email"
+                    name="email"
+                    className="form-input"
+                    placeholder="Enter email address"
+                    required
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                  />
+                </div>
               </div>
 
               <div className="form-group">
                 <label className="form-label">Reason for Consultation (Optional)</label>
                 <textarea
+                  name="reason"
                   className="form-input"
                   placeholder="Briefly describe the concern (e.g. Hand injury, Wrist pain, Nerve reconstruction, Flap surgery)"
                   value={message}
                   onChange={e => setMessage(e.target.value)}
                 />
               </div>
+
+              {errorMessage && (
+                <div className={styles.errorMessage}>
+                  {errorMessage}
+                </div>
+              )}
 
               <button
                 id="modal-submit-btn"
@@ -201,6 +267,7 @@ export default function AppointmentModal({ isOpen, onClose, selectedType = 'Dire
             </p>
             <div className={styles.receipt}>
               <div><strong>Type:</strong> {consultationType}</div>
+              {phone && <div><strong>Contact:</strong> {phone}</div>}
               <div><strong>Location:</strong> Department of Plastic Surgery, Sir Ganga Ram Hospital</div>
             </div>
             <button className="btn btn-primary" onClick={resetForm} style={{ marginTop: '20px' }}>

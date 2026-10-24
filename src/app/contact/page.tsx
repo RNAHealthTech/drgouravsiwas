@@ -1,15 +1,65 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { doctorData } from '@/data/doctorData';
 import styles from '../shared-page.module.css';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, CheckCircle2 } from 'lucide-react';
 import LiveOpdStatus from '@/components/LiveOpdStatus';
 import OpdSchedule from '@/components/OpdSchedule';
 import FAQ from '@/components/FAQ';
 
 export default function ContactPage() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('https://formspree.io/f/myeezzel', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          formType: 'Website Contact Inquiry',
+          name,
+          email,
+          phone,
+          message,
+        }),
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+        setName('');
+        setEmail('');
+        setPhone('');
+        setMessage('');
+      } else {
+        const data = await response.json().catch(() => ({}));
+        const errText = 
+          data?.errors?.map((err: { message: string }) => err.message).join(', ') ||
+          data?.error ||
+          'Failed to send message. Please try again.';
+        setErrorMessage(errText);
+      }
+    } catch {
+      setErrorMessage('Network error. Please check your connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <main>
       <header className={styles.pageHeader}>
@@ -93,21 +143,106 @@ export default function ContactPage() {
               className={styles.card}
             >
               <h3 style={{ fontSize: '1.8rem', color: 'var(--primary)', marginBottom: '24px' }}>Send a Message</h3>
-              <form style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '8px', color: 'var(--text-muted)' }}>Your Name</label>
-                  <input type="text" style={{ width: '100%', padding: '16px', border: '1px solid var(--border)', borderRadius: '4px', background: 'var(--bg-secondary)', color: 'var(--text-main)', fontFamily: 'inherit' }} placeholder="John Doe" />
+              
+              {isSuccess ? (
+                <div style={{ padding: '32px 20px', textAlign: 'center' }}>
+                  <CheckCircle2 size={48} color="var(--primary)" style={{ margin: '0 auto 16px' }} />
+                  <h4 style={{ fontSize: '1.3rem', marginBottom: '8px', color: 'var(--text-main)' }}>Message Sent Successfully!</h4>
+                  <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '24px' }}>
+                    Thank you for reaching out. We have received your inquiry and our team will get back to you shortly.
+                  </p>
+                  <button 
+                    type="button" 
+                    className="btn btn-outline" 
+                    onClick={() => setIsSuccess(false)}
+                  >
+                    Send Another Message
+                  </button>
                 </div>
-                <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '8px', color: 'var(--text-muted)' }}>Email Address</label>
-                  <input type="email" style={{ width: '100%', padding: '16px', border: '1px solid var(--border)', borderRadius: '4px', background: 'var(--bg-secondary)', color: 'var(--text-main)', fontFamily: 'inherit' }} placeholder="john@example.com" />
-                </div>
-                <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '8px', color: 'var(--text-muted)' }}>Message</label>
-                  <textarea rows={4} style={{ width: '100%', padding: '16px', border: '1px solid var(--border)', borderRadius: '4px', background: 'var(--bg-secondary)', color: 'var(--text-main)', fontFamily: 'inherit', resize: 'vertical' }} placeholder="How can we help you?"></textarea>
-                </div>
-                <button type="button" className="btn btn-primary" style={{ width: '100%', marginTop: '16px' }}>Send Message</button>
-              </form>
+              ) : (
+                <form 
+                  onSubmit={handleSubmit}
+                  action="https://formspree.io/f/myeezzel"
+                  method="POST"
+                  style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
+                >
+                  <input type="hidden" name="formType" value="Website Contact Inquiry" />
+                  
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '8px', color: 'var(--text-muted)' }}>Your Name</label>
+                    <input 
+                      type="text" 
+                      name="name"
+                      required
+                      value={name}
+                      onChange={e => setName(e.target.value)}
+                      style={{ width: '100%', padding: '16px', border: '1px solid var(--border)', borderRadius: '4px', background: 'var(--bg-secondary)', color: 'var(--text-main)', fontFamily: 'inherit' }} 
+                      placeholder="John Doe" 
+                    />
+                  </div>
+
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '8px', color: 'var(--text-muted)' }}>Phone Number</label>
+                    <input 
+                      type="tel" 
+                      name="phone"
+                      required
+                      value={phone}
+                      onChange={e => setPhone(e.target.value)}
+                      style={{ width: '100%', padding: '16px', border: '1px solid var(--border)', borderRadius: '4px', background: 'var(--bg-secondary)', color: 'var(--text-main)', fontFamily: 'inherit' }} 
+                      placeholder="+91 98765 43210" 
+                    />
+                  </div>
+
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '8px', color: 'var(--text-muted)' }}>Email Address</label>
+                    <input 
+                      type="email" 
+                      name="email"
+                      required
+                      value={email}
+                      onChange={e => setEmail(e.target.value)}
+                      style={{ width: '100%', padding: '16px', border: '1px solid var(--border)', borderRadius: '4px', background: 'var(--bg-secondary)', color: 'var(--text-main)', fontFamily: 'inherit' }} 
+                      placeholder="john@example.com" 
+                    />
+                  </div>
+
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '8px', color: 'var(--text-muted)' }}>Message</label>
+                    <textarea 
+                      rows={4} 
+                      name="message"
+                      required
+                      value={message}
+                      onChange={e => setMessage(e.target.value)}
+                      style={{ width: '100%', padding: '16px', border: '1px solid var(--border)', borderRadius: '4px', background: 'var(--bg-secondary)', color: 'var(--text-main)', fontFamily: 'inherit', resize: 'vertical' }} 
+                      placeholder="How can we help you?"
+                    ></textarea>
+                  </div>
+
+                  {errorMessage && (
+                    <div style={{
+                      backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                      color: '#dc2626',
+                      border: '1px solid rgba(239, 68, 68, 0.3)',
+                      padding: '12px 16px',
+                      borderRadius: '4px',
+                      fontSize: '0.85rem'
+                    }}>
+                      {errorMessage}
+                    </div>
+                  )}
+
+                  <button 
+                    type="submit" 
+                    disabled={isSubmitting} 
+                    className="btn btn-primary" 
+                    style={{ width: '100%', marginTop: '8px' }}
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                  </button>
+                </form>
+              )}
             </motion.div>
           </div>
         </div>

@@ -203,6 +203,17 @@
   }
 }
 
+.errorMessage {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm, 4px);
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
 /* Success State */
 .successScreen {
   text-align: center;
