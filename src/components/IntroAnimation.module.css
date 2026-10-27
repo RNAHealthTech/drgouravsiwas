@@ -1,7 +1,10 @@
 .overlay {
   position: fixed;
-  inset: 0;
-  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
   background-color: var(--primary, #664637);
   display: flex;
   flex-direction: column;
@@ -40,70 +43,92 @@
   z-index: 3;
 }
 
-.drWrapper {
+.introLogoBox {
+  width: 154px;
+  height: 154px;
+  border-radius: 28px;
   overflow: hidden;
-  margin-bottom: -4px;
+  background: #ffffff;
+  border: 2.5px solid rgba(212, 175, 55, 0.65);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.55), 0 0 35px rgba(212, 175, 55, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
-.drText {
-  display: block;
-  font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
-  font-size: clamp(1.4rem, 3vw, 2rem);
-  color: var(--secondary, #ACB296);
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
+@media (max-width: 576px) {
+  .introLogoBox {
+    width: 120px;
+    height: 120px;
+    border-radius: 22px;
+    margin-bottom: 18px;
+  }
 }
 
-/* Name with letter animation */
+.introLogoImg {
+  width: 132px;
+  height: 132px;
+  object-fit: contain;
+}
+
+@media (max-width: 576px) {
+  .introLogoImg {
+    width: 102px;
+    height: 102px;
+  }
+}
+
+/* Name below logo - elegant and smaller than the old giant typography */
 .nameWrapper {
   display: flex;
-  align-items: baseline;
-  perspective: 600px;
-  overflow: visible;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
 }
 
-.nameLetter {
-  display: inline-block;
+.doctorName {
   font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
-  font-size: clamp(3.5rem, 10vw, 8rem);
+  font-size: clamp(1.6rem, 3.4vw, 2.35rem);
   font-weight: 700;
-  color: #fff;
-  line-height: 1;
-  letter-spacing: 0.02em;
-}
-
-.space {
-  display: inline-block;
-  width: clamp(1rem, 2.5vw, 2.5rem);
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  line-height: 1.25;
+  margin: 0;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 
 /* Divider line */
 .divider {
-  width: clamp(120px, 25vw, 260px);
+  width: clamp(100px, 18vw, 180px);
   height: 1.5px;
   background: linear-gradient(90deg, transparent, var(--secondary, #ACB296), transparent);
-  margin: 24px auto 20px;
-  transform-origin: left;
+  margin: 14px auto;
+  transform-origin: center;
 }
 
-/* Subtitle */
+/* Subtitle / Specialty */
 .subtitle {
-  font-size: clamp(0.85rem, 2vw, 1.1rem);
-  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(0.78rem, 1.5vw, 0.95rem);
+  color: rgba(255, 255, 255, 0.92);
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   font-family: var(--font-sans, 'Inter', sans-serif);
   font-weight: 500;
   padding: 0 16px;
+  margin: 0;
 }
 
 .tagline {
-  margin-top: 10px;
-  font-size: clamp(0.72rem, 1.5vw, 0.9rem);
+  margin-top: 8px;
+  font-size: clamp(0.7rem, 1.3vw, 0.84rem);
   color: var(--secondary, #ACB296);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   font-family: var(--font-sans, 'Inter', sans-serif);
   font-weight: 500;
+  margin-bottom: 0;
 }
 
 /* GS monogram corner */

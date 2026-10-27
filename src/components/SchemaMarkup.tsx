@@ -19,7 +19,6 @@ export default function SchemaMarkup() {
     image: 'https://drgouravsiwas.com/images/dr_gourav_portrait_hd.jpg',
     telephone: doctorData.phone,
     email: doctorData.email,
-    priceRange: '₹₹',
     currenciesAccepted: 'INR',
     paymentAccepted: 'Cash, Credit Card, Debit Card, UPI, Net Banking, Insurance / Mediclaim TPA',
     address: {

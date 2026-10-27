@@ -1,6 +1,7 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AppointmentModal from '@/components/AppointmentModal';
@@ -14,6 +15,12 @@ interface ClientLayoutProps {
 
 function ClientLayoutContent({ children }: { children: React.ReactNode }) {
   const { isBookingOpen, bookingType, closeBooking } = useBooking();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    // Unconditionally scroll to top when navigating across pages (especially from footer)
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [pathname]);
 
   return (
     <>

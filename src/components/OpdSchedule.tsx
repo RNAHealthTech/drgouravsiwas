@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { doctorData } from '@/data/doctorData';
 import { useBooking } from '@/context/BookingContext';
 import styles from './OpdSchedule.module.css';
@@ -254,12 +255,43 @@ export default function OpdSchedule() {
           </div>
 
           <div className={`${styles.feeCard} glass-card`}>
-            <h3 className={styles.feeTitle}>Consultation Guidelines</h3>
-            <p className={styles.feeSubtitle}>Official OPD at Department of Plastic Surgery, Sir Ganga Ram Hospital.</p>
+            <h3 className={styles.feeTitle}>Pre &amp; Post Consultation Guidelines</h3>
+            <p className={styles.feeSubtitle}>Essential preparation protocols &amp; post-operative follow-up at Sir Ganga Ram Hospital.</p>
             
-            <div className={styles.notice} style={{ marginTop: '16px' }}>
-              <p><strong>Appointment Registration:</strong> Consultations can be scheduled through our booking portal or directly at Sir Ganga Ram Hospital OPD reception desks.</p>
-              <p style={{ marginTop: '12px' }}><strong>Emergency Trauma:</strong> For acute amputations, severed tendons, or burns, the 24x7 Emergency Microsurgical unit is immediately available at the hospital casualty.</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '18px' }}>
+              <div style={{ background: 'rgba(255,255,255,0.7)', borderRadius: '8px', padding: '14px 16px', border: '1px solid rgba(172, 178, 150, 0.35)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                  <span style={{ fontSize: '1.1rem' }}>📋</span>
+                  <strong style={{ fontSize: '0.95rem', color: 'var(--text-main)' }}>Pre-Consultation Checklist</strong>
+                </div>
+                <ul style={{ fontSize: '0.84rem', color: 'var(--text-muted)', lineHeight: '1.5', paddingLeft: '18px', margin: 0 }}>
+                  <li>Bring prior imaging scans (X-rays, MRI, CT, Doppler) and nerve conduction reports.</li>
+                  <li>Carry current prescription records, medical history, and SGRH registration / TPA card.</li>
+                  <li>Note down functional movement symptoms or trauma history for surgical review.</li>
+                </ul>
+              </div>
+
+              <div style={{ background: 'rgba(255,255,255,0.7)', borderRadius: '8px', padding: '14px 16px', border: '1px solid rgba(172, 178, 150, 0.35)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                  <span style={{ fontSize: '1.1rem' }}>🩹</span>
+                  <strong style={{ fontSize: '0.95rem', color: 'var(--text-main)' }}>Post-Consultation &amp; Recovery Care</strong>
+                </div>
+                <ul style={{ fontSize: '0.84rem', color: 'var(--text-muted)', lineHeight: '1.5', paddingLeft: '18px', margin: 0 }}>
+                  <li>Personalized treatment plan review, medication scheduling, and surgical date coordination.</li>
+                  <li>Structured dressing change schedules, custom splinting, and supervised hand rehabilitation.</li>
+                  <li>24x7 emergency microsurgical helpline for acute trauma and post-operative surgical queries.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', gap: '10px' }}>
+              <Link 
+                href="/patient-care"
+                className="btn btn-secondary"
+                style={{ flex: 1, textAlign: 'center', justifyContent: 'center', fontSize: '0.84rem', padding: '9px 14px' }}
+              >
+                View Full Pre &amp; Post Care Guides →
+              </Link>
             </div>
           </div>
         </div>

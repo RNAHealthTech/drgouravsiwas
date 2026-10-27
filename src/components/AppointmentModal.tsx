@@ -140,13 +140,13 @@ export default function AppointmentModal({ isOpen, onClose, selectedType = 'Dire
               <div className={styles.feeSelector}>
                 <span className={styles.label}>Select Consultation Type:</span>
                 <div className={styles.feeCards}>
-                  {doctorData.fees.map((fee) => (
+                  {['OPD Consultation', 'Second Opinion', 'Post-Op Follow-up'].map((type) => (
                     <div
-                      key={fee.type}
-                      className={`${styles.feeCard} ${consultationType === fee.type ? styles.feeCardActive : ''}`}
-                      onClick={() => setConsultationType(fee.type)}
+                      key={type}
+                      className={`${styles.feeCard} ${consultationType === type ? styles.feeCardActive : ''}`}
+                      onClick={() => setConsultationType(type)}
                     >
-                      <span className={styles.feeTypeName}>{fee.type}</span>
+                      <span className={styles.feeTypeName}>{type}</span>
                     </div>
                   ))}
                 </div>

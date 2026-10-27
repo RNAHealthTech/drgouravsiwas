@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import ScrollReveal from '@/components/ScrollReveal';
 import styles from './Expertise.module.css';
@@ -11,6 +12,7 @@ interface Specialty {
   description: string;
   icon: React.ReactNode;
   treatments: string[];
+  link?: string;
 }
 
 export default function Expertise() {
@@ -36,10 +38,11 @@ export default function Expertise() {
       description: "Specialized arthroscopic and open techniques for complex wrist trauma, scaphoid fractures, ligament tears, and degenerative wrist conditions.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="7" r="4" />
-          <path d="M5 21v-2a7 7 0 0 1 14 0v2" />
-          <line x1="8" y1="17" x2="16" y2="17" />
-          <line x1="9" y1="21" x2="15" y2="21" />
+          <rect x="7" y="10" width="10" height="9" rx="2" />
+          <path d="M9 10V5a3 3 0 0 1 6 0v5" />
+          <line x1="12" y1="13" x2="12" y2="16" />
+          <line x1="7" y1="14" x2="17" y2="14" />
+          <path d="M9 19v2a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-2" />
         </svg>
       ),
       treatments: ["Scaphoid Non-Union & Fractures", "Wrist Arthroscopy", "TFCC Ligament Repair", "Kienböck's Disease", "Partial/Total Wrist Arthrodesis"]
@@ -50,15 +53,13 @@ export default function Expertise() {
       description: "Advanced micro-neurosurgical reconstruction for adult and pediatric brachial plexus injuries, targeted nerve transfers, and limb salvage.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="3" />
-          <path d="M12 2v4" />
-          <path d="M12 18v4" />
-          <path d="M4.93 4.93l2.83 2.83" />
-          <path d="M16.24 16.24l2.83 2.83" />
-          <path d="M2 12h4" />
-          <path d="M18 12h4" />
-          <path d="M4.93 19.07l2.83-2.83" />
-          <path d="M16.24 7.76l2.83-2.83" />
+          <circle cx="6" cy="6" r="3" />
+          <circle cx="18" cy="6" r="3" />
+          <circle cx="12" cy="18" r="3" />
+          <path d="M8.5 7.5L12 15" />
+          <path d="M15.5 7.5L12 15" />
+          <path d="M12 2v3" />
+          <path d="M12 21v1" />
         </svg>
       ),
       treatments: ["Adult Brachial Plexus Injury", "Obstetric Brachial Plexus Palsy", "Targeted Nerve Transfers", "Free Functioning Muscle Transfer", "Microvascular Anastomosis"]
@@ -69,16 +70,31 @@ export default function Expertise() {
       description: "Precision microvascular tissue transfers to rebuild complex defects from severe trauma, cancer resection, and limb-threatening infections.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M6 18h8" />
-          <path d="M3 22h18" />
-          <path d="M14 22a7 7 0 1 0-14 0" />
-          <path d="M9 14h2" />
-          <path d="M9 12a3 3 0 0 1-3-3V5a3 3 0 0 1 6 0v4a3 3 0 0 1-3 3Z" />
-          <path d="M12 5h4" />
-          <path d="M14 9h4" />
+          <polygon points="12 2 2 7 12 12 22 7 12 2" />
+          <polyline points="2 17 12 22 22 17" />
+          <polyline points="2 12 12 17 22 12" />
         </svg>
       ),
       treatments: ["Free Flap Reconstruction", "Limb Salvage", "Head & Neck Reconstruction", "Complex Soft Tissue Coverage"]
+    },
+    {
+      id: 'plastic-reconstructive-care',
+      title: "Plastic Surgery & Pre-Post Care",
+      description: "Aesthetic facial refinement, scar revision, structured perioperative preparation, custom thermoplastic splinting, and supervised rehabilitation.",
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8L12 2z" />
+          <path d="M19 3l.8 2.4L22 6l-2.2.6L19 9l-.8-2.4L16 6l2.2-.6L19 3z" />
+        </svg>
+      ),
+      treatments: [
+        "Aesthetic Rhinoplasty & Facial Contouring",
+        "Scar Revision & Keloid Management",
+        "Pre-Surgical Clearance & Diagnostic Workup",
+        "Wound Dressing & Suture Protocols",
+        "Custom Splinting & Hand Rehabilitation"
+      ],
+      link: "/patient-care"
     }
   ];
 
@@ -144,6 +160,19 @@ export default function Expertise() {
                   ))}
                 </div>
               </div>
+
+              {spec.link && (
+                <div style={{ marginTop: '20px' }}>
+                  <Link 
+                    href={spec.link} 
+                    className="btn btn-secondary btn-sm" 
+                    style={{ padding: '7px 16px', fontSize: '0.8rem', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                  >
+                    <span>View Pre &amp; Post Care Protocols</span>
+                    <span>→</span>
+                  </Link>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>

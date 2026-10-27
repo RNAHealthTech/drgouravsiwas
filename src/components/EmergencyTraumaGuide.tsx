@@ -29,9 +29,9 @@ export default function EmergencyTraumaGuide() {
     },
     {
       step: 4,
-      title: 'Rush to SGRH Casualty Immediately',
+      title: 'Rush to Casualty Desk Immediately',
       icon: '🚑',
-      instruction: 'Time is tissue. Ideal warm ischemia time for digits is under 12 hours (and muscle-rich limbs under 6 hours). Inform Sir Ganga Ram Hospital casualty desk in advance so the microsurgical theater and Dr. Gourav Siwas\'s team can be prepped.'
+      instruction: 'Time is tissue. Ideal warm ischemia time for digits is under 12 hours (and muscle-rich limbs under 6 hours). Inform casualty desk in advance so the microsurgical theater and Dr. Gourav Siwas\'s team can be prepped.'
     }
   ];
 

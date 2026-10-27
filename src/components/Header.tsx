@@ -91,6 +91,7 @@ export default function Header() {
     { name: 'Services', href: '/services', isDropdown: true },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Media', href: '/media' },
+    { name: 'Blogs', href: '/blog' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' },
   ];
@@ -225,7 +226,7 @@ export default function Header() {
                             className={styles.megaViewAllLink}
                             onClick={closeAllMenus}
                           >
-                            <span>Explore All Services &amp; Estimator</span>
+                            <span>Explore All Services</span>
                             <ArrowRight size={14} />
                           </Link>
                         </div>

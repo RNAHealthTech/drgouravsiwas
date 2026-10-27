@@ -4,7 +4,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Marquee from 'react-fast-marquee';
-import ProcedureEstimator from '@/components/ProcedureEstimator';
 import BookingCTA from '@/components/BookingCTA';
 import styles from '../shared-page.module.css';
 
@@ -84,20 +83,6 @@ export default function ProceduresPage() {
         </div>
       </section>
 
-      <section className={styles.pageSectionAlt} style={{ padding: '80px 0' }}>
-        <div className="container">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            style={{ textAlign: 'center', marginBottom: '60px' }}
-          >
-            <h2 style={{ fontSize: '3rem', color: 'var(--primary)', marginBottom: '16px' }}>Interactive Procedure Guide</h2>
-            <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)' }}>Explore details and get estimated timelines for various treatments.</p>
-          </motion.div>
-          <ProcedureEstimator />
-        </div>
-      </section>
 
       <section className={styles.pageSection}>
         <BookingCTA />

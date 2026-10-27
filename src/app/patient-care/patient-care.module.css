@@ -1,7 +1,13 @@
 .patientCare {
   background-color: transparent;
   position: relative;
-  padding: 40px 0;
+  padding: 140px 0 60px;
+}
+
+@media (max-width: 768px) {
+  .patientCare {
+    padding: 110px 0 40px;
+  }
 }
 
 .grid {

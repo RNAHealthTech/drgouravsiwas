@@ -2,14 +2,14 @@ export interface MediaItem {
   id: string;
   title: string;
   source: string;
-  category: 'National Press' | 'Video & Broadcast' | 'Academic Summits' | 'Social Media';
+  category: 'National Press' | 'Video & Broadcast' | 'Social Media';
   date: string;
   summary: string;
   link: string;
   badge?: string;
   image?: string;
   highlight?: boolean;
-  mediaType: 'article' | 'video' | 'social' | 'event';
+  mediaType: 'article' | 'video' | 'social';
 }
 
 export const mediaData: MediaItem[] = [
@@ -25,18 +25,6 @@ export const mediaData: MediaItem[] = [
     image: '/images/replantation-real.jpg',
     link: 'https://www.timesnownews.com/delhi/in-a-complex-10-hour-surgery-doctors-at-delhi-hospital-reattach-severed-hand-of-factory-worker-article-109408057',
     mediaType: 'article'
-  },
-  {
-    id: 'puls-2026-pediatric-upper-limb-summit',
-    title: 'Pediatric Upper Limb Summit 2026 (PULS 2026) — Defining Precision for Growing Hands',
-    source: 'Bangalore Orthopaedic Society & BiPrag Hand Academia',
-    category: 'Academic Summits',
-    date: 'November 14 – 15, 2026',
-    summary: 'India’s dedicated pediatric upper limb summit hosted at Welcomhotel by ITC, Richmond Road, Bengaluru. Convening leading hand and reconstructive surgeons to advance clinical precision, pediatric microsurgical reconstruction, and congenital anomaly management.',
-    badge: 'PULS 2026 Bengaluru',
-    image: '/images/puls-2026-pediatric-summit.jpg',
-    link: 'https://pulsconf.com/',
-    mediaType: 'event'
   },
   {
     id: 'deccan-chronicle-gender-affirmation',
@@ -60,6 +48,18 @@ export const mediaData: MediaItem[] = [
     badge: 'Video Masterclass',
     image: '/images/media-kyc-youtube.jpg',
     link: 'https://m.youtube.com/watch?v=rqD_yzIJOSw',
+    mediaType: 'video'
+  },
+  {
+    id: 'youtube-hastam-scaphocapitate-kienbock',
+    title: 'HASTAM: Scaphocapitate Fusion for Advanced Kienböck Disease — Surgical Technique & Expert Tips',
+    source: 'GK Hand Surgery (YouTube / HASTAM Series)',
+    category: 'Video & Broadcast',
+    date: '2025',
+    summary: 'Operative surgical demonstration and technical pearls on Scaphocapitate Arthrodesis with Lunate excision for advanced Kienböck disease, highlighting sub-millimeter surgical precision, bone fixation, and long-term functional recovery.',
+    badge: 'Surgical Masterclass',
+    image: '/images/media-kienbock-hastam.jpg',
+    link: 'https://youtu.be/goJoZFNSwxA',
     mediaType: 'video'
   },
   {

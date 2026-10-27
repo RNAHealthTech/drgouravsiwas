@@ -11,8 +11,8 @@ export default function Achievements() {
       <div className="container">
         <ScrollReveal direction="up">
           <div className="section-title">
-            <h2>Achievements & Recognition</h2>
-            <p>Key academic awards, certifications, and professional memberships of Dr. Gourav Siwas</p>
+            <h2>Awards & Achievements</h2>
+            <p>Key surgical milestones, academic awards, fellowships, and professional memberships</p>
           </div>
         </ScrollReveal>
 

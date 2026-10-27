@@ -82,7 +82,6 @@ export interface DoctorProfile {
   logoUrl: string;
   emblemUrl: string;
   ebhsPhotoUrl: string;
-  mentorshipPhotoUrl: string;
   languages: string[];
   education: Education[];
   positions: Position[];
@@ -123,7 +122,6 @@ export const doctorData: DoctorProfile = {
   logoUrl: "/images/dr_gourav_logo.png",
   emblemUrl: "/images/dr_gourav_emblem.jpg",
   ebhsPhotoUrl: "/images/dr_gourav_ebhs_award.jpg",
-  mentorshipPhotoUrl: "/images/dr_gourav_mentorship.jpg",
   languages: ["English", "Hindi"],
   bio: "Dr. Gourav Siwas is a board certified Plastic & Reconstructive Surgeon & India’s youngest European board certified Hand surgeon with fellowship in Hand & Upper Extremity Surgery.\n\nHe is sincere and passionately dedicated towards ethical patient care, He is a team player with an eye for detail. He has strong creative and analytical skills which he incorporates in surgical decision making. He is a firm believer of learning and sharing his knowledge and expertise with his juniors, colleagues and seniors. He believes in both ability and availability as a surgeon.",
   philosophy: "His philosophy is 'Adding life to years!'",
@@ -148,17 +146,15 @@ export const doctorData: DoctorProfile = {
     { degree: "European Diploma in Hand Surgery", institution: "Switzerland", year: "2026" },
     { degree: "Fellow - Hand & Upper Extremity Surgery", institution: "Max healthcare, New Delhi", year: "2025" },
     { degree: "DrNB Plastic & Reconstructive Surgery", institution: "Sir Ganga Ram Hospital, New Delhi", year: "2018 - 2024" },
-    { degree: "M.B.B.S.", institution: "Pt. B. D. Sharma, PGIMS, Rohtak, Haryana", year: "2011 - 2017" },
-    { degree: "CLASS XII", institution: "Modern Vidya Niketan, Faridabad, Haryana", year: "2011" },
-    { degree: "CLASS X", institution: "St. John’s School, Faridabad, Haryana", year: "2009" }
+    { degree: "M.B.B.S.", institution: "Pt. B. D. Sharma, PGIMS, Rohtak, Haryana", year: "2011 - 2017" }
   ],
   positions: [
-    { role: "Associate Consultant- Hand, wrist & Reconstructive Microsurgery", institution: "Max Smart Super Speciality hospital, Saket, New Delhi", period: "September 2025 - Aug 2026" },
+    { role: "Consultant - Plastic, Hand & Microsurgery", institution: "Sir Ganga Ram Hospital, New Delhi", period: "At Present" },
+    { role: "Associate Consultant - Hand, Wrist & Reconstructive Microsurgery", institution: "Max Smart Super Speciality Hospital, Saket, New Delhi", period: "September 2025 - Aug 2026" },
     { role: "Fellow - Hand and Upper Extremity Surgery", institution: "Max Healthcare, New Delhi", period: "March - August 2025" },
     { role: "Clinical Assistant - Plastic, Hand and Microsurgery", institution: "Sir Ganga Ram Hospital, New Delhi", period: "June 2024 - February 2025" },
-    { role: "Clinical observer-Hand & Reconstructive Microsurgery", institution: "Ganga hospital, Coimbatore", period: "February 2024" },
-    { role: "Resident - Plastic, Hand and Microsurgery", institution: "Sir Ganga Ram Hospital, New Delhi", period: "June 2018 - May 2024" },
-    { role: "Junior Resident - Orthopedics (Paraplegia)", institution: "Pt. B. D. Sharma, PGIMS, Rohtak", period: "Jan 2018 - May 2018" }
+    { role: "Clinical Observer - Hand & Reconstructive Microsurgery", institution: "Ganga Hospital, Coimbatore", period: "February 2024" },
+    { role: "Resident - Plastic, Hand and Microsurgery", institution: "Sir Ganga Ram Hospital, New Delhi", period: "June 2018 - May 2024" }
   ],
   memberships: [
     { name: "Delhi Medical Council - DMC (Reg No. - DMC-84828)", year: "Active" },
@@ -166,18 +162,7 @@ export const doctorData: DoctorProfile = {
     { name: "Indian Society for Surgery of the Hand - ISSH", year: "Active" },
     { name: "National Academy of Med Sciences - MNAMS", year: "Active" }
   ],
-  trainings: [
-    { title: "Hands on Workshop on ‘Hand Fractures’", institution: "APFSSH-APFSHT-APWA-ISSH-SHTI CONGRESS 2025, Mumbai, India", period: "2025" },
-    { title: "Cadaveric Course: All About Scaphoid", institution: "AIIMS, New Delhi", period: "April 2025" },
-    { title: "Craniofacial surgery- SORG Advanced Course", institution: "AIIMS Rishikesh", period: "Nov 2023" },
-    { title: "7th Delhi Rhinoplasty Course", institution: "Sir Ganga Ram Hospital, New Delhi", period: "Nov 2023" },
-    { title: "Hands-on course in Microsurgery", institution: "Ganga Hospital, Coimbatore", period: "Aug-Sep 2022" },
-    { title: "APSI accredited CME on ‘Hand Module’", institution: "APSI", period: "May 2022" },
-    { title: "Mini Fellowship program of Delhi Rhinoplasty Course", institution: "Sir Ganga Ram Hospital, New Delhi", period: "Nov 2022" },
-    { title: "Virtual live Course of ‘A to Z of Free Fibula flap’", institution: "Virtual", period: "Mar 2021" },
-    { title: "Ganga Hand & Microsurgery operative course", institution: "Virtual live", period: "Jul 2020" },
-    { title: "5th Delhi Rhinoplasty Course", institution: "Sir Ganga Ram Hospital, New Delhi", period: "Dec 2019" }
-  ],
+  trainings: [],
   awards: [
     { name: "Delhi’s 1st successful bilateral Hand Transplant Team Member", organization: "Sir Ganga Ram Hospital", year: "January 2024" },
     { name: "India’s Youngest and Delhi’s 1st Plastic surgeon to earn European Diploma in Hand Surgery (EDHS)", organization: "Switzerland", year: "2026" }
@@ -222,8 +207,6 @@ export const doctorData: DoctorProfile = {
       location: "Department of Plastic Surgery, Sir Ganga Ram Hospital"
     }
   ],
-  fees: [
-    { type: "Consultation", amount: 1000 }
-  ],
+  fees: [],
   testimonials: []
 };

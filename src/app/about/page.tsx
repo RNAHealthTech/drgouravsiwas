@@ -10,7 +10,6 @@ import CertificatesGallery from '@/components/CertificatesGallery';
 import Timeline from '@/components/Timeline';
 import Expertise from '@/components/Expertise';
 import WhyChooseUs from '@/components/WhyChooseUs';
-import DetailedProfile from '@/components/DetailedProfile';
 import BookingCTA from '@/components/BookingCTA';
 import styles from '../shared-page.module.css';
 
@@ -67,8 +66,6 @@ export default function AboutPage() {
       <section className={styles.pageSection}>
         <Achievements />
       </section>
-
-      <DetailedProfile />
 
       <section className={styles.pageSectionAlt}>
         <BookingCTA />

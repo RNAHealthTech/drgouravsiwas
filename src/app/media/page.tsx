@@ -36,7 +36,7 @@ const InstagramIcon = ({ size = 13 }: { size?: number }) => (
 export default function MediaPage() {
   const [activeCategory, setActiveCategory] = useState<string>('All');
 
-  const categories = ['All', 'National Press', 'Academic Summits', 'Video & Broadcast', 'Social Media'];
+  const categories = ['All', 'National Press', 'Video & Broadcast', 'Social Media'];
 
   const filteredItems = activeCategory === 'All'
     ? mediaData
@@ -53,20 +53,18 @@ export default function MediaPage() {
     if (!item.link) return null;
     const isYoutube = item.link.includes('youtube') || item.link.includes('youtu.be');
     const isInstagram = item.link.includes('instagram.com');
-    const isSummit = item.category === 'Academic Summits';
 
     let label = 'Read Full Article';
     let iconElement = <ExternalLink size={13} />;
 
     if (isYoutube) {
-      label = 'Watch Video Interview';
+      label = item.title.toLowerCase().includes('technique') || item.title.toLowerCase().includes('masterclass')
+        ? 'Watch Surgical Masterclass'
+        : 'Watch Video Interview';
       iconElement = <Play size={13} fill="currentColor" />;
     } else if (isInstagram) {
       label = 'View on Instagram';
       iconElement = <InstagramIcon size={13} />;
-    } else if (isSummit) {
-      label = 'Visit Summit Portal';
-      iconElement = <ExternalLink size={13} />;
     }
 
     return (
@@ -183,7 +181,6 @@ export default function MediaPage() {
               const isYoutube = item.link?.includes('youtube') || item.link?.includes('youtu.be');
               const isInstagram = item.link?.includes('instagram.com');
               const isArticle = item.category === 'National Press';
-              const isSummit = item.category === 'Academic Summits';
 
               return (
                 <article key={item.id} className={styles.mediaCard}>
@@ -258,27 +255,6 @@ export default function MediaPage() {
                         border: '1px solid rgba(172, 178, 150, 0.35)'
                       }}>
                         <FileText size={10} /> Press Article
-                      </div>
-                    )}
-                    {isSummit && (
-                      <div style={{
-                        position: 'absolute',
-                        top: '12px',
-                        right: '12px',
-                        background: 'rgba(35, 24, 18, 0.92)',
-                        backdropFilter: 'blur(4px)',
-                        color: '#ACB296',
-                        padding: '4px 9px',
-                        borderRadius: '6px',
-                        fontSize: '0.72rem',
-                        fontWeight: 700,
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '5px',
-                        boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
-                        border: '1px solid rgba(172, 178, 150, 0.45)'
-                      }}>
-                        <Calendar size={10} /> Academic Summit
                       </div>
                     )}
                   </div>

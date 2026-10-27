@@ -65,23 +65,8 @@ export default function HeroCanvasAnimation() {
     function animate() {
       if (!ctx || !canvas) return;
 
-      // Deep earth brown gradient bg (from Swatch 4)
-      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-      gradient.addColorStop(0, '#180f0b');
-      gradient.addColorStop(0.5, '#2e1e17');
-      gradient.addColorStop(1, '#180f0b');
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      // Subtle sage & cream radial glow center
-      const radial = ctx.createRadialGradient(
-        canvas.width / 2, canvas.height / 2, 0,
-        canvas.width / 2, canvas.height / 2, canvas.width * 0.6
-      );
-      radial.addColorStop(0, 'rgba(172, 178, 150, 0.08)');
-      radial.addColorStop(1, 'rgba(0, 0, 0, 0)');
-      ctx.fillStyle = radial;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      // Clear canvas so the underlying scrubs background image shows through clearly
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Draw connections
       drawConnections(particlesRef.current, ctx);

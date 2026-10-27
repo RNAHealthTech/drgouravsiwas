@@ -23,7 +23,6 @@ import {
   Sparkles
 } from 'lucide-react';
 import Marquee from 'react-fast-marquee';
-import ProcedureEstimator from '@/components/ProcedureEstimator';
 import TestimonialsGrid from '@/components/TestimonialsGrid';
 import BookingCTA from '@/components/BookingCTA';
 import { serviceCategories, servicesData } from '@/data/servicesData';
@@ -202,22 +201,6 @@ function ServicesContent() {
         </div>
       </section>
 
-      <section className={styles.estimatorSection}>
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className={styles.sectionHeader}
-          >
-            <h2 className={`serif ${styles.sectionTitle}`}>Procedure Insights &amp; Cost Guidance</h2>
-            <p className={styles.sectionSubtitle}>
-              Interactive timeline estimation and clinical guidelines for surgical recovery.
-            </p>
-          </motion.div>
-          <ProcedureEstimator />
-        </div>
-      </section>
 
       <TestimonialsGrid />
 

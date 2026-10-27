@@ -55,7 +55,7 @@ export default function Home() {
   const galleryImages = [
     { title: 'Member of National Academy of Medical Sciences (MNAMS) — Plastic & Reconstructive Surgery (2024)', src: '/images/cert-mnams.jpg' },
     { title: 'European Diploma in Hand Surgery (Basel, Switzerland)', src: '/images/dr_gourav_ebhs_award.jpg' },
-    { title: 'International Academic Exchange & Clinical Mentorship', src: '/images/dr_gourav_mentorship.jpg' },
+    { title: 'World Society for Reconstructive Microsurgery (WSRM)', src: '/images/cert-wsrm.png' },
     { title: 'European Board of Hand Surgery Official Certification (EDHS)', src: '/images/cert-edhs.jpg' },
     { title: 'Advanced Microsurgery Fellowship — Ganga Hospital', src: '/images/cert-ganga-microsurgery.png' },
     { title: 'Dr. Gourav Siwas — Plastic, Reconstructive & Hand Surgeon', src: '/images/dr_gourav_portrait_hd.jpg' },
@@ -66,6 +66,17 @@ export default function Home() {
 
       <section ref={heroRef} className={styles.hero}>
         <motion.div className={styles.heroBg} style={{ scale: heroScale }}>
+          {/* Real surgical scrubs background picture */}
+          <div className={styles.heroScrubsBgWrap}>
+            <Image
+              src="/images/dr_gourav_scrubs.jpg"
+              alt="Dr. Gourav Siwas - Plastic & Reconstructive Hand Surgeon in scrubs"
+              fill
+              priority
+              quality={95}
+              className={styles.heroScrubsImg}
+            />
+          </div>
           <HeroCanvasAnimation />
           <div className={styles.heroRings}>
             <div className={styles.ring1} />

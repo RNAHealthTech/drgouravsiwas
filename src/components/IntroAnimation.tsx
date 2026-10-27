@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './IntroAnimation.module.css';
 
@@ -8,8 +9,8 @@ export default function IntroAnimation() {
   const [phase, setPhase] = useState<'intro' | 'exit' | 'done'>('intro');
 
   useEffect(() => {
-    const tExit = setTimeout(() => setPhase('exit'), 1100);
-    const tDone = setTimeout(() => setPhase('done'), 1600);
+    const tExit = setTimeout(() => setPhase('exit'), 1400);
+    const tDone = setTimeout(() => setPhase('done'), 1900);
 
     return () => {
       clearTimeout(tExit);
@@ -46,63 +47,59 @@ export default function IntroAnimation() {
         )}
 
         <div className={styles.content}>
-          {/* Dr. text */}
-          <div className={styles.drWrapper}>
-            <motion.span
-              className={styles.drText}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            >
-              Dr.
-            </motion.span>
-          </div>
+          {/* Big Featured Logo */}
+          <motion.div
+            className={styles.introLogoBox}
+            initial={{ opacity: 0, scale: 0.65, y: -20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <Image
+              src="/images/dr_gourav_emblem.jpg"
+              alt="Dr. Gourav Siwas Emblem"
+              width={140}
+              height={140}
+              priority
+              className={styles.introLogoImg}
+            />
+          </motion.div>
 
-          {/* Name — fast, elegant letter wave */}
-          <div className={styles.nameWrapper}>
-            {'Gourav Siwas'.split('').map((char, i) => (
-              <motion.span
-                key={i}
-                className={char === ' ' ? styles.space : styles.nameLetter}
-                initial={{ opacity: 0, y: 30, rotateX: 60 }}
-                animate={{ opacity: 1, y: 0, rotateX: 0 }}
-                transition={{
-                  duration: 0.35,
-                  delay: 0.04 + i * 0.02,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
-              >
-                {char}
-              </motion.span>
-            ))}
-          </div>
+          {/* Doctor's Name - Small, refined and elegant directly below logo */}
+          <motion.div
+            className={styles.nameWrapper}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <h2 className={styles.doctorName}>Dr. Gourav Siwas</h2>
+          </motion.div>
 
-          {/* Divider line */}
+          {/* Elegant Divider */}
           <motion.div
             className={styles.divider}
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
-            transition={{ duration: 0.45, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.4, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
           />
 
-          {/* Subtitle — comes right with Gourav Siwas */}
+          {/* Subtitle / Specialty — Hand, Wrist & Reconstructive Plastic Surgeon */}
           <motion.p
             className={styles.subtitle}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.4, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
           >
-            Consultant Hand &amp; Microsurgery
+            Hand, Wrist &amp; Reconstructive Plastic Surgeon
           </motion.p>
 
-          {/* Tagline — comes right with the subtitle */}
+          {/* Hospital Affiliation — Sir Ganga Ram Hospital New Delhi */}
           <motion.p
             className={styles.tagline}
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 0.95, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.4, delay: 0.26, ease: [0.16, 1, 0.3, 1] }}
           >
-            Sir Ganga Ram Hospital New Delhi
+            Sir Ganga Ram Hospital, New Delhi
           </motion.p>
         </div>
 

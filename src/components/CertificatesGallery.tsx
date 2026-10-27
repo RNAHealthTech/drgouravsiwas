@@ -44,15 +44,6 @@ const certificates = [
     badge: '⭐ Fellowship',
   },
   {
-    id: 5,
-    title: 'International Academic Mentorship & Faculty Fellowship',
-    issuer: 'Global Hand & Reconstructive Microsurgery Exchange',
-    year: '2025',
-    location: 'International Congress',
-    image: '/images/dr_gourav_mentorship.jpg',
-    badge: '🤝 Faculty Mentorship',
-  },
-  {
     id: 6,
     title: 'Hands-on Course in Microsurgery',
     issuer: 'Ganga Microsurgery Training Institute',

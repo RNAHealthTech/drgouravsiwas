@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { doctorData } from '@/data/doctorData';
-import { BookOpen, Presentation, Award, Activity, GraduationCap, Users, Bookmark } from 'lucide-react';
+import { BookOpen, Presentation, Award, Activity, Users, Bookmark } from 'lucide-react';
 import styles from './DetailedProfile.module.css';
 
 export default function DetailedProfile() {
@@ -11,8 +11,8 @@ export default function DetailedProfile() {
 
   const tabs = [
     { id: 'publications', label: 'Publications & Research', icon: BookOpen },
-    { id: 'conferences', label: 'Workshops & Courses', icon: GraduationCap },
-    { id: 'achievements', label: 'Achievements & Accomplishments', icon: Award }
+    { id: 'presentations', label: 'Presentations & Papers', icon: Presentation },
+    { id: 'achievements', label: 'Awards & Achievements', icon: Award }
   ];
 
   return (
@@ -100,26 +100,6 @@ export default function DetailedProfile() {
                 </motion.div>
               )}
 
-              {activeTab === 'conferences' && (
-                <motion.div
-                  key="conferences"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <h3 className={styles.contentTitle}>Workshops &amp; Courses</h3>
-                  <div className={styles.gridContainer}>
-                    {doctorData.trainings.map((train, idx) => (
-                      <div key={idx} className={styles.gridCard}>
-                        <strong className={styles.cardMain}>{train.title}</strong>
-                        <span className={styles.cardSub}>{train.institution}</span>
-                        <span className={styles.cardMeta}>{train.period}</span>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
 
               {activeTab === 'achievements' && (
                 <motion.div
@@ -129,7 +109,7 @@ export default function DetailedProfile() {
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <h3 className={styles.contentTitle}>Key Achievements</h3>
+                  <h3 className={styles.contentTitle}>Key Awards &amp; Honors</h3>
                   <div className={styles.listContainer}>
                     {doctorData.awards.map((award, idx) => (
                       <div key={idx} className={styles.listItem}>
