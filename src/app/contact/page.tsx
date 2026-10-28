@@ -24,7 +24,7 @@ export default function ContactPage() {
     setErrorMessage('');
 
     try {
-      const response = await fetch('https://formspree.io/f/myeezzel', {
+      const response = await fetch('https://formspree.io/f/mljjbqvj', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -36,6 +36,7 @@ export default function ContactPage() {
           email,
           phone,
           message,
+          _subject: `New Contact Inquiry from ${name} (${phone})`,
         }),
       });
 
@@ -162,7 +163,7 @@ export default function ContactPage() {
               ) : (
                 <form 
                   onSubmit={handleSubmit}
-                  action="https://formspree.io/f/myeezzel"
+                  action="https://formspree.io/f/mljjbqvj"
                   method="POST"
                   style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
                 >

@@ -98,7 +98,7 @@
 }
 
 .accordionContentOpen {
-  max-height: 250px; /* Bounded height for transition */
+  max-height: 600px;
   padding-bottom: 24px;
 }
 

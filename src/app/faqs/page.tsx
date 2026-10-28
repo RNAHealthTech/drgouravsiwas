@@ -1,19 +1,20 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import styles from './faqs.module.css';
+import { acJointArthritisFaqs } from '@/data/acJointFaqsData';
 
 interface FAQItem {
   question: string;
   answer: string;
-  category: 'general' | 'hand' | 'cleft';
+  category: 'general' | 'hand' | 'cleft' | 'ac-joint';
 }
 
 export default function FaqsPage() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const [activeCategory, setActiveCategory] = useState<string>('all');
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const [activeCategory, setActiveCategory] = useState<string>('ac-joint');
 
-  const faqs: FAQItem[] = [
+  const baseFaqs: FAQItem[] = [
     {
       question: "What is the difference between Plastic Surgery and Cosmetic Surgery?",
       answer: "Plastic Surgery is a broad medical field focused on reconstructing facial and body defects due to birth disorders, trauma, burns, and disease. Cosmetic Surgery is a subspecialty of plastic surgery focused specifically on enhancing the aesthetic appearance, symmetry, and proportions of facial and body features.",
@@ -46,19 +47,28 @@ export default function FaqsPage() {
     }
   ];
 
+  const acFaqs: FAQItem[] = useMemo(() => {
+    return acJointArthritisFaqs.map(f => ({
+      question: `${f.id}. ${f.question}`,
+      answer: f.answer,
+      category: 'ac-joint' as const
+    }));
+  }, []);
+
+  const allFaqs = useMemo(() => {
+    return [...acFaqs, ...baseFaqs];
+  }, [acFaqs]);
+
   const filteredFaqs = activeCategory === 'all' 
-    ? faqs 
-    : faqs.filter(faq => faq.category === activeCategory);
+    ? allFaqs 
+    : allFaqs.filter(faq => faq.category === activeCategory);
 
   const toggleAccordion = (index: number) => {
-    if (activeIndex === index) {
-      setActiveIndex(null);
-    } else {
-      setActiveIndex(index);
-    }
+    setActiveIndex(activeIndex === index ? null : index);
   };
 
   const categories = [
+    { id: 'ac-joint', name: 'AC Joint Arthritis (50 FAQs)' },
     { id: 'all', name: 'All FAQs' },
     { id: 'general', name: 'General Questions' },
     { id: 'hand', name: 'Hand & Microsurgery' },
@@ -70,7 +80,7 @@ export default function FaqsPage() {
       <div className="container">
         <div className="section-title">
           <h2>Patient FAQs</h2>
-          <p>Common questions regarding hand, wrist, and reconstructive plastic surgeries</p>
+          <p>Common questions regarding hand, wrist, joint arthritis, and reconstructive surgeries</p>
         </div>
 
         <div className={styles.tabsWrapper}>
@@ -80,7 +90,7 @@ export default function FaqsPage() {
               className={`${styles.tabBtn} ${activeCategory === cat.id ? styles.tabBtnActive : ''}`}
               onClick={() => {
                 setActiveCategory(cat.id);
-                setActiveIndex(null);
+                setActiveIndex(0);
               }}
             >
               {cat.name}
