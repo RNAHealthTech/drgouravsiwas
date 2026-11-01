@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from '../shared-page.module.css';
+import faqStyles from './faq.module.css';
 import { Plus, Minus, Search, Calendar, MessageSquare, HelpCircle } from 'lucide-react';
 import { acJointArthritisFaqs, acJointArthritisOverview } from '@/data/acJointFaqsData';
 import { doctorData } from '@/data/doctorData';
@@ -114,58 +115,25 @@ export default function FAQPage() {
       </header>
 
       <section className={styles.pageSection} style={{ padding: '60px 0 100px' }}>
-        <div className="container" style={{ maxWidth: '900px' }}>
+        <div className={`container ${faqStyles.faqContainer}`}>
           
           {/* Category Tabs */}
-          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '10px', marginBottom: '30px' }}>
+          <div className={faqStyles.tabsRow}>
             <button
               onClick={() => { setActiveTab('ac-joint'); setOpenFaq(1); }}
-              style={{
-                padding: '12px 22px',
-                borderRadius: '50px',
-                border: activeTab === 'ac-joint' ? '1px solid var(--primary)' : '1px solid var(--border)',
-                background: activeTab === 'ac-joint' ? 'var(--primary)' : 'var(--bg-secondary)',
-                color: activeTab === 'ac-joint' ? '#ffffff' : 'var(--text-muted)',
-                fontWeight: 600,
-                fontSize: '0.9rem',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease',
-                boxShadow: activeTab === 'ac-joint' ? '0 4px 12px rgba(13, 148, 136, 0.25)' : 'none'
-              }}
+              className={`${faqStyles.tabBtn} ${activeTab === 'ac-joint' ? faqStyles.tabBtnActive : ''}`}
             >
               Acromioclavicular (AC) Arthritis (50 FAQs)
             </button>
             <button
               onClick={() => { setActiveTab('general'); setOpenFaq(101); }}
-              style={{
-                padding: '12px 22px',
-                borderRadius: '50px',
-                border: activeTab === 'general' ? '1px solid var(--primary)' : '1px solid var(--border)',
-                background: activeTab === 'general' ? 'var(--primary)' : 'var(--bg-secondary)',
-                color: activeTab === 'general' ? '#ffffff' : 'var(--text-muted)',
-                fontWeight: 600,
-                fontSize: '0.9rem',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease',
-                boxShadow: activeTab === 'general' ? '0 4px 12px rgba(13, 148, 136, 0.25)' : 'none'
-              }}
+              className={`${faqStyles.tabBtn} ${activeTab === 'general' ? faqStyles.tabBtnActive : ''}`}
             >
               General Clinic &amp; OPD FAQs
             </button>
             <button
               onClick={() => { setActiveTab('all'); setOpenFaq(null); }}
-              style={{
-                padding: '12px 22px',
-                borderRadius: '50px',
-                border: activeTab === 'all' ? '1px solid var(--primary)' : '1px solid var(--border)',
-                background: activeTab === 'all' ? 'var(--primary)' : 'var(--bg-secondary)',
-                color: activeTab === 'all' ? '#ffffff' : 'var(--text-muted)',
-                fontWeight: 600,
-                fontSize: '0.9rem',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease',
-                boxShadow: activeTab === 'all' ? '0 4px 12px rgba(13, 148, 136, 0.25)' : 'none'
-              }}
+              className={`${faqStyles.tabBtn} ${activeTab === 'all' ? faqStyles.tabBtnActive : ''}`}
             >
               All FAQs ({allFaqs.length})
             </button>
@@ -176,124 +144,71 @@ export default function FAQPage() {
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              style={{
-                background: 'linear-gradient(135deg, rgba(13, 148, 136, 0.08) 0%, rgba(13, 148, 136, 0.02) 100%)',
-                border: '1px solid rgba(13, 148, 136, 0.25)',
-                borderRadius: 'var(--radius-md)',
-                padding: '24px 28px',
-                marginBottom: '30px'
-              }}
+              className={faqStyles.overviewBanner}
             >
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: 'var(--primary)', fontSize: '0.82rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>
+              <div className={faqStyles.overviewBadge}>
                 <HelpCircle size={15} /> 50 Common Questions with Clinical Answers
               </div>
-              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.5rem', color: 'var(--text-main)', margin: '4px 0 10px' }}>
+              <h2 className={faqStyles.overviewTitle}>
                 Acromioclavicular (AC) Joint Arthritis
               </h2>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
+              <p className={faqStyles.overviewText}>
                 {acJointArthritisOverview.intro}
               </p>
             </motion.div>
           )}
 
           {/* Search Box */}
-          <div style={{ position: 'relative', marginBottom: '30px' }}>
+          <div className={faqStyles.searchWrapper}>
             <Search 
               size={18} 
-              style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} 
+              className={faqStyles.searchIcon}
             />
             <input 
               type="text"
               placeholder="Search across questions (e.g. causes, surgery, injections, exercises, pain...)"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              style={{
-                width: '100%',
-                padding: '14px 18px 14px 46px',
-                background: 'var(--bg-secondary)',
-                border: '1px solid var(--border)',
-                borderRadius: 'var(--radius-md)',
-                fontSize: '0.95rem',
-                color: 'var(--text-main)',
-                outline: 'none',
-                fontFamily: 'var(--font-sans)'
-              }}
+              className={faqStyles.searchInput}
             />
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+          <div className={faqStyles.metaRow}>
             <span>Showing {filteredFaqs.length} questions</span>
             <button
               onClick={() => setOpenFaq(openFaq ? null : filteredFaqs[0]?.id)}
-              style={{ background: 'none', border: 'none', color: 'var(--primary)', fontWeight: 600, cursor: 'pointer', fontSize: '0.85rem' }}
+              className={faqStyles.collapseBtn}
             >
               {openFaq ? 'Collapse Active' : 'Expand Top Question'}
             </button>
           </div>
 
           {/* FAQ Accordion List */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <div className={faqStyles.faqList}>
             {filteredFaqs.map((faq) => {
               const isOpen = openFaq === faq.id;
               return (
                 <div 
                   key={faq.id} 
-                  style={{
-                    background: 'var(--bg-secondary)',
-                    border: isOpen ? '1px solid rgba(13, 148, 136, 0.4)' : '1px solid var(--border)',
-                    borderRadius: 'var(--radius-md)',
-                    overflow: 'hidden',
-                    transition: 'all 0.2s ease'
-                  }}
+                  className={`${faqStyles.faqCard} ${isOpen ? faqStyles.faqCardOpen : ''}`}
                 >
                   <button 
                     onClick={() => toggleFaq(faq.id)}
-                    style={{
-                      width: '100%',
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      gap: '14px',
-                      padding: '18px 22px',
-                      background: 'transparent',
-                      border: 'none',
-                      cursor: 'pointer',
-                      textAlign: 'left'
-                    }}
+                    className={faqStyles.faqHeaderBtn}
                   >
                     <span 
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        minWidth: '28px',
-                        height: '28px',
-                        borderRadius: '4px',
-                        background: isOpen ? 'var(--primary)' : 'rgba(13, 148, 136, 0.1)',
-                        color: isOpen ? '#ffffff' : 'var(--primary)',
-                        fontSize: '0.8rem',
-                        fontWeight: 700,
-                        marginTop: '2px',
-                        flexShrink: 0
-                      }}
+                      className={`${faqStyles.faqBadge} ${isOpen ? faqStyles.faqBadgeActive : ''}`}
                     >
                       {faq.id > 100 ? faq.id - 100 : faq.id}
                     </span>
 
                     <span 
-                      style={{
-                        flex: 1,
-                        fontSize: '1.02rem',
-                        fontFamily: 'var(--font-sans)',
-                        fontWeight: 600,
-                        color: isOpen ? 'var(--primary)' : 'var(--text-main)',
-                        lineHeight: 1.45,
-                        transition: 'color 0.2s'
-                      }}
+                      className={`${faqStyles.faqQuestion} ${isOpen ? faqStyles.faqQuestionActive : ''}`}
                     >
                       {faq.question}
                     </span>
 
-                    <span style={{ color: isOpen ? 'var(--primary)' : 'var(--text-muted)', flexShrink: 0, marginTop: '4px' }}>
+                    <span className={`${faqStyles.faqIcon} ${isOpen ? faqStyles.faqIconActive : ''}`}>
                       {isOpen ? <Minus size={18} /> : <Plus size={18} />}
                     </span>
                   </button>
@@ -305,9 +220,9 @@ export default function FAQPage() {
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.25 }}
-                        style={{ overflow: 'hidden' }}
+                        className={faqStyles.faqAnswerWrapper}
                       >
-                        <div style={{ padding: '0 22px 20px 64px', fontSize: '0.96rem', color: 'var(--text-muted)', lineHeight: 1.7 }}>
+                        <div className={faqStyles.faqAnswer}>
                           {faq.answer}
                         </div>
                       </motion.div>
@@ -318,7 +233,7 @@ export default function FAQPage() {
             })}
 
             {filteredFaqs.length === 0 && (
-              <div style={{ textAlign: 'center', padding: '50px 20px', color: 'var(--text-muted)' }}>
+              <div className={faqStyles.noResults}>
                 <p>No questions found matching &ldquo;{searchQuery}&rdquo;</p>
                 <button
                   onClick={() => setSearchQuery('')}
@@ -332,23 +247,14 @@ export default function FAQPage() {
           </div>
 
           {/* Consultation CTA Banner */}
-          <div 
-            style={{
-              marginTop: '60px',
-              padding: '36px',
-              background: 'linear-gradient(135deg, rgba(13, 148, 136, 0.08) 0%, rgba(13, 148, 136, 0.02) 100%), var(--bg-secondary)',
-              border: '1px solid rgba(13, 148, 136, 0.25)',
-              borderRadius: 'var(--radius-lg)',
-              textAlign: 'center'
-            }}
-          >
-            <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--text-main)', marginBottom: '12px' }}>
+          <div className={faqStyles.ctaCard}>
+            <h3 className={faqStyles.ctaTitle}>
               Have Questions About Your Symptoms or Treatment?
             </h3>
-            <p style={{ color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto 24px', fontSize: '0.98rem', lineHeight: 1.6 }}>
+            <p className={faqStyles.ctaText}>
               Get personal clinical guidance directly from {doctorData.name} at Sir Ganga Ram Hospital, New Delhi.
             </p>
-            <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '14px' }}>
+            <div className={faqStyles.ctaActions}>
               <button
                 className="btn btn-primary"
                 onClick={() => openBooking('OPD Consultation')}
@@ -360,17 +266,7 @@ export default function FAQPage() {
                 href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  backgroundColor: '#25D366',
-                  color: '#ffffff',
-                  fontWeight: 500,
-                  padding: '12px 22px',
-                  borderRadius: 'var(--radius-sm)',
-                  textDecoration: 'none'
-                }}
+                className={faqStyles.whatsappActionBtn}
               >
                 <MessageSquare size={18} /> WhatsApp Consultation
               </a>

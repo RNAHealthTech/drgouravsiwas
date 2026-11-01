@@ -382,11 +382,49 @@
 }
 
 @media (max-width: 768px) {
-  .headerTitle {
-    font-size: 2.5rem;
+  .header {
+    padding: 130px 16px 55px;
   }
-
+  .headerTitle {
+    font-size: 2.2rem;
+  }
+  .headerSubtitle {
+    font-size: 0.98rem;
+  }
   .tabsContainer {
     padding: 0 16px;
+  }
+  .gridSection {
+    padding: 40px 0 60px;
+  }
+  .serviceCard {
+    padding: 24px 20px;
+  }
+  .processSection {
+    padding: 60px 0;
+  }
+  .sectionTitle {
+    font-size: 2.1rem;
+  }
+  .estimatorSection {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 115px 12px 45px;
+  }
+  .headerTitle {
+    font-size: 1.85rem;
+  }
+  .gridContainer {
+    padding: 0 14px;
+  }
+  .serviceCard {
+    padding: 20px 16px;
+  }
+  .processCard {
+    padding: 28px 20px;
   }
 }

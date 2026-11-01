@@ -6,7 +6,7 @@
 
 @media (max-width: 768px) {
   .faqSection {
-    padding: 110px 0 40px;
+    padding: 100px 0 40px;
   }
 }
 
@@ -56,6 +56,7 @@
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   border: 1px solid var(--border);
+  border-radius: var(--radius-md);
 }
 
 .accordionItemOpen {
@@ -98,7 +99,7 @@
 }
 
 .accordionContentOpen {
-  max-height: 600px;
+  max-height: 2000px;
   padding-bottom: 24px;
 }
 
@@ -106,4 +107,81 @@
   font-size: 0.975rem;
   line-height: 1.6;
   color: var(--text-muted);
+}
+
+/* ═════════════════════════════════════════════
+   Responsive Design for Mobile & Tablet
+   ═════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .tabsWrapper {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .tabBtn {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+  }
+
+  .accordion {
+    gap: 12px;
+  }
+
+  .accordionHeader {
+    padding: 16px 18px;
+  }
+
+  .questionText {
+    font-size: 0.98rem;
+    padding-right: 12px;
+    line-height: 1.45;
+  }
+
+  .icon {
+    font-size: 1.3rem;
+  }
+
+  .accordionContent {
+    padding: 0 18px;
+  }
+
+  .accordionContentOpen {
+    padding-bottom: 18px;
+  }
+
+  .answerText {
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabsWrapper {
+    gap: 6px;
+  }
+
+  .tabBtn {
+    padding: 7px 12px;
+    font-size: 0.78rem;
+  }
+
+  .accordionHeader {
+    padding: 14px 14px;
+  }
+
+  .questionText {
+    font-size: 0.92rem;
+  }
+
+  .accordionContent {
+    padding: 0 14px;
+  }
+
+  .accordionContentOpen {
+    padding-bottom: 14px;
+  }
+
+  .answerText {
+    font-size: 0.88rem;
+  }
 }

@@ -1,0 +1,361 @@
+.faqContainer {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tabsRow {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.tabBtn {
+  padding: 12px 22px;
+  border-radius: 50px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-sans);
+}
+
+.tabBtn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.tabBtnActive {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
+}
+
+.overviewBanner {
+  background: linear-gradient(135deg, rgba(13, 148, 136, 0.08) 0%, rgba(13, 148, 136, 0.02) 100%);
+  border: 1px solid rgba(13, 148, 136, 0.25);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  margin-bottom: 30px;
+}
+
+.overviewBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.overviewTitle {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--text-main);
+  margin: 4px 0 10px;
+}
+
+.overviewText {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.searchWrapper {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 14px 18px 14px 46px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  color: var(--text-main);
+  outline: none;
+  font-family: var(--font-sans);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.searchInput:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+}
+
+.metaRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.collapseBtn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faqCard {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.faqCardOpen {
+  border-color: rgba(13, 148, 136, 0.4);
+}
+
+.faqHeaderBtn {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faqBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: rgba(13, 148, 136, 0.1);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-top: 2px;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.faqBadgeActive {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.faqQuestion {
+  flex: 1;
+  font-size: 1.02rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.45;
+  transition: color 0.2s;
+}
+
+.faqQuestionActive {
+  color: var(--primary);
+}
+
+.faqIcon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.faqIconActive {
+  color: var(--primary);
+}
+
+.faqAnswerWrapper {
+  overflow: hidden;
+}
+
+.faqAnswer {
+  padding: 0 22px 20px 64px;
+  font-size: 0.96rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.noResults {
+  text-align: center;
+  padding: 50px 20px;
+  color: var(--text-muted);
+}
+
+.ctaCard {
+  margin-top: 60px;
+  padding: 36px;
+  background: linear-gradient(135deg, rgba(13, 148, 136, 0.08) 0%, rgba(13, 148, 136, 0.02) 100%), var(--bg-secondary);
+  border: 1px solid rgba(13, 148, 136, 0.25);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.ctaTitle {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.ctaText {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 24px;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.ctaActions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.whatsappActionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #25D366;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 12px 22px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.whatsappActionBtn:hover {
+  background-color: #1ebd59;
+}
+
+/* ═════════════════════════════════════════════
+   Responsive Design (Tablet & Mobile)
+   ═════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .tabsRow {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .tabBtn {
+    padding: 10px 16px;
+    font-size: 0.82rem;
+  }
+
+  .overviewBanner {
+    padding: 18px 20px;
+    margin-bottom: 24px;
+  }
+
+  .overviewTitle {
+    font-size: 1.25rem;
+  }
+
+  .overviewText {
+    font-size: 0.9rem;
+  }
+
+  .searchInput {
+    padding: 12px 14px 12px 42px;
+    font-size: 0.9rem;
+  }
+
+  .faqHeaderBtn {
+    padding: 14px 16px;
+    gap: 10px;
+  }
+
+  .faqBadge {
+    min-width: 24px;
+    height: 24px;
+    font-size: 0.75rem;
+  }
+
+  .faqQuestion {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  /* Responsive Answer Padding: no awkward 64px indent on mobile */
+  .faqAnswer {
+    padding: 0 16px 16px 16px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .ctaCard {
+    margin-top: 40px;
+    padding: 24px 18px;
+  }
+
+  .ctaTitle {
+    font-size: 1.4rem;
+  }
+
+  .ctaText {
+    font-size: 0.9rem;
+    margin-bottom: 18px;
+  }
+
+  .ctaActions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ctaActions button,
+  .ctaActions a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabBtn {
+    width: 100%;
+    text-align: center;
+    padding: 9px 14px;
+    font-size: 0.8rem;
+  }
+
+  .faqHeaderBtn {
+    padding: 12px 14px;
+  }
+
+  .faqAnswer {
+    padding: 0 14px 14px 14px;
+    font-size: 0.88rem;
+  }
+}
+
