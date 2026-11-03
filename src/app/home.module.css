@@ -159,7 +159,7 @@
   font-family: var(--font-sans);
   text-transform: uppercase;
   color: rgba(254, 247, 231, 0.95);
-  margin-bottom: 18px;
+  margin-bottom: 0;
   max-width: 650px;
   text-align: left;
 }
@@ -186,7 +186,7 @@
   line-height: 1.15;
   color: #fff;
   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
-  margin-bottom: 0;
+  margin-bottom: 12px;
   white-space: nowrap;
 }
 
@@ -307,7 +307,7 @@
   .heroBadge {
     align-items: center;
     text-align: center;
-    margin-bottom: 12px;
+    margin-bottom: 0;
     gap: 3px;
   }
 
@@ -328,7 +328,7 @@
     white-space: normal;
     letter-spacing: 0.01em;
     line-height: 1.18;
-    margin-bottom: 0;
+    margin-bottom: 8px;
   }
 
   .heroDivider {
@@ -1377,14 +1377,18 @@
 }
 
 /* ─── SWIPER PAGINATION OVERRIDE ───────────── */
-:global(.swiper-pagination-bullet) {
+.proceduresSwiper :global(.swiper-pagination-bullet),
+.testimonialSwiper :global(.swiper-pagination-bullet),
+.gallerySwiper :global(.swiper-pagination-bullet) {
   background: var(--primary) !important;
   opacity: 0.3 !important;
   width: 10px !important;
   height: 10px !important;
 }
 
-:global(.swiper-pagination-bullet-active) {
+.proceduresSwiper :global(.swiper-pagination-bullet-active),
+.testimonialSwiper :global(.swiper-pagination-bullet-active),
+.gallerySwiper :global(.swiper-pagination-bullet-active) {
   opacity: 1 !important;
   background: var(--secondary) !important;
 }

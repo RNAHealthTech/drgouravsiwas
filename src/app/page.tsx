@@ -88,13 +88,13 @@ export default function Home() {
 
         <motion.div className={styles.heroInner} style={{ opacity: heroOpacity }}>
           <motion.div className={styles.heroContent} initial="hidden" animate="visible" variants={stagger}>
+            <motion.h1 variants={fadeUp} className={styles.heroHeading}>
+              Dr. Gourav Siwas
+            </motion.h1>
             <motion.div variants={fadeUp} className={styles.heroBadge}>
               <span className={styles.heroBadgeTitle}>Consultant Hand &amp; Microsurgery</span>
               <span className={styles.heroBadgeHospital}>Sir Ganga Ram Hospital New Delhi</span>
             </motion.div>
-            <motion.h1 variants={fadeUp} className={styles.heroHeading}>
-              Dr. Gourav Siwas
-            </motion.h1>
             <motion.div variants={fadeUp} className={styles.heroDivider} />
             <motion.p variants={fadeUp} className={styles.heroTagline}>
               Hand · Wrist · Microsurgery · Brachial Plexus · Plastic &amp; Reconstructive Surgery

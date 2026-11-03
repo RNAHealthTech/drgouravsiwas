@@ -4,7 +4,7 @@ import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from '../shared-page.module.css';
 import faqStyles from './faq.module.css';
-import { Plus, Minus, Search, Calendar, MessageSquare, HelpCircle } from 'lucide-react';
+import { Plus, Minus, Search, Calendar, MessageSquare, HelpCircle, Activity } from 'lucide-react';
 import { acJointArthritisFaqs, acJointArthritisOverview } from '@/data/acJointFaqsData';
 import { doctorData } from '@/data/doctorData';
 import { useBooking } from '@/context/BookingContext';
@@ -13,14 +13,119 @@ interface FAQItem {
   id: number;
   question: string;
   answer: string;
-  category: 'ac-joint' | 'general';
+  category: 'procedures' | 'ac-joint' | 'general';
 }
 
 export default function FAQPage() {
   const { openBooking } = useBooking();
-  const [activeTab, setActiveTab] = useState<'ac-joint' | 'general' | 'all'>('ac-joint');
-  const [openFaq, setOpenFaq] = useState<number | null>(1);
+  const [activeTab, setActiveTab] = useState<'procedures' | 'ac-joint' | 'general' | 'all'>('procedures');
+  const [openFaq, setOpenFaq] = useState<number | null>(201);
   const [searchQuery, setSearchQuery] = useState('');
+
+  const procedureFaqs: FAQItem[] = [
+    {
+      id: 201,
+      question: "How quickly does the tingling disappear after carpal tunnel surgery?",
+      answer: "Most patients experience immediate relief from the deep aching and nighttime tingling within 24–48 hours. Sensation in the fingertips gradually normalizes over several weeks to months as the decompressed median nerve regenerates.",
+      category: 'procedures'
+    },
+    {
+      id: 202,
+      question: "Can both hands be operated on at the same time for carpal tunnel?",
+      answer: "While bilateral simultaneous release is possible, staged surgery (2–4 weeks apart) is typically recommended so you retain one fully functional hand for personal hygiene and daily tasks during early wound healing.",
+      category: 'procedures'
+    },
+    {
+      id: 203,
+      question: "Is general anesthesia required for carpal tunnel release?",
+      answer: "No. The procedure is routinely performed under WALANT (Wide Awake Local Anesthesia No Tourniquet) or local block with light sedation. You remain comfortable throughout, avoid general anesthesia side effects, and can go home the same day.",
+      category: 'procedures'
+    },
+    {
+      id: 204,
+      question: "Why do scaphoid fractures take so long to heal?",
+      answer: "The scaphoid bone has a retrograde, vulnerable blood supply that enters from its distal pole. Fractures across the waist or proximal pole disrupt this blood flow, creating high risk for delayed union, avascular necrosis, and nonunion if not stabilized rigidly.",
+      category: 'procedures'
+    },
+    {
+      id: 205,
+      question: "Can I avoid surgery and just stay in a plaster cast for a scaphoid fracture?",
+      answer: "Undisplaced acute fractures can be managed with 6–10 weeks of cast immobilization. However, minimally invasive percutaneous headless screw fixation allows rigid internal compression, eliminates prolonged casting, and permits earlier return to work.",
+      category: 'procedures'
+    },
+    {
+      id: 206,
+      question: "When should a cut tendon in the hand be operated on?",
+      answer: "Flexor and extensor tendon lacerations require urgent surgical repair ideally within 24 to 72 hours. Delayed repairs lead to retracted tendon ends, scarring within the sheath, and permanent loss of finger flexion or extension.",
+      category: 'procedures'
+    },
+    {
+      id: 207,
+      question: "Why is specialized hand therapy so crucial after tendon repair?",
+      answer: "A repaired tendon must glide to prevent adhesions, yet premature force can rupture the suture line. Controlled early active motion protocols guided by certified hand therapists ensure optimal tendon excursion while protecting repair strength.",
+      category: 'procedures'
+    },
+    {
+      id: 208,
+      question: "Will trigger finger return after surgical release?",
+      answer: "Complete surgical release of the A1 pulley provides definitive cure with near-zero recurrence rate. The tendon glides freely without clicking, snapping, or locking.",
+      category: 'procedures'
+    },
+    {
+      id: 209,
+      question: "How fast do nerves grow back after repair or micro-grafting?",
+      answer: "Peripheral nerves regenerate at approximately 1 mm per day (about 1 inch per month) after precise microsurgical epineurial repair. Reinnervation time depends on the distance between the injury site and the target muscle or fingertip.",
+      category: 'procedures'
+    },
+    {
+      id: 210,
+      question: "What is the optimal timing for brachial plexus reconstruction?",
+      answer: "Microsurgical exploration and nerve transfers yield the best outcomes when performed between 3 to 6 months post-injury before irreversible motor endplate degeneration occurs in denervated muscles.",
+      category: 'procedures'
+    },
+    {
+      id: 211,
+      question: "How is cubital tunnel syndrome different from carpal tunnel syndrome?",
+      answer: "Carpal tunnel involves the median nerve at the wrist causing numbness in the thumb, index, and middle fingers. Cubital tunnel involves the ulnar nerve at the inner elbow, causing numbness in the ring and little fingers and hand muscle wasting.",
+      category: 'procedures'
+    },
+    {
+      id: 212,
+      question: "How should an amputated finger or hand be preserved for replantation?",
+      answer: "Wrap the severed part in sterile saline-dampened gauze, place it into a clean watertight sealed plastic bag, and place that bag ON TOP OF ice water (slurry). NEVER place tissue directly in water or directly on dry ice.",
+      category: 'procedures'
+    },
+    {
+      id: 213,
+      question: "Can all amputated fingers be saved?",
+      answer: "Replantation feasibility depends on the level and mechanism of injury (sharp cut vs severe crush/avulsion), warm ischemia time, and the patient's general vascular health. Sharp amputations have success rates exceeding 85–90%.",
+      category: 'procedures'
+    },
+    {
+      id: 214,
+      question: "Will there be a large scar at the donor site after free tissue transfer?",
+      answer: "Donor sites (such as the anterolateral thigh or lateral arm) are closed primarily or with split-thickness skin grafts in concealed areas, with meticulous plastic surgical techniques to minimize cosmetic footprint.",
+      category: 'procedures'
+    },
+    {
+      id: 215,
+      question: "Can amputation truly be avoided in severe diabetic foot infections?",
+      answer: "Yes. By combining aggressive wound debridement, revascularization, infection control, and microvascular free flap coverage, even extensive deep ulcers exposing bone and tendon can be reconstructed to preserve weight-bearing ambulation.",
+      category: 'procedures'
+    },
+    {
+      id: 216,
+      question: "When is the best time to operate on a burn scar contracture?",
+      answer: "Contractures causing severe joint deformity or functional impairment should be released promptly. Maturing hypertrophic scars are typically optimized with pressure therapy and silicone sheets before elective reconstruction at 6–12 months.",
+      category: 'procedures'
+    },
+    {
+      id: 217,
+      question: "What is the best age to operate on webbed fingers (syndactyly) in children?",
+      answer: "Congenital syndactyly release is typically performed between 12 and 18 months of age, prior to fine motor skill development. Border digits (thumb-index or ring-little) are often separated earlier (around 6–9 months) to prevent growth discrepancy.",
+      category: 'procedures'
+    }
+  ];
 
   const generalFaqs: FAQItem[] = [
     {
@@ -65,7 +170,7 @@ export default function FAQPage() {
   }, []);
 
   const allFaqs = useMemo(() => {
-    return [...acFaqItems, ...generalFaqs];
+    return [...procedureFaqs, ...generalFaqs, ...acFaqItems];
   }, [acFaqItems]);
 
   const filteredFaqs = useMemo(() => {
@@ -109,7 +214,7 @@ export default function FAQPage() {
             transition={{ delay: 0.2 }}
             className={styles.pageSubtitle}
           >
-            Comprehensive clinical answers regarding Acromioclavicular (AC) Joint Arthritis, hand surgery, and patient care.
+            Comprehensive clinical answers regarding hand, wrist, peripheral nerve, reconstructive surgeries, and patient care.
           </motion.p>
         </div>
       </header>
@@ -120,16 +225,22 @@ export default function FAQPage() {
           {/* Category Tabs */}
           <div className={faqStyles.tabsRow}>
             <button
-              onClick={() => { setActiveTab('ac-joint'); setOpenFaq(1); }}
-              className={`${faqStyles.tabBtn} ${activeTab === 'ac-joint' ? faqStyles.tabBtnActive : ''}`}
+              onClick={() => { setActiveTab('procedures'); setOpenFaq(201); }}
+              className={`${faqStyles.tabBtn} ${activeTab === 'procedures' ? faqStyles.tabBtnActive : ''}`}
             >
-              Acromioclavicular (AC) Arthritis (50 FAQs)
+              Hand &amp; Reconstructive Surgeries ({procedureFaqs.length} FAQs)
             </button>
             <button
               onClick={() => { setActiveTab('general'); setOpenFaq(101); }}
               className={`${faqStyles.tabBtn} ${activeTab === 'general' ? faqStyles.tabBtnActive : ''}`}
             >
-              General Clinic &amp; OPD FAQs
+              General Clinic &amp; OPD ({generalFaqs.length} FAQs)
+            </button>
+            <button
+              onClick={() => { setActiveTab('ac-joint'); setOpenFaq(1); }}
+              className={`${faqStyles.tabBtn} ${activeTab === 'ac-joint' ? faqStyles.tabBtnActive : ''}`}
+            >
+              AC Joint Arthritis ({acFaqItems.length} FAQs)
             </button>
             <button
               onClick={() => { setActiveTab('all'); setOpenFaq(null); }}
@@ -139,6 +250,25 @@ export default function FAQPage() {
             </button>
           </div>
 
+          {/* Procedure Intro Banner */}
+          {activeTab === 'procedures' && (
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              className={faqStyles.overviewBanner}
+            >
+              <div className={faqStyles.overviewBadge}>
+                <Activity size={15} /> Clinical Surgical Services &amp; Recovery
+              </div>
+              <h2 className={faqStyles.overviewTitle}>
+                Hand, Wrist, Microsurgery &amp; Reconstructive Care
+              </h2>
+              <p className={faqStyles.overviewText}>
+                Authoritative clinical guidance from Dr. Gourav Siwas on recovery timelines, anesthesia options, surgical techniques, and postoperative care for procedures performed at Sir Ganga Ram Hospital.
+              </p>
+            </motion.div>
+          )}
+
           {/* AC Arthritis Intro Banner */}
           {activeTab === 'ac-joint' && (
             <motion.div
@@ -147,7 +277,7 @@ export default function FAQPage() {
               className={faqStyles.overviewBanner}
             >
               <div className={faqStyles.overviewBadge}>
-                <HelpCircle size={15} /> 50 Common Questions with Clinical Answers
+                <HelpCircle size={15} /> Clinical Questions &amp; Distal Clavicle Surgery
               </div>
               <h2 className={faqStyles.overviewTitle}>
                 Acromioclavicular (AC) Joint Arthritis
@@ -166,7 +296,7 @@ export default function FAQPage() {
             />
             <input 
               type="text"
-              placeholder="Search across questions (e.g. causes, surgery, injections, exercises, pain...)"
+              placeholder="Search across questions (e.g. carpal tunnel, tendon, replantation, recovery, surgery, pain...)"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className={faqStyles.searchInput}
@@ -199,7 +329,7 @@ export default function FAQPage() {
                     <span 
                       className={`${faqStyles.faqBadge} ${isOpen ? faqStyles.faqBadgeActive : ''}`}
                     >
-                      {faq.id > 100 ? faq.id - 100 : faq.id}
+                      {faq.id > 200 ? faq.id - 200 : (faq.id > 100 ? faq.id - 100 : faq.id)}
                     </span>
 
                     <span 

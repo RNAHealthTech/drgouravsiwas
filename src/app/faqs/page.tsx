@@ -1,124 +1,28 @@
-'use client';
+import { Metadata } from 'next';
+import FAQPage from '@/app/faq/page';
 
-import React, { useState, useMemo } from 'react';
-import styles from './faqs.module.css';
-import { acJointArthritisFaqs } from '@/data/acJointFaqsData';
-
-interface FAQItem {
-  question: string;
-  answer: string;
-  category: 'general' | 'hand' | 'cleft' | 'ac-joint';
-}
+export const metadata: Metadata = {
+  title: 'Patient FAQs | Dr. Gourav Siwas - Hand & Reconstructive Plastic Surgeon',
+  description:
+    'Frequently asked questions regarding hand surgery, wrist injuries, microsurgery, peripheral nerve repair, and reconstructive plastic surgery by Dr. Gourav Siwas at Sir Ganga Ram Hospital, New Delhi.',
+  keywords: [
+    'Hand Surgery FAQs',
+    'Carpal Tunnel FAQs',
+    'Tendon Repair FAQs',
+    'Replantation FAQs',
+    'Dr Gourav Siwas',
+    'Sir Ganga Ram Hospital New Delhi'
+  ],
+  openGraph: {
+    title: 'Patient FAQs | Dr. Gourav Siwas',
+    description:
+      'Answers to common patient questions on hand and wrist surgeries, microsurgery replantation, and reconstructive procedures.',
+    url: 'https://drgouravsiwas.com/faqs',
+    siteName: 'Dr. Gourav Siwas',
+    type: 'article',
+  },
+};
 
 export default function FaqsPage() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(0);
-  const [activeCategory, setActiveCategory] = useState<string>('ac-joint');
-
-  const baseFaqs: FAQItem[] = [
-    {
-      question: "What is the difference between Plastic Surgery and Cosmetic Surgery?",
-      answer: "Plastic Surgery is a broad medical field focused on reconstructing facial and body defects due to birth disorders, trauma, burns, and disease. Cosmetic Surgery is a subspecialty of plastic surgery focused specifically on enhancing the aesthetic appearance, symmetry, and proportions of facial and body features.",
-      category: "general"
-    },
-    {
-      question: "Are reconstructive surgeries performed at Sir Ganga Ram Hospital covered by insurance?",
-      answer: "Yes, most reconstructive procedures—such as cleft lip/palate repairs, hand trauma repairs, burn contracture release, and free tissue transfer reconstructions—are medically necessary and generally covered by corporate health insurance and TPAs. SGRH insurance helpdesk can verify specific plans.",
-      category: "general"
-    },
-    {
-      question: "What is Hand Microsurgery and when is it required?",
-      answer: "Hand Microsurgery uses specialized operating microscopes and precision instruments to repair tiny blood vessels and nerves (often less than 1mm in diameter) in the hand and wrist. It is critical for reattaching severed fingers (replantation), restoring sensation after nerve injuries, repairing cut tendons, and restoring hand function after severe trauma.",
-      category: "hand"
-    },
-    {
-      question: "What is the window of time for emergency hand re-attachment (replantation)?",
-      answer: "Replantation is time-sensitive. Severed digits/limbs must be cooled (wrapped in sterile saline-damp gauze, placed in a sealed bag, and that bag placed in ice water—NEVER directly on ice). The warm ischemia time window is generally under 6 hours for muscle-heavy limbs and up to 12-24 hours for fingers. Emergency contact through SGRH Casualty should be made immediately.",
-      category: "hand"
-    },
-    {
-      question: "At what age should a child undergo Cleft Lip and Cleft Palate surgeries?",
-      answer: "According to standard pediatric protocols: Cleft Lip repair is usually performed at around 3 to 6 months of age (rule of 10s: 10 weeks old, 10 pounds weight, 10g hemoglobin). Cleft Palate repair is typically performed between 9 and 18 months of age, before the child begins speaking, to ensure optimal speech and palate development.",
-      category: "cleft"
-    },
-    {
-      question: "How do I prepare for my first consultation with Dr. Gourav Siwas?",
-      answer: "Please bring all prior medical reports, current prescription list, and details of any allergies. If seeking reconstructive options, any surgical histories or imaging reports (CT scans, X-rays) are helpful. ",
-      category: "general"
-    }
-  ];
-
-  const acFaqs: FAQItem[] = useMemo(() => {
-    return acJointArthritisFaqs.map(f => ({
-      question: `${f.id}. ${f.question}`,
-      answer: f.answer,
-      category: 'ac-joint' as const
-    }));
-  }, []);
-
-  const allFaqs = useMemo(() => {
-    return [...acFaqs, ...baseFaqs];
-  }, [acFaqs]);
-
-  const filteredFaqs = activeCategory === 'all' 
-    ? allFaqs 
-    : allFaqs.filter(faq => faq.category === activeCategory);
-
-  const toggleAccordion = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-
-  const categories = [
-    { id: 'ac-joint', name: 'AC Joint Arthritis (50 FAQs)' },
-    { id: 'all', name: 'All FAQs' },
-    { id: 'general', name: 'General Questions' },
-    { id: 'hand', name: 'Hand & Microsurgery' },
-    { id: 'cleft', name: 'Cleft & Craniofacial' }
-  ];
-
-  return (
-    <section className={styles.faqSection}>
-      <div className="container">
-        <div className="section-title">
-          <h2>Patient FAQs</h2>
-          <p>Common questions regarding hand, wrist, joint arthritis, and reconstructive surgeries</p>
-        </div>
-
-        <div className={styles.tabsWrapper}>
-          {categories.map(cat => (
-            <button 
-              key={cat.id}
-              className={`${styles.tabBtn} ${activeCategory === cat.id ? styles.tabBtnActive : ''}`}
-              onClick={() => {
-                setActiveCategory(cat.id);
-                setActiveIndex(0);
-              }}
-            >
-              {cat.name}
-            </button>
-          ))}
-        </div>
-
-        <div className={styles.accordion}>
-          {filteredFaqs.map((faq, idx) => {
-            const isOpen = activeIndex === idx;
-            return (
-              <div key={idx} className={`${styles.accordionItem} ${isOpen ? styles.accordionItemOpen : ''} glass-card`}>
-                <button 
-                  className={styles.accordionHeader} 
-                  onClick={() => toggleAccordion(idx)}
-                >
-                  <span className={styles.questionText}>{faq.question}</span>
-                  <span className={styles.icon}>{isOpen ? '−' : '+'}</span>
-                </button>
-                
-                <div className={`${styles.accordionContent} ${isOpen ? styles.accordionContentOpen : ''}`}>
-                  <p className={styles.answerText}>{faq.answer}</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
+  return <FAQPage />;
 }
